@@ -1,1 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work | Sumaima Zakir</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        .purple-glow-btn {
+            background: #7C5DFA;
+            box-shadow: 0 0 20px rgba(124, 93, 250, 0.5);
+        }
+        .nav-link:hover { color: #7C5DFA; transition: 0.3s; }
+        .footer-link:hover { color: #ffffff; transition: 0.3s; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
 
+    <!-- HEADER (As per Image 1) -->
+    <header class="w-full border-b border-white/10 px-6 py-4 flex justify-between items-center bg-black/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full border border-purple-500/50 flex items-center justify-center text-xs font-bold text-purple-400">SZ</div>
+            <div>
+                <h1 class="text-sm font-bold tracking-tight">Sumaima Zakir.</h1>
+                <p class="text-[9px] uppercase tracking-[0.2em] text-white/50">Digital Designer & Strategist</p>
+            </div>
+        </div>
+
+<nav class="hidden lg:flex items-center gap-8 text-[13px] font-medium text-white/70">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="About.html" class="nav-link">About</a>
+            <a href="Portfolio.html" class="text-white border-b border-purple-500 pb-1">Portfolio</a>
+            <a href="Services.html" class="nav-link">Services</a>
+            <a href="Resume.html" class="nav-link">Resume</a>
+            <a href="Contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-6">
+            <a href="#" class="hidden md:block text-[13px] text-white/70 hover:text-white transition">CV / Resume</a>
+            <button class="purple-glow-btn px-5 py-2.5 rounded-full text-[13px] font-bold flex items-center gap-2 hover:scale-105 transition-all">
+                <span>📅</span> Book Discovery Call
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT (Work Section) -->
+    <main class="flex-grow container mx-auto px-6 py-20">
+        <div class="max-w-4xl mb-16">
+            <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-6">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span class="text-[11px] font-semibold uppercase tracking-widest text-white/70">Available for Q3/Q4 Projects</span>
+            </div>
+            <h2 class="text-6xl md:text-8xl font-extrabold leading-[1.1] mb-8">
+                Selected <span class="text-[#7C5DFA]">Works.</span>
+            </h2>
+            <p class="text-lg text-white/50 max-w-xl">
+                Helping startups and businesses build beautiful brands and digital experiences that drive growth.
+            </p>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- Project Card 1 -->
+            <div class="group cursor-pointer">
+                <div class="aspect-video bg-zinc-900 rounded-3xl overflow-hidden border border-white/10 mb-6 relative">
+                    <div class="absolute inset-0 bg-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <h3 class="text-2xl font-bold mb-1">Project Name One</h3>
+                <p class="text-white/40 text-sm uppercase tracking-widest">Brand Identity • Web Design</p>
+            </div>
+            <!-- Project Card 2 -->
+            <div class="group cursor-pointer">
+                <div class="aspect-video bg-zinc-900 rounded-3xl overflow-hidden border border-white/10 mb-6 relative">
+                    <div class="absolute inset-0 bg-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <h3 class="text-2xl font-bold mb-1">Project Name Two</h3>
+                <p class="text-white/40 text-sm uppercase tracking-widest">UI/UX Design • Development</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER (As per Image 2) -->
+    <footer class="bg-black pt-20 pb-10 border-t border-white/5">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+            
+            <!-- Bio Column -->
+            <div class="md:col-span-4">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-full border border-purple-500/30 flex items-center justify-center text-xs font-bold text-purple-400">SZ</div>
+                    <h1 class="text-lg font-bold">Sumaima Zakir.</h1>
+                </div>
+                <p class="text-white/50 text-[14px] leading-relaxed mb-8 max-w-xs">
+                    Designing digital experiences that grow businesses. Delivering high-performing websites, visual identity, and growth marketing strategies.
+                </p>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3 text-[13px]">
+                        <span class="text-purple-500">📍</span>
+                        <span class="text-white/70">Location: <span class="text-white font-medium">London / Remote Global</span></span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[13px]">
+                        <span class="w-2 h-2 rounded-full bg-green-500 ml-1"></span>
+                        <span class="text-white/70">Status: <span class="text-green-500 font-medium">Available for Q3/Q4 Projects</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Column -->
+            <div class="md:col-span-2">
+                <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-8">Navigation</h4>
+                <ul class="space-y-4 text-[14px] text-white/50">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="About.html" class="nav-link">About</a>
+            <a href="Portfolio.html" class="text-white border-b border-purple-500 pb-1">Portfolio</a>
+            <a href="Services.html" class="nav-link">Services</a>
+            <a href="Resume.html" class="nav-link">Resume</a>
+            <a href="Contact.html" class="nav-link">Contact</a>
+                    <li><a href="#" class="footer-link flex items-center gap-2">Download CV / Resume <span>⬇️</span></a></li>
+                </ul>
+            </div>
+
+            <!-- Services Column -->
+            <div class="md:col-span-3">
+                <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-8">Services Offered</h4>
+                <ul class="space-y-4 text-[14px] text-white/50">
+                    <li>Web Design & Development</li>
+                    <li>UI/UX Prototyping</li>
+                    <li>WordPress Development</li>
+                    <li>Brand Identity Design</li>
+                    <li>Social Media Management</li>
+                    <li>Digital Marketing & SEO</li>
+                </ul>
+            </div>
+
+            <!-- Connect Column -->
+            <div class="md:col-span-3">
+                <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-8">Connect</h4>
+                <div class="flex gap-3 mb-8">
+                    <!-- Social Icons -->
+                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer">in</div>
+                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer">GH</div>
+                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer">IG</div>
+                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer">DR</div>
+                </div>
+                <a href="#" class="text-[#7C5DFA] border-b border-[#7C5DFA] pb-1 text-[14px] font-bold">Book a Discovery Call</a>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="container mx-auto px-6 pt-10 border-t border-white/5 flex flex-col md:row justify-between items-center gap-4 text-white/40 text-[12px]">
+            <p>© 2026 Sumaima Zakir. All Rights Reserved.</p>
+            <div class="flex items-center gap-6">
+                <span>Designed & Engineered for Digital Growth</span>
+                <button class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10">↑</button>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
