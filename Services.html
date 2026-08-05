@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Sumaima Zakir</title>
+    <title>Services Detail | Sumaima Zakir</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #000000;
@@ -20,22 +21,21 @@
             background: #7C5DFA;
             box-shadow: 0 0 20px rgba(124, 93, 250, 0.5);
         }
-        .service-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.4s ease;
-        }
-        .service-card:hover {
-            border-color: #7C5DFA;
-            background: rgba(124, 93, 250, 0.05);
-            transform: translateY(-5px);
-        }
         .nav-link:hover { color: #7C5DFA; transition: 0.3s; }
+        .service-section {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 5rem;
+            margin-bottom: 5rem;
+        }
+        details summary::-webkit-details-marker { display: none; }
+        details[open] summary span { transform: rotate(180deg); }
+        .sidebar-link:hover { color: #7C5DFA; }
+        .active-dot { background: #7C5DFA; box-shadow: 0 0 8px #7C5DFA; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
-    <!-- HEADER (Identical to Homepage/Work) -->
+    <!-- HEADER (Identical) -->
     <header class="w-full border-b border-white/10 px-6 py-4 flex justify-between items-center bg-black/50 backdrop-blur-md sticky top-0 z-50">
         <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full border border-purple-500/50 flex items-center justify-center text-xs font-bold text-purple-400">SZ</div>
@@ -45,10 +45,10 @@
             </div>
         </div>
         <nav class="hidden lg:flex items-center gap-8 text-[13px] font-medium text-white/70">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="About.html" class="nav-link">About</a>
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
             <a href="#" class="nav-link">Portfolio</a>
-            <a href="Services.html" class="text-white border-b border-purple-500 pb-1">Services</a>
+            <a href="#" class="text-white border-b border-purple-500 pb-1">Services</a>
             <a href="#" class="nav-link">Resume</a>
             <a href="#" class="nav-link">Contact</a>
         </nav>
@@ -60,11 +60,32 @@
         </div>
     </header>
 
-    <!-- SERVICES HERO -->
+    <main class="flex-grow container mx-auto px-6 py-20">
+        
+        <div class="flex flex-col lg:flex-row gap-16">
+            
+            <!-- STICKY SIDEBAR NAV -->
+            <aside class="lg:w-1/4 hidden lg:block">
+                <div class="sticky top-32 space-y-4">
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-white/30 mb-6">Explore Services</h4>
+                    <nav class="flex flex-col gap-4 text-sm font-semibold text-white/50">
+                        <a href="#web-design" class="sidebar-link flex items-center gap-3"><span>01</span> Web Design & Development</a>
+                        <a href="#ui-ux" class="sidebar-link flex items-center gap-3"><span>02</span> WordPress Development</a>
+                        <a href="#graphic-design" class="sidebar-link flex items-center gap-3"><span>03</span> UI/UX Design</a>
+                        <a href="#brand-identity" class="sidebar-link flex items-center gap-3"><span>04</span> Brand Identity</a>
+                        <a href="#wordpress" class="sidebar-link flex items-center gap-3"><span>05</span> Graphic Design</a>
+                        <a href="#social-media" class="sidebar-link flex items-center gap-3"><span>06</span> Social Media Management</a>
+                        <a href="#digital-marketing" class="sidebar-link flex items-center gap-3"><span>07</span> Digital Marketing</a>
+                        <a href="#seo" class="sidebar-link flex items-center gap-3"><span>08</span> SEO</a>
+                    </nav>
+                </div>
+            </aside>
+
+          <!-- SERVICES HERO -->
     <main class="flex-grow container mx-auto px-6 py-20">
         <div class="max-w-4xl mb-20 text-center mx-auto">
             <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-6">
-                <span class="text-[11px] font-semibold uppercase tracking-widest text-purple-400">Our Capabilities</span>
+                <span class="text-[11px] font-semibold uppercase tracking-widest text-purple-400">Services</span>
             </div>
             <h2 class="text-5xl md:text-7xl font-extrabold leading-tight mb-8">
                 Strategic Solutions for <br> <span class="text-[#7C5DFA]">Digital Growth.</span>
@@ -73,84 +94,395 @@
                 Comprehensive digital services tailored to help startups and established businesses scale their online presence through design, strategy, and engineering.
             </p>
         </div>
+          
+            <!-- SERVICE CONTENT AREA -->
+            <div class="lg:w-3/4">
 
-        <!-- SERVICES GRID (Matching the list in your footer) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <!-- Service 1 -->
-            <div class="service-card p-10 rounded-[32px]">
-                <div class="text-3xl mb-6">🌐</div>
-                <h3 class="text-xl font-bold mb-4">Web Design & Development</h3>
-                <p class="text-white/50 text-sm leading-relaxed">High-performance, responsive websites built with modern technologies to convert visitors into customers.</p>
-            </div>
+                <!-- 01 WEB DESIGN -->
+                <section id="web-design" class="service-section">
+                    <h2 class="text-4xl md:text-6xl font-extrabold mb-6">Web Design & <span class="text-[#7C5DFA]">Development🌐</span></h2>
+                    <p class="text-white/60 text-lg mb-10 leading-relaxed">
+                        I design and develop custom websites that are visually engaging, user-focused, and built to help businesses grow. Every website is crafted to reflect your brand, provide a seamless experience across all devices, and convert visitors into customers.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-4">What's Included</h4>
+                            <ul class="text-sm text-white/70 space-y-2">
+                                <li>• Responsive Mobile-First Design</li>
+                                <li>• Custom Layout & Visuals</li>
+                                <li>• Speed Optimization</li>
+                                <li>• Basic On-Page SEO</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-4">Deliverables</h4>
+                            <ul class="text-sm text-white/70 space-y-2">
+                                <li>• Live Website Link</li>
+                                <li>• Training Session (Loom/Zoom)</li>
+                                <li>• Source Assets</li>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                </section>
 
-            <!-- Service 2 -->
-            <div class="service-card p-10 rounded-[32px]">
-                <div class="text-3xl mb-6">✨</div>
-                <h3 class="text-xl font-bold mb-4">UI/UX Prototyping</h3>
-                <p class="text-white/50 text-sm leading-relaxed">User-centric design solutions that ensure seamless interaction and delightful digital experiences.</p>
-            </div>
+                <!-- 02 WordPress Development -->
+                <section id="ui-ux" class="service-section">
+                    <h2 class="text-4xl md:text-6xl font-extrabold mb-6">WordPress <span class="text-[#7C5DFA]">Development⚙️.</span></h2>
+                    <p class="text-white/60 text-lg mb-10 leading-relaxed">
+                        I build custom WordPress websites that are easy to manage, scalable, secure, and optimized for performance.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-4">What's Included</h4>
+                            <ul class="text-sm text-white/70 space-y-2">
+                                <li>• Custom WordPress Website</li>
+                                <li>• Elementor Development</li>
+                                <li>• WooCommerce Setup</li>
+                                <li>• Theme Customization</li>
+                              <li>• Plugin Integration</li>
+                              <li>• CMS Training</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-4">Deliverables</h4>
+                            <ul class="text-sm text-white/70 space-y-2">
+                                <li>• WordPress Website</li>
+                                <li>• Admin Dashboard</li>
+                                <li>• Training Guide</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </section>
 
-            <!-- Service 3 -->
-            <div class="service-card p-10 rounded-[32px]">
-                <div class="text-3xl mb-6">⚙️</div>
-                <h3 class="text-xl font-bold mb-4">WordPress Development</h3>
-                <p class="text-white/50 text-sm leading-relaxed">Scalable and easy-to-manage custom WordPress solutions tailored to your unique business needs.</p>
-            </div>
+                <!-- 03 UI/UX Design -->
+                <section id="graphic-design" class="service-section">
+                    <h2 class="text-4xl md:text-6xl font-extrabold mb-6">UI/UX <span class="text-[#7C5DFA]">Design🖥️</span></h2>
+                    <p class="text-white/60 text-lg mb-10 leading-relaxed">I create intuitive user experiences and modern interfaces that improve usability, engagement, and customer satisfaction.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-4">What's Included</h4>
+                            <ul class="text-sm text-white/70 space-y-2">
+                                <li>• User Research</li>
+                                <li>• Wireframes</li>
+                                <li>• High-Fidelity UI</li>
+                              <li>• Interactive Prototype</li>
+                              <li>• Design System</li>
+                              <li>• Responsive Layouts</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-4">Deliverables</h4>
+                            <ul class="text-sm text-white/70 space-y-2">
+                                <li>• Figma Files</li>
+                                <li>• Interactive Prototype</li>
+                                <li>• UI Components</li>
+                              <li>• Design System</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-            <!-- Service 4 -->
-            <div class="service-card p-10 rounded-[32px]">
-                <div class="text-3xl mb-6">🎨</div>
-                <h3 class="text-xl font-bold mb-4">Brand Identity Design</h3>
-                <p class="text-white/50 text-sm leading-relaxed">Creating memorable visual identities, logos, and style guides that define your brand's voice.</p>
-            </div>
+                <!-- 04 BRAND IDENTITY -->
+                <section id="brand-identity" class="service-section">
+                    <h2 class="text-4xl md:text-6xl font-extrabold mb-6">Brand <span class="text-[#7C5DFA]">Identity🎨</span></h2>
+                    <p class="text-white/60 text-lg mb-10 leading-relaxed">I help businesses build memorable brands through cohesive visual identities that communicate professionalism and trust.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-4">What's Included</h4>
+                            <ul class="text-sm text-white/70 space-y-2">
+                                <li>• Logo Design</li>
+                                <li>• Color Palette</li>
+                                
+                              <li>• Typography</li>
+                              <li>• Brand Guidelines</li>
+                              <li>• Business Stationery</li>
+                              <li>• Social Media Branding</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-4">Deliverables</h4>
+                            <ul class="text-sm text-white/70 space-y-2">
+                                <li>• Logo Files</li>
+                                <li>• Brand Guidelines</li>
+                              <li>• Print Assets</li>
+                              <li>• Digital Assets</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-            <!-- Service 5 -->
-            <div class="service-card p-10 rounded-[32px]">
-                <div class="text-3xl mb-6">📱</div>
-                <h3 class="text-xl font-bold mb-4">Social Media Management</h3>
-                <p class="text-white/50 text-sm leading-relaxed">Strategic content creation and platform management to boost engagement and brand awareness.</p>
-            </div>
+                <!-- 05 Graphic Design -->
+                <section id="wordpress" class="service-section">
+                    <h2 class="text-4xl md:text-6xl font-extrabold mb-6">Graphic<span class="text-[#7C5DFA]">Design🖌️</span></h2>
+                    <p class="text-white/60 text-lg mb-10 leading-relaxed">From marketing materials to digital content, I create visuals that effectively communicate your message and strengthen your brand.</p>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-4">What's Included</h4>
+                            <ul class="text-sm text-white/70 space-y-2">
+                                <li>• Logo Design</li>
+                                <li>• Color Palette</li>
+                                
+                              <li>• Typography</li>
+                              <li>• Brand Guidelines</li>
+                              <li>• Business Stationery</li>
+                              <li>• Social Media Branding</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-4">Deliverables</h4>
+                            <ul class="text-sm text-white/70 space-y-2">
+                                <li>• Logo Files</li>
+                                <li>• Brand Guidelines</li>
+                              <li>• Print Assets</li>
+                              <li>• Digital Assets</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-            <!-- Service 6 -->
-            <div class="service-card p-10 rounded-[32px]">
-                <div class="text-3xl mb-6">🚀</div>
-                <h3 class="text-xl font-bold mb-4">Digital Marketing & SEO</h3>
-                <p class="text-white/50 text-sm leading-relaxed">Optimizing your digital footprint to improve visibility, drive traffic, and maximize ROI.</p>
-            </div>
+                <!-- 06 SOCIAL MEDIA -->
+                <section id="social-media" class="service-section">
+                    <h2 class="text-4xl md:text-6xl font-extrabold mb-6">Social <span class="text-[#7C5DFA]">Media📱</span></h2>
+                    <p class="text-white/60 text-lg mb-10 leading-relaxed">I help businesses build a consistent online presence through strategic content planning, engaging designs, and platform management.</p>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-4">What's Included</h4>
+                            <ul class="text-sm text-white/70 space-y-2">
+                                <li>• Content Calendar</li>
+                                <li>• Content Design</li>
+                                
+                              <li>• Caption Writing</li>
+                              <li>• Scheduling</li>
+                              <li>• Hashtag Research</li>
+                              <li>• Community Management</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-4">Deliverables</h4>
+                            <ul class="text-sm text-white/70 space-y-2">
+                                <li>• Monthly Content Plan</li>
+                                <li>• Social Media Graphics</li>
+                              <li>• Performance Reports</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-        </div>
+                <!-- 07 DIGITAL MARKETING -->
+                <section id="digital-marketing" class="service-section">
+                    <h2 class="text-4xl md:text-6xl font-extrabold mb-6">Digital <span class="text-[#7C5DFA]">Marketing🚀</span></h2>
+                    <p class="text-white/60 text-lg mb-10 leading-relaxed">I develop digital marketing strategies that help businesses attract the right audience, generate leads, and increase conversions.</p>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-4">What's Included</h4>
+                            <ul class="text-sm text-white/70 space-y-2">
+                                <li>• Marketing Strategy</li>
+                                <li>• Campaign Planning</li>
+                                
+                              <li>• Meta Ads Support</li>
+                              <li>• Email Marketing</li>
+                              <li>•Performance Tracking</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-4">Deliverables</h4>
+                            <ul class="text-sm text-white/70 space-y-2">
+                                <li>• Marketing Plan</li>
+                                <li>• Campaign Reports</li>
+                              <li>• Analytics Dashboard</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-        <!-- PROCESS SECTION -->
-        <div class="mt-40 border-t border-white/10 pt-20">
-            <h3 class="text-3xl font-bold mb-16 text-center">My Design Process</h3>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-                <div class="text-center">
-                    <div class="text-4xl font-black text-white/10 mb-4 italic">01</div>
-                    <h4 class="font-bold mb-2">Discovery</h4>
-                    <p class="text-xs text-white/40">Understanding your goals and target audience.</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl font-black text-white/10 mb-4 italic">02</div>
-                    <h4 class="font-bold mb-2">Strategy</h4>
-                    <p class="text-xs text-white/40">Planning the architecture and user journey.</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl font-black text-white/10 mb-4 italic">03</div>
-                    <h4 class="font-bold mb-2">Design</h4>
-                    <p class="text-xs text-white/40">Crafting high-fidelity visuals and prototypes.</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl font-black text-white/10 mb-4 italic">04</div>
-                    <h4 class="font-bold mb-2">Launch</h4>
-                    <p class="text-xs text-white/40">Testing, refining, and going live.</p>
-                </div>
+                <!-- 08 SEO -->
+                <section id="seo" class="service-section">
+                    <h2 class="text-4xl md:text-6xl font-extrabold mb-6">S.E.<span class="text-[#7C5DFA]">O.🔍</span></h2>
+                    <p class="text-white/60 text-lg mb-10 leading-relaxed">I optimize websites to improve search visibility, increase organic traffic, and help businesses reach their target audience.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-4">What's Included</h4>
+                            <ul class="text-sm text-white/70 space-y-2">
+                                <li>• Keyword Research</li>
+                                <li>• On-Page SEO</li>
+                                <li>• Technical SEO</li>
+                              <li>• SEO Audit</li>
+                              <li>• Content Optimization</li>
+                              <li>• Performance Monitoring</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-4">Deliverables</h4>
+                            <ul class="text-sm text-white/70 space-y-2">
+                                <li>• SEO Audit Report</li>
+                                <li>• Keyword List</li>
+                              <li>• Optimization Checklist</li>
+                              <li>• Monthly Reports</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </section>
+
             </div>
         </div>
     </main>
 
-    <!-- FOOTER (Identical to Homepage/Work) -->
-    <footer class="bg-black pt-20 pb-10 border-t border-white/5">
+  <!-- WHY WORK WITH ME -->
+<section class="py-32 border-t border-white/10">
+
+    <div class="max-w-3xl mx-auto text-center mb-20">
+        <span class="inline-block text-[11px] uppercase tracking-[0.3em] text-purple-400 mb-4">
+            WHY WORK WITH ME
+        </span>
+
+        <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+            More Than Just Design.
+            <br>
+            <span class="text-[#7C5DFA]">Built For Results.</span>
+        </h2>
+
+        <p class="text-white/50 text-lg leading-relaxed">
+            Every project combines strategy, creativity, and technical expertise
+            to help your business stand out, attract customers, and grow online.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+
+        <!-- Card -->
+        <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:border-purple-500 transition duration-300">
+
+            <div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-3xl mb-6">
+                🎯
+            </div>
+
+            <h3 class="text-xl font-bold mb-3">
+                Strategy First
+            </h3>
+
+            <p class="text-white/50 text-sm leading-7">
+                Every design decision is backed by business goals,
+                user experience, and conversion strategy.
+            </p>
+
+        </div>
+
+        <!-- Card -->
+        <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:border-purple-500 transition duration-300">
+
+            <div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-3xl mb-6">
+                ⚡
+            </div>
+
+            <h3 class="text-xl font-bold mb-3">
+                Fast & Responsive
+            </h3>
+
+            <p class="text-white/50 text-sm leading-7">
+                Mobile-first websites optimized for speed,
+                accessibility and seamless performance.
+            </p>
+
+        </div>
+
+        <!-- Card -->
+        <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:border-purple-500 transition duration-300">
+
+            <div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-3xl mb-6">
+                💡
+            </div>
+
+            <h3 class="text-xl font-bold mb-3">
+                Creative Solutions
+            </h3>
+
+            <p class="text-white/50 text-sm leading-7">
+                Modern branding, engaging interfaces,
+                and visuals that leave lasting impressions.
+            </p>
+
+        </div>
+
+        <!-- Card -->
+        <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:border-purple-500 transition duration-300">
+
+            <div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-3xl mb-6">
+                🤝
+            </div>
+
+            <h3 class="text-xl font-bold mb-3">
+                Long-Term Support
+            </h3>
+
+            <p class="text-white/50 text-sm leading-7">
+                I don't disappear after launch.
+                Ongoing improvements and support are always available.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+  
+  <!-- CALL TO ACTION -->
+<section class="py-32">
+
+    <div class="relative overflow-hidden rounded-[40px] border border-purple-500/20 bg-gradient-to-br from-[#111111] via-[#151515] to-[#1E1635] p-12 md:p-20 text-center">
+
+        <!-- Glow -->
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-600/20 blur-[140px] rounded-full"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto">
+
+            <span class="inline-block text-[11px] uppercase tracking-[0.3em] text-purple-400 mb-5">
+                LET'S WORK TOGETHER
+            </span>
+
+            <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-8">
+                Ready to Build Something
+                <span class="text-[#7C5DFA]">Amazing?</span>
+            </h2>
+
+            <p class="text-white/60 text-lg leading-relaxed mb-10">
+                Whether you need a website, branding, UI/UX design,
+                social media management, or a complete digital strategy,
+                I'm here to help bring your ideas to life.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-5">
+
+                <a href="Contact.html"
+                   class="bg-[#7C5DFA] hover:bg-[#6A4BF2] px-8 py-4 rounded-full font-semibold transition duration-300 shadow-[0_0_40px_rgba(124,93,250,0.45)]">
+
+                    Book a Discovery Call
+
+                </a>
+
+                <a href="Portfolio.html"
+                   class="border border-white/15 hover:border-purple-500 px-8 py-4 rounded-full font-semibold transition duration-300">
+
+                    View My Work →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+  
+    <!-- FOOTER (Identical) -->
+    <footer class="bg-black pt-20 pb-10 border-t border-white/5 mt-20">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
             <!-- Bio Column -->
             <div class="md:col-span-4">
@@ -164,7 +496,7 @@
                 <div class="space-y-3">
                     <div class="flex items-center gap-3 text-[13px]">
                         <span class="text-purple-500">📍</span>
-                        <span class="text-white/70">Location: <span class="text-white font-medium">London / Remote Global</span></span>
+                        <span class="text-white/70">Location: <span class="text-white font-medium">UAE • Remote Worldwide</span></span>
                     </div>
                     <div class="flex items-center gap-3 text-[13px]">
                         <span class="w-2 h-2 rounded-full bg-green-500 ml-1"></span>
@@ -176,13 +508,12 @@
             <div class="md:col-span-2">
                 <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-8">Navigation</h4>
                 <ul class="space-y-4 text-[14px] text-white/50">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="About.html" class="nav-link">About</a>
-            <a href="#" class="nav-link">Portfolio</a>
-            <a href="Services.html" class="text-white border-b border-purple-500 pb-1">Services</a>
-            <a href="#" class="nav-link">Resume</a>
-            <a href="#" class="nav-link">Contact</a>
-                    <li><a href="#" class="flex items-center gap-2 hover:text-white transition">Download CV / Resume <span>⬇️</span></a></li>
+                    <li><a href="#" class="nav-link">Work</a></li>
+                    <li><a href="#" class="nav-link">Services</a></li>
+                    <li><a href="#" class="nav-link">About</a></li>
+                    <li><a href="#" class="nav-link">Experience</a></li>
+                    <li><a href="#" class="nav-link">Testimonials</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
                 </ul>
             </div>
             <!-- Services Column -->
@@ -201,12 +532,12 @@
             <div class="md:col-span-3">
                 <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-8">Connect</h4>
                 <div class="flex gap-3 mb-8">
-                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer">in</div>
-                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer">GH</div>
-                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer">IG</div>
-                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer">DR</div>
+                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer text-[10px]">in</div>
+                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer text-[10px]">GH</div>
+                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer text-[10px]">IG</div>
+                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer text-[10px]">DR</div>
                 </div>
-                <a href="#" class="text-[#7C5DFA] border-b border-[#7C5DFA] pb-1 text-[14px] font-bold hover:brightness-125 transition">Book a Discovery Call</a>
+                <a href="#" class="text-[#7C5DFA] border-b border-[#7C5DFA] pb-1 text-[14px] font-bold">Book a Discovery Call</a>
             </div>
         </div>
         <div class="container mx-auto px-6 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-[12px]">
