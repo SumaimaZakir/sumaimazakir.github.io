@@ -833,5 +833,32 @@ Leading end-to-end web design, brand identity, WordPress development, and digita
 </div>
 </footer>
 
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-[#7C5DFA] rounded-full flex items-center justify-center opacity-0 translate-y-10 transition-all duration-500 z-[100] shadow-[0_0_20px_rgba(124,93,250,0.5)]">
+    <span class="text-white text-xl">↑</span>
+</button>
+
+<style>
+    #backToTop.show {
+        opacity: 1;
+        translate-y: 0;
+    }
+    const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 400) {
+        backToTop.classList.add("show");
+        backToTop.style.transform = "translateY(0)";
+    } else {
+        backToTop.classList.remove("show");
+        backToTop.style.transform = "translateY(40px)";
+    }
+});
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</style>
+    
 </body>
 </html>
+
