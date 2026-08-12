@@ -68,24 +68,85 @@
             </p>
         </div>
 
-        <!-- Project Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <!-- Project Card 1 -->
-            <div class="group cursor-pointer">
-                <div class="aspect-video bg-zinc-900 rounded-3xl overflow-hidden border border-white/10 mb-6 relative">
-                    <div class="absolute inset-0 bg-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-                <h3 class="text-2xl font-bold mb-1">Project Name One</h3>
-                <p class="text-white/40 text-sm uppercase tracking-widest">Brand Identity • Web Design</p>
+ <!-- FILTER BUTTONS (FUNCTIONAL) -->
+            <div class="flex flex-wrap justify-center gap-3" id="filter-container">
+                <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects</button>
+                <button class="filter-btn" onclick="filterProjects('web', this)">Web Design</button>
+                <button class="filter-btn" onclick="filterProjects('uiux', this)">UI/UX</button>
+                <button class="filter-btn" onclick="filterProjects('branding', this)">Brand Identity</button>
+                <button class="filter-btn" onclick="filterProjects('social', this)">Social Media</button>
             </div>
-            <!-- Project Card 2 -->
-            <div class="group cursor-pointer">
-                <div class="aspect-video bg-zinc-900 rounded-3xl overflow-hidden border border-white/10 mb-6 relative">
-                    <div class="absolute inset-0 bg-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-                <h3 class="text-2xl font-bold mb-1">Project Name Two</h3>
-                <p class="text-white/40 text-sm uppercase tracking-widest">UI/UX Design • Development</p>
+        </div>
+
+        <!-- PORTFOLIO GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-grid">
+
+            <!-- Zendex Dental -->
+            <div class="project-card" data-category="web">
+                <a href="/case-study/zendex-dental" class="block bg-zinc-900 border border-white/10 rounded-[32px] overflow-hidden group">
+                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:bg-zinc-700"></div>
+                    <div class="p-8">
+                        <span class="text-purple-400 text-[10px] font-black uppercase tracking-widest">Web Design</span>
+                        <h3 class="text-2xl font-bold mt-2">Zendex Dental</h3>
+                    </div>
+                </a>
             </div>
+
+            <!-- Stalux Leather -->
+            <div class="project-card" data-category="branding">
+                <a href="/case-study/stalux-leather" class="block bg-zinc-900 border border-white/10 rounded-[32px] overflow-hidden group">
+                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:bg-zinc-700"></div>
+                    <div class="p-8">
+                        <span class="text-purple-400 text-[10px] font-black uppercase tracking-widest">Brand Identity</span>
+                        <h3 class="text-2xl font-bold mt-2">Stalux Leather</h3>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Social Media Packs -->
+            <div class="project-card" data-category="social">
+                <a href="/case-study/social-designs" class="block bg-zinc-900 border border-white/10 rounded-[32px] overflow-hidden group">
+                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:bg-zinc-700"></div>
+                    <div class="p-8">
+                        <span class="text-purple-400 text-[10px] font-black uppercase tracking-widest">Social Media</span>
+                        <h3 class="text-2xl font-bold mt-2">Instagram Brand Kit</h3>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Britanova Medic -->
+            <div class="project-card" data-category="uiux">
+                <a href="/case-study/britanova" class="block bg-zinc-900 border border-white/10 rounded-[32px] overflow-hidden group">
+                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:bg-zinc-700"></div>
+                    <div class="p-8">
+                        <span class="text-purple-400 text-[10px] font-black uppercase tracking-widest">UI/UX Design</span>
+                        <h3 class="text-2xl font-bold mt-2">Britanova Medic</h3>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Landing Pages -->
+            <div class="project-card" data-category="web">
+                <a href="/case-study/landing-pages" class="block bg-zinc-900 border border-white/10 rounded-[32px] overflow-hidden group">
+                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:bg-zinc-700"></div>
+                    <div class="p-8">
+                        <span class="text-purple-400 text-[10px] font-black uppercase tracking-widest">Web Design</span>
+                        <h3 class="text-2xl font-bold mt-2">SaaS Landing Pages</h3>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Packaging -->
+            <div class="project-card" data-category="branding">
+                <a href="/case-study/packaging" class="block bg-zinc-900 border border-white/10 rounded-[32px] overflow-hidden group">
+                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:bg-zinc-700"></div>
+                    <div class="p-8">
+                        <span class="text-purple-400 text-[10px] font-black uppercase tracking-widest">Packaging</span>
+                        <h3 class="text-2xl font-bold mt-2">Luxury Cosmetics</h3>
+                    </div>
+                </a>
+            </div>
+
         </div>
     </main>
 
@@ -164,6 +225,30 @@
             </div>
         </div>
     </footer>
+    <!-- FILTER JAVASCRIPT -->
+    <script>
+        function filterProjects(category, button) {
+            // 1. Update Active Button Style
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // 2. Filter Projects
+            const projects = document.querySelectorAll('.project-card');
+            projects.forEach(project => {
+                const projectCategory = project.getAttribute('data-category');
+                
+                if (category === 'all' || projectCategory === category) {
+                    project.classList.remove('hidden');
+                    // Simple fade in effect
+                    project.style.opacity = '0';
+                    setTimeout(() => project.style.opacity = '1', 50);
+                } else {
+                    project.classList.add('hidden');
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
