@@ -11,43 +11,55 @@
             font-family: 'Inter', sans-serif;
             background-color: #000000;
             color: #ffffff;
+            /* Modern Grid Background */
             background-image: 
                 linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
         }
-         .filter-btn {
+        
+        .filter-btn {
             background: #09090b;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #71717a; /* Muted text for inactive */
-            padding: 10px 28px;
+            color: #71717a;
+            padding: 10px 24px;
             border-radius: 9999px;
             font-size: 13px;
-            font-weight: 800;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .filter-btn:hover {
             color: #ffffff;
             border-color: rgba(124, 93, 250, 0.5);
+            transform: translateY(-2px);
         }
+
         .filter-btn.active {
             color: #ffffff;
-            border-color: #7C5DFA; /* Purple border from image */
-            background: rgba(124, 93, 250, 0.05);
+            border-color: #7C5DFA;
+            background: rgba(124, 93, 250, 0.1);
+            box-shadow: 0 0 15px rgba(124, 93, 250, 0.2);
         }
+
         .purple-glow-btn {
             background: #7C5DFA;
-            box-shadow: 0 0 20px rgba(124, 93, 250, 0.5);
+            box-shadow: 0 0 20px rgba(124, 93, 250, 0.4);
         }
-        .nav-link:hover { color: #7C5DFA; transition: 0.3s; }
-        .footer-link:hover { color: #ffffff; transition: 0.3s; }
+
+        .nav-link { transition: 0.3s; }
+        .nav-link:hover { color: #7C5DFA; }
+        
+        .project-card {
+            transition: all 0.5s ease;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
-    <!-- HEADER (As per Image 1) -->
+    <!-- HEADER -->
     <header class="w-full border-b border-white/10 px-6 py-4 flex justify-between items-center bg-black/50 backdrop-blur-md sticky top-0 z-50">
         <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full border border-purple-500/50 flex items-center justify-center text-xs font-bold text-purple-400">SZ</div>
@@ -57,7 +69,7 @@
             </div>
         </div>
 
-<nav class="hidden lg:flex items-center gap-8 text-[13px] font-medium text-white/70">
+        <nav class="hidden lg:flex items-center gap-8 text-[13px] font-medium text-white/70">
             <a href="index.html" class="nav-link">Home</a>
             <a href="About.html" class="nav-link">About</a>
             <a href="Portfolio.html" class="text-white border-b border-purple-500 pb-1">Portfolio</a>
@@ -67,103 +79,103 @@
         </nav>
 
         <div class="flex items-center gap-6">
-            <a href="#" class="hidden md:block text-[13px] text-white/70 hover:text-white transition">CV / Resume</a>
-            <button class="purple-glow-btn px-5 py-2.5 rounded-full text-[13px] font-bold flex items-center gap-2 hover:scale-105 transition-all">
+            <button class="purple-glow-btn px-5 py-2.5 rounded-full text-[13px] font-bold flex items-center gap-2 hover:scale-105 transition-all active:scale-95">
                 <span>📅</span> Book Discovery Call
             </button>
         </div>
     </header>
 
-    <!-- MAIN CONTENT (Work Section) -->
-    <main class="flex-grow container mx-auto px-6 py-20">
-        <div class="max-w-4xl mb-16">
-            <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-6">
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow container mx-auto px-6 py-24">
+        
+        <!-- Hero Section -->
+        <div class="max-w-5xl mb-16">
+            <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-8">
                 <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                 <span class="text-[11px] font-semibold uppercase tracking-widest text-white/70">Available for Q3/Q4 Projects</span>
             </div>
-            <h2 class="text-6xl md:text-8xl font-extrabold leading-[1.1] mb-8">
+            <h2 class="text-6xl md:text-8xl font-extrabold leading-[1.05] mb-8 tracking-tighter">
                 Selected <span class="text-[#7C5DFA]">Works.</span>
             </h2>
-            <p class="text-lg text-white/50 max-w-xl">
-                Helping startups and businesses build beautiful brands and digital experiences that drive growth.
+            <p class="text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed">
+                Helping startups and businesses build beautiful brands and digital experiences that drive growth through strategic design.
             </p>
         </div>
 
- <!-- FILTER BUTTONS (FUNCTIONAL) -->
-            <div class="flex flex-wrap justify-center gap-3" id="filter-container">
-                <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects</button>
-                <button class="filter-btn" onclick="filterProjects('web', this)">Web Design</button>
-                <button class="filter-btn" onclick="filterProjects('uiux', this)">UI/UX</button>
-                <button class="filter-btn" onclick="filterProjects('branding', this)">Brand Identity</button>
-                <button class="filter-btn" onclick="filterProjects('social', this)">Social Media</button>
-            </div>
+        <!-- FILTER BUTTONS (Left Aligned with spacing) -->
+        <div class="flex flex-wrap justify-start gap-3 mb-16" id="filter-container">
+            <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects</button>
+            <button class="filter-btn" onclick="filterProjects('web', this)">Web Design</button>
+            <button class="filter-btn" onclick="filterProjects('uiux', this)">UI/UX</button>
+            <button class="filter-btn" onclick="filterProjects('branding', this)">Brand Identity</button>
+            <button class="filter-btn" onclick="filterProjects('social', this)">Social Media</button>
         </div>
 
         <!-- PORTFOLIO GRID -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-grid">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="project-grid">
 
             <!-- Zendex Dental -->
             <div class="project-card" data-category="web">
-                <a href="/case-study/zendex-dental" class="block bg-zinc-900 border border-white/10 rounded-[32px] overflow-hidden group">
-                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:bg-zinc-700"></div>
+                <a href="#" class="block bg-zinc-900/50 border border-white/5 rounded-[32px] overflow-hidden group hover:border-purple-500/30 transition-all">
+                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:scale-[1.02] duration-500"></div>
                     <div class="p-8">
                         <span class="text-purple-400 text-[10px] font-black uppercase tracking-widest">Web Design</span>
-                        <h3 class="text-2xl font-bold mt-2">Zendex Dental</h3>
+                        <h3 class="text-2xl font-bold mt-2 group-hover:text-purple-400 transition-colors">Zendex Dental</h3>
                     </div>
                 </a>
             </div>
 
             <!-- Stalux Leather -->
             <div class="project-card" data-category="branding">
-                <a href="/case-study/stalux-leather" class="block bg-zinc-900 border border-white/10 rounded-[32px] overflow-hidden group">
-                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:bg-zinc-700"></div>
+                <a href="#" class="block bg-zinc-900/50 border border-white/5 rounded-[32px] overflow-hidden group hover:border-purple-500/30 transition-all">
+                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:scale-[1.02] duration-500"></div>
                     <div class="p-8">
                         <span class="text-purple-400 text-[10px] font-black uppercase tracking-widest">Brand Identity</span>
-                        <h3 class="text-2xl font-bold mt-2">Stalux Leather</h3>
+                        <h3 class="text-2xl font-bold mt-2 group-hover:text-purple-400 transition-colors">Stalux Leather</h3>
                     </div>
                 </a>
             </div>
 
-            <!-- Social Media Packs -->
+            <!-- Instagram Kit -->
             <div class="project-card" data-category="social">
-                <a href="/case-study/social-designs" class="block bg-zinc-900 border border-white/10 rounded-[32px] overflow-hidden group">
-                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:bg-zinc-700"></div>
+                <a href="#" class="block bg-zinc-900/50 border border-white/5 rounded-[32px] overflow-hidden group hover:border-purple-500/30 transition-all">
+                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:scale-[1.02] duration-500"></div>
                     <div class="p-8">
                         <span class="text-purple-400 text-[10px] font-black uppercase tracking-widest">Social Media</span>
-                        <h3 class="text-2xl font-bold mt-2">Instagram Brand Kit</h3>
+                        <h3 class="text-2xl font-bold mt-2 group-hover:text-purple-400 transition-colors">Instagram Brand Kit</h3>
                     </div>
                 </a>
             </div>
 
-            <!-- Britanova Medic -->
+            <!-- Britanova -->
             <div class="project-card" data-category="uiux">
-                <a href="/case-study/britanova" class="block bg-zinc-900 border border-white/10 rounded-[32px] overflow-hidden group">
-                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:bg-zinc-700"></div>
+                <a href="#" class="block bg-zinc-900/50 border border-white/5 rounded-[32px] overflow-hidden group hover:border-purple-500/30 transition-all">
+                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:scale-[1.02] duration-500"></div>
                     <div class="p-8">
                         <span class="text-purple-400 text-[10px] font-black uppercase tracking-widest">UI/UX Design</span>
-                        <h3 class="text-2xl font-bold mt-2">Britanova Medic</h3>
+                        <h3 class="text-2xl font-bold mt-2 group-hover:text-purple-400 transition-colors">Britanova Medic</h3>
                     </div>
                 </a>
             </div>
 
-            <!-- Landing Pages -->
+            <!-- SaaS Landing -->
             <div class="project-card" data-category="web">
-                <a href="/case-study/landing-pages" class="block bg-zinc-900 border border-white/10 rounded-[32px] overflow-hidden group">
-                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:bg-zinc-700"></div>
+                <a href="#" class="block bg-zinc-900/50 border border-white/5 rounded-[32px] overflow-hidden group hover:border-purple-500/30 transition-all">
+                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:scale-[1.02] duration-500"></div>
                     <div class="p-8">
                         <span class="text-purple-400 text-[10px] font-black uppercase tracking-widest">Web Design</span>
-                        <h3 class="text-2xl font-bold mt-2">SaaS Landing Pages</h3>
+                        <h3 class="text-2xl font-bold mt-2 group-hover:text-purple-400 transition-colors">SaaS Landing Pages</h3>
                     </div>
                 </a>
             </div>
 
-            <!-- Packaging -->
+            <!-- Luxury Cosmetics -->
             <div class="project-card" data-category="branding">
-                <a href="/case-study/packaging" class="block bg-zinc-900 border border-white/10 rounded-[32px] overflow-hidden group">
-                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:bg-zinc-700"></div>
+                <a href="#" class="block bg-zinc-900/50 border border-white/5 rounded-[32px] overflow-hidden group hover:border-purple-500/30 transition-all">
+                    <div class="aspect-[4/3] bg-zinc-800 transition-all group-hover:scale-[1.02] duration-500"></div>
                     <div class="p-8">
                         <span class="text-purple-400 text-[10px] font-black uppercase tracking-widest">Packaging</span>
-                        <h3 class="text-2xl font-bold mt-2">Luxury Cosmetics</h3>
+                        <h3 class="text-2xl font-bold mt-2 group-hover:text-purple-400 transition-colors">Luxury Cosmetics</h3>
                     </div>
                 </a>
             </div>
@@ -171,105 +183,97 @@
         </div>
     </main>
 
-    <!-- FOOTER (As per Image 2) -->
-    <footer class="bg-black pt-20 pb-10 border-t border-white/5">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+    <!-- FOOTER -->
+    <footer class="bg-black pt-24 pb-12 border-t border-white/5">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
             
-            <!-- Bio Column -->
             <div class="md:col-span-4">
-                <div class="flex items-center gap-3 mb-6">
+                <div class="flex items-center gap-3 mb-8">
                     <div class="w-10 h-10 rounded-full border border-purple-500/30 flex items-center justify-center text-xs font-bold text-purple-400">SZ</div>
-                    <h1 class="text-lg font-bold">Sumaima Zakir.</h1>
+                    <h1 class="text-xl font-bold">Sumaima Zakir.</h1>
                 </div>
-                <p class="text-white/50 text-[14px] leading-relaxed mb-8 max-w-xs">
-                    Designing digital experiences that grow businesses. Delivering high-performing websites, visual identity, and growth marketing strategies.
+                <p class="text-white/40 text-sm leading-relaxed mb-10 max-w-xs">
+                    Designing digital experiences that grow businesses. Delivering high-performing websites and growth strategies.
                 </p>
-                <div class="space-y-3">
-                    <div class="flex items-center gap-3 text-[13px]">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-sm">
                         <span class="text-purple-500">📍</span>
-                        <span class="text-white/70">Location: <span class="text-white font-medium">UAE / Remote Global</span></span>
+                        <span class="text-white/60">Location: <span class="text-white font-medium">UAE / Remote Global</span></span>
                     </div>
-                    <div class="flex items-center gap-3 text-[13px]">
+                    <div class="flex items-center gap-3 text-sm">
                         <span class="w-2 h-2 rounded-full bg-green-500 ml-1"></span>
-                        <span class="text-white/70">Status: <span class="text-green-500 font-medium">Available for Q3/Q4 Projects</span></span>
+                        <span class="text-white/60">Status: <span class="text-green-500 font-medium">Available for New Projects</span></span>
                     </div>
                 </div>
             </div>
 
-            <!-- Navigation Column -->
             <div class="md:col-span-2">
-                <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-8">Navigation</h4>
-                <ul class="space-y-4 text-[14px] text-white/50">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="About.html" class="nav-link">About</a>
-            <a href="Portfolio.html" class="text-white border-b border-purple-500 pb-1">Portfolio</a>
-            <a href="Services.html" class="nav-link">Services</a>
-            <a href="Resume.html" class="nav-link">Resume</a>
-            <a href="Contact.html" class="nav-link">Contact</a>
-                    <li><a href="#" class="footer-link flex items-center gap-2">Download CV / Resume <span>⬇️</span></a></li>
+                <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/30 mb-8">Navigation</h4>
+                <ul class="space-y-4 text-sm text-white/50">
+                    <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                    <li><a href="About.html" class="hover:text-white transition">About</a></li>
+                    <li><a href="Portfolio.html" class="text-white border-b border-purple-500 pb-1">Portfolio</a></li>
+                    <li><a href="Services.html" class="hover:text-white transition">Services</a></li>
                 </ul>
             </div>
 
-            <!-- Services Column -->
             <div class="md:col-span-3">
-                <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-8">Services Offered</h4>
-                <ul class="space-y-4 text-[14px] text-white/50">
+                <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/30 mb-8">Expertise</h4>
+                <ul class="space-y-4 text-sm text-white/50">
                     <li>Web Design & Development</li>
                     <li>UI/UX Prototyping</li>
-                    <li>WordPress Development</li>
                     <li>Brand Identity Design</li>
-                    <li>Social Media Management</li>
-                    <li>Digital Marketing & SEO</li>
+                    <li>Social Media Growth</li>
                 </ul>
             </div>
 
-            <!-- Connect Column -->
-            <div class="md:col-span-3">
-                <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-8">Connect</h4>
-                <div class="flex gap-3 mb-8">
-                    <!-- Social Icons -->
-                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer">in</div>
-                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer">GH</div>
-                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer">IG</div>
-                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer">DR</div>
+            <div class="md:col-span-3 text-right md:text-left">
+                <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/30 mb-8">Let's Connect</h4>
+                <div class="flex gap-4 justify-end md:justify-start mb-10">
+                    <div class="w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer transition">in</div>
+                    <div class="w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer transition">IG</div>
                 </div>
-                <a href="#" class="text-[#7C5DFA] border-b border-[#7C5DFA] pb-1 text-[14px] font-bold">Book a Discovery Call</a>
+                <a href="mailto:hello@sumaima.com" class="text-[#7C5DFA] border-b border-[#7C5DFA] pb-1 text-sm font-bold hover:text-white transition duration-300">Start a Project →</a>
             </div>
         </div>
 
-        <!-- Copyright Bar -->
-        <div class="container mx-auto px-6 pt-10 border-t border-white/5 flex flex-col md:row justify-between items-center gap-4 text-white/40 text-[12px]">
-            <p>© 2026 Sumaima Zakir. All Rights Reserved.</p>
-            <div class="flex items-center gap-6">
-                <span>Designed & Engineered for Digital Growth</span>
-                <button class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10">↑</button>
+        <div class="container mx-auto px-6 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/30 text-[12px]">
+            <p>© 2024 Sumaima Zakir. All Rights Reserved.</p>
+            <div class="flex items-center gap-8">
+                <span>Designed for Digital Growth</span>
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition">↑</button>
             </div>
         </div>
     </footer>
+
     <!-- FILTER JAVASCRIPT -->
     <script>
         function filterProjects(category, button) {
-            // 1. Update Active Button Style
+            // 1. Update Button States
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            // 2. Filter Projects
+            // 2. Animate Grid Items
             const projects = document.querySelectorAll('.project-card');
             projects.forEach(project => {
                 const projectCategory = project.getAttribute('data-category');
                 
                 if (category === 'all' || projectCategory === category) {
-                    project.classList.remove('hidden');
-                    // Simple fade in effect
-                    project.style.opacity = '0';
-                    setTimeout(() => project.style.opacity = '1', 50);
+                    project.style.display = 'block';
+                    // Trigger reflow for animation
+                    project.offsetHeight; 
+                    project.style.opacity = '1';
+                    project.style.transform = 'scale(1)';
                 } else {
-                    project.classList.add('hidden');
+                    project.style.opacity = '0';
+                    project.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        if (project.style.opacity === '0') project.style.display = 'none';
+                    }, 400);
                 }
             });
         }
     </script>
-
 </body>
 </html>
