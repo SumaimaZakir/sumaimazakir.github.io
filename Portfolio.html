@@ -7,27 +7,20 @@
 
     <title>Portfolio | Sumaima Zakir</title>
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Font -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
 
     <style>
-
-        /* =========================================================
-           GLOBAL
-        ========================================================= */
-
         html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "Inter", sans-serif;
             background: #000;
             color: #fff;
 
@@ -45,11 +38,6 @@
             background-size: 50px 50px;
         }
 
-
-        /* =========================================================
-           NAVIGATION
-        ========================================================= */
-
         .nav-link {
             transition: color 0.3s ease;
         }
@@ -58,92 +46,42 @@
             color: #7C5DFA;
         }
 
-
-        /* =========================================================
-           BUTTONS
-        ========================================================= */
-
         .purple-glow-btn {
             background: #7C5DFA;
-
-            box-shadow:
-                0 0 20px rgba(124,93,250,0.35);
-
+            box-shadow: 0 0 20px rgba(124, 93, 250, 0.35);
             transition: all 0.3s ease;
         }
 
         .purple-glow-btn:hover {
             transform: translateY(-2px);
-
-            box-shadow:
-                0 0 30px rgba(124,93,250,0.6);
+            box-shadow: 0 0 30px rgba(124, 93, 250, 0.6);
         }
-
-
-        /* =========================================================
-           FILTER BUTTONS
-        ========================================================= */
 
         .filter-btn {
             background: #09090b;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.10);
-
-            color:
-                #71717a;
-
-            padding:
-                10px 22px;
-
-            border-radius:
-                9999px;
-
-            font-size:
-                12px;
-
-            font-weight:
-                700;
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                0.05em;
-
-            transition:
-                all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.10);
+            color: #71717a;
+            padding: 10px 22px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
         }
 
         .filter-btn:hover {
             color: #fff;
-
-            border-color:
-                rgba(124,93,250,0.5);
-
-            transform:
-                translateY(-2px);
+            border-color: rgba(124, 93, 250, 0.5);
+            transform: translateY(-2px);
         }
 
         .filter-btn.active {
             color: #fff;
-
-            border-color:
-                #7C5DFA;
-
-            background:
-                rgba(124,93,250,0.10);
-
-            box-shadow:
-                0 0 18px
-                rgba(124,93,250,0.20);
+            border-color: #7C5DFA;
+            background: rgba(124, 93, 250, 0.10);
+            box-shadow: 0 0 18px rgba(124, 93, 250, 0.20);
         }
-
-
-        /* =========================================================
-           PROJECT CARDS
-        ========================================================= */
 
         .project-card {
             transition:
@@ -157,23 +95,12 @@
 
         .project-button {
             width: 100%;
-
             text-align: left;
-
             cursor: pointer;
-
-            background:
-                rgba(24,24,27,0.50);
-
-            border:
-                1px solid
-                rgba(255,255,255,0.06);
-
-            border-radius:
-                32px;
-
-            overflow:
-                hidden;
+            background: rgba(24, 24, 27, 0.50);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 32px;
+            overflow: hidden;
 
             transition:
                 border-color 0.35s ease,
@@ -182,526 +109,245 @@
         }
 
         .project-button:hover {
-            border-color:
-                rgba(124,93,250,0.40);
-
-            transform:
-                translateY(-6px);
-
-            box-shadow:
-                0 20px 60px
-                rgba(0,0,0,0.40);
+            border-color: rgba(124, 93, 250, 0.40);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.40);
         }
-
-
-        /* =========================================================
-           PROJECT IMAGE
-        ========================================================= */
 
         .project-image {
             position: relative;
-
             overflow: hidden;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #27272a,
-                    #18181b
-                );
+            background: linear-gradient(135deg, #27272a, #18181b);
         }
 
         .project-image img {
             width: 100%;
             height: 100%;
-
             object-fit: cover;
-
             display: block;
-
-            transition:
-                transform 0.6s ease;
+            transition: transform 0.6s ease;
         }
 
-        .project-button:hover
-        .project-image img {
-            transform:
-                scale(1.05);
+        .project-button:hover .project-image img {
+            transform: scale(1.05);
         }
 
         .project-image::after {
             content: "";
-
             position: absolute;
-
             inset: 0;
-
-            background:
-                linear-gradient(
-                    to top,
-                    rgba(0,0,0,0.25),
-                    transparent 60%
-                );
-
+            background: linear-gradient(
+                to top,
+                rgba(0,0,0,0.25),
+                transparent 60%
+            );
             pointer-events: none;
         }
-
-
-        /* =========================================================
-           PLACEHOLDER
-        ========================================================= */
 
         .image-placeholder {
             position: absolute;
-
             inset: 0;
-
             display: flex;
-
             align-items: center;
             justify-content: center;
-
-            color:
-                rgba(255,255,255,0.20);
-
-            font-size:
-                11px;
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                0.15em;
-
+            color: rgba(255,255,255,0.20);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
             pointer-events: none;
         }
 
-
-        /* =========================================================
-           CATEGORY
-        ========================================================= */
-
         .project-category {
-            color:
-                #7C5DFA;
-
-            font-size:
-                10px;
-
-            font-weight:
-                800;
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                0.15em;
+            color: #7C5DFA;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
         }
-
-
-        /* =========================================================
-           VIEW PROJECT
-        ========================================================= */
 
         .view-project {
-            transition:
-                all 0.3s ease;
+            transition: all 0.3s ease;
         }
 
-        .project-button:hover
-        .view-project {
-            color:
-                #7C5DFA;
-
-            transform:
-                translateX(4px);
+        .project-button:hover .view-project {
+            color: #7C5DFA;
+            transform: translateX(4px);
         }
-
-
-        /* =========================================================
-           MODAL
-        ========================================================= */
 
         .project-modal {
             position: fixed;
-
             inset: 0;
-
             z-index: 100;
-
             display: none;
-
             align-items: center;
             justify-content: center;
-
             padding: 20px;
-
-            background:
-                rgba(0,0,0,0.92);
-
-            backdrop-filter:
-                blur(14px);
+            background: rgba(0,0,0,0.92);
+            backdrop-filter: blur(14px);
         }
 
         .project-modal.show {
             display: flex;
         }
 
-
         .modal-content {
             position: relative;
-
             width: 100%;
-
-            max-width:
-                1150px;
-
-            max-height:
-                92vh;
-
-            overflow-y:
-                auto;
-
-            background:
-                #09090b;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.10);
-
-            border-radius:
-                30px;
-
-            box-shadow:
-                0 30px 100px
-                rgba(0,0,0,0.80);
-
-            animation:
-                modalIn 0.30s ease;
+            max-width: 1150px;
+            max-height: 92vh;
+            overflow-y: auto;
+            background: #09090b;
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 30px;
+            box-shadow: 0 30px 100px rgba(0,0,0,0.80);
+            animation: modalIn 0.30s ease;
         }
 
-
         @keyframes modalIn {
-
             from {
                 opacity: 0;
-
-                transform:
-                    translateY(20px)
-                    scale(0.98);
+                transform: translateY(20px) scale(0.98);
             }
 
             to {
                 opacity: 1;
-
-                transform:
-                    translateY(0)
-                    scale(1);
+                transform: translateY(0) scale(1);
             }
-
         }
-
-
-        /* =========================================================
-           MODAL CLOSE
-        ========================================================= */
 
         .modal-close {
             position: sticky;
-
             float: right;
-
             top: 20px;
             right: 20px;
-
             z-index: 50;
-
-            margin:
-                20px 20px 0 0;
-
-            width:
-                44px;
-
-            height:
-                44px;
-
-            border-radius:
-                50%;
-
-            background:
-                rgba(0,0,0,0.80);
-
-            border:
-                1px solid
-                rgba(255,255,255,0.15);
-
-            color:
-                #fff;
-
+            margin: 20px 20px 0 0;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.80);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #fff;
             display: flex;
-
             align-items: center;
             justify-content: center;
-
             cursor: pointer;
-
-            transition:
-                all 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .modal-close:hover {
-            background:
-                #7C5DFA;
-
-            transform:
-                rotate(90deg);
+            background: #7C5DFA;
+            transform: rotate(90deg);
         }
-
-
-        /* =========================================================
-           MODAL HERO IMAGE
-        ========================================================= */
 
         .modal-hero-image {
             width: 100%;
-
-            max-height:
-                520px;
-
-            object-fit:
-                cover;
-
-            border-radius:
-                20px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.08);
-
-            display:
-                block;
+            max-height: 520px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+            display: block;
         }
 
-
-        /* =========================================================
-           MODAL SECTIONS
-        ========================================================= */
-
         .modal-section {
-            border-top:
-                1px solid
-                rgba(255,255,255,0.06);
-
-            padding-top:
-                28px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 28px;
         }
 
         .modal-label {
-            color:
-                rgba(255,255,255,0.30);
-
-            font-size:
-                10px;
-
-            font-weight:
-                800;
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                0.15em;
-
-            margin-bottom:
-                10px;
+            color: rgba(255,255,255,0.30);
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 10px;
         }
-
-
-        /* =========================================================
-           TOOL TAGS
-        ========================================================= */
 
         .tool-tag {
-            display:
-                inline-flex;
-
-            padding:
-                8px 12px;
-
-            margin:
-                4px;
-
-            border-radius:
-                9999px;
-
-            background:
-                rgba(124,93,250,0.08);
-
-            border:
-                1px solid
-                rgba(124,93,250,0.20);
-
-            color:
-                rgba(255,255,255,0.70);
-
-            font-size:
-                11px;
+            display: inline-flex;
+            padding: 8px 12px;
+            margin: 4px;
+            border-radius: 9999px;
+            background: rgba(124,93,250,0.08);
+            border: 1px solid rgba(124,93,250,0.20);
+            color: rgba(255,255,255,0.70);
+            font-size: 11px;
         }
 
-
-        /* =========================================================
-           MODAL GALLERY
-        ========================================================= */
-
         .modal-gallery {
-            display:
-                grid;
-
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
-
-            gap:
-                16px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
         }
 
         .modal-gallery-item {
-            overflow:
-                hidden;
-
-            border-radius:
-                18px;
-
-            background:
-                #18181b;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.06);
+            overflow: hidden;
+            border-radius: 18px;
+            background: #18181b;
+            border: 1px solid rgba(255,255,255,0.06);
         }
 
         .modal-gallery-item img {
-            width:
-                100%;
-
-            height:
-                auto;
-
-            display:
-                block;
-
-            transition:
-                transform 0.4s ease;
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
         }
 
         .modal-gallery-item:hover img {
-            transform:
-                scale(1.03);
+            transform: scale(1.03);
         }
 
-
-        /* =========================================================
-           EMPTY GROWTH MARKETING
-        ========================================================= */
-
         .empty-category {
-            display:
-                none;
-
-            text-align:
-                center;
-
-            padding:
-                90px 20px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.07);
-
-            border-radius:
-                30px;
-
-            background:
-                rgba(255,255,255,0.015);
+            display: none;
+            text-align: center;
+            padding: 90px 20px;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 30px;
+            background: rgba(255,255,255,0.015);
         }
 
         .empty-category.show {
-            display:
-                block;
+            display: block;
         }
 
-
-        /* =========================================================
-           FOOTER
-        ========================================================= */
-
         .footer-social {
-            transition:
-                all 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .footer-social:hover {
-            background:
-                rgba(124,93,250,0.10);
-
-            border-color:
-                rgba(124,93,250,0.40);
-
-            transform:
-                translateY(-3px);
+            background: rgba(124,93,250,0.10);
+            border-color: rgba(124,93,250,0.40);
+            transform: translateY(-3px);
         }
 
-
-        /* =========================================================
-           MOBILE
-        ========================================================= */
-
         @media (max-width: 640px) {
-
             .filter-btn {
-                padding:
-                    9px 15px;
-
-                font-size:
-                    10px;
+                padding: 9px 15px;
+                font-size: 10px;
             }
 
             .modal-gallery {
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
             }
 
             .project-modal {
-                padding:
-                    10px;
+                padding: 10px;
             }
 
             .modal-content {
-                border-radius:
-                    20px;
+                border-radius: 20px;
             }
-
         }
-
     </style>
-
 </head>
 
-
 <body class="min-h-screen flex flex-col">
-
-
-    <!-- =========================================================
-         HEADER
-    ========================================================= -->
 
     <header
         class="w-full border-b border-white/10 px-6 py-4 flex justify-between items-center bg-black/60 backdrop-blur-md sticky top-0 z-50"
     >
-
-        <!-- LOGO -->
-
         <div class="flex items-center gap-3">
-
             <div
                 class="w-10 h-10 rounded-full border border-purple-500/50 flex items-center justify-center text-xs font-bold text-purple-400"
             >
@@ -709,74 +355,31 @@
             </div>
 
             <div>
-
                 <h1 class="text-sm font-bold tracking-tight">
                     Sumaima Zakir.
                 </h1>
 
-                <p
-                    class="text-[9px] uppercase tracking-[0.2em] text-white/50"
-                >
+                <p class="text-[9px] uppercase tracking-[0.2em] text-white/50">
                     Digital Designer & Strategist
                 </p>
-
             </div>
-
         </div>
-
-
-        <!-- NAVIGATION -->
 
         <nav
             class="hidden lg:flex items-center gap-8 text-[13px] font-medium text-white/70"
         >
-
-            <a
-                href="index.html"
-                class="nav-link"
-            >
-                Home
-            </a>
-
-            <a
-                href="About.html"
-                class="nav-link"
-            >
-                About
-            </a>
-
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="About.html" class="nav-link">About</a>
             <a
                 href="Portfolio.html"
                 class="text-white border-b border-purple-500 pb-1"
             >
                 Portfolio
             </a>
-
-            <a
-                href="Services.html"
-                class="nav-link"
-            >
-                Services
-            </a>
-
-            <a
-                href="Resume.html"
-                class="nav-link"
-            >
-                Resume
-            </a>
-
-            <a
-                href="Contact.html"
-                class="nav-link"
-            >
-                Contact
-            </a>
-
+            <a href="Services.html" class="nav-link">Services</a>
+            <a href="Resume.html" class="nav-link">Resume</a>
+            <a href="Contact.html" class="nav-link">Contact</a>
         </nav>
-
-
-        <!-- CTA -->
 
         <a
             href="Contact.html"
@@ -785,32 +388,14 @@
             <span>📅</span>
             Book Discovery Call
         </a>
-
     </header>
 
+    <main class="flex-grow container mx-auto px-6 py-24">
 
-
-    <!-- =========================================================
-         MAIN
-    ========================================================= -->
-
-    <main
-        class="flex-grow container mx-auto px-6 py-24"
-    >
-
-
-        <!-- =====================================================
-             HERO
-        ====================================================== -->
-
-        <section
-            class="max-w-5xl mb-16"
-        >
-
+        <section class="max-w-5xl mb-16">
             <div
                 class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-8"
             >
-
                 <span
                     class="w-2 h-2 rounded-full bg-green-500 animate-pulse"
                 ></span>
@@ -820,43 +405,25 @@
                 >
                     Available for Q3/Q4 Projects
                 </span>
-
             </div>
-
 
             <h2
                 class="text-6xl md:text-8xl font-extrabold leading-[1.05] mb-8 tracking-tighter"
             >
-
                 Selected
-
-                <span class="text-[#7C5DFA]">
-                    Works.
-                </span>
-
+                <span class="text-[#7C5DFA]">Works.</span>
             </h2>
-
 
             <p
                 class="text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed"
             >
                 A selection of websites, digital products, brand identities,
-                social media campaigns, and creative work designed to help
-                businesses look better and grow faster.
+                social media campaigns, advertisements, and creative work
+                designed to help businesses look better and grow faster.
             </p>
-
         </section>
 
-
-
-        <!-- =====================================================
-             FILTERS
-        ====================================================== -->
-
-        <div
-            class="flex flex-wrap justify-start gap-3 mb-16"
-        >
-
+        <div class="flex flex-wrap justify-start gap-3 mb-16">
             <button
                 type="button"
                 class="filter-btn active"
@@ -865,7 +432,6 @@
             >
                 All Projects
             </button>
-
 
             <button
                 type="button"
@@ -876,7 +442,6 @@
                 Web Development
             </button>
 
-
             <button
                 type="button"
                 class="filter-btn"
@@ -885,7 +450,6 @@
             >
                 UI/UX Design
             </button>
-
 
             <button
                 type="button"
@@ -896,7 +460,6 @@
                 Brand Identity
             </button>
 
-
             <button
                 type="button"
                 class="filter-btn"
@@ -906,9 +469,6 @@
                 Social Media Design
             </button>
 
-
-            <!-- KEEP GROWTH MARKETING -->
-
             <button
                 type="button"
                 class="filter-btn"
@@ -917,880 +477,38 @@
             >
                 Growth Marketing
             </button>
-
         </div>
-
-
-
-        <!-- =====================================================
-             PROJECT GRID
-        ====================================================== -->
 
         <div
             id="project-grid"
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
-        >
+        ></div>
 
-
-            <!-- =================================================
-                 01 — WEB DEVELOPMENT
-            ================================================== -->
-
-            <article
-                class="project-card"
-                data-category="web"
-            >
-
-                <button
-                    type="button"
-                    onclick="openProject('zendex')"
-                    class="project-button"
-                >
-
-                    <div
-                        class="project-image aspect-[4/3]"
-                    >
-
-                        <img
-                            src="images/projects/zendex-dental.jpg"
-                            alt="Zendex Dental website"
-                            onerror="this.style.display='none';"
-                        >
-
-                        <div class="image-placeholder">
-                            Zendex Dental
-                        </div>
-
-                    </div>
-
-
-                    <div class="p-8">
-
-                        <span class="project-category">
-                            Web Development
-                        </span>
-
-
-                        <h3
-                            class="text-2xl font-bold mt-2"
-                        >
-                            Zendex Dental
-                        </h3>
-
-
-                        <p
-                            class="text-sm text-white/40 mt-3"
-                        >
-                            WordPress • Elementor • Responsive Design
-                        </p>
-
-
-                        <div
-                            class="mt-6 flex items-center justify-between"
-                        >
-
-                            <span
-                                class="text-xs text-white/30"
-                            >
-                                Website Project
-                            </span>
-
-
-                            <span
-                                class="view-project text-xs font-bold"
-                            >
-                                View Project →
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </button>
-
-            </article>
-
-
-
-            <!-- =================================================
-                 02 — WEB DEVELOPMENT
-            ================================================== -->
-
-            <article
-                class="project-card"
-                data-category="web"
-            >
-
-                <button
-                    type="button"
-                    onclick="openProject('ecommerce')"
-                    class="project-button"
-                >
-
-                    <div
-                        class="project-image aspect-[4/3]"
-                    >
-
-                        <img
-                            src="images/projects/ecommerce.jpg"
-                            alt="E-commerce website"
-                            onerror="this.style.display='none';"
-                        >
-
-                        <div class="image-placeholder">
-                            E-Commerce Website
-                        </div>
-
-                    </div>
-
-
-                    <div class="p-8">
-
-                        <span class="project-category">
-                            Web Development
-                        </span>
-
-
-                        <h3
-                            class="text-2xl font-bold mt-2"
-                        >
-                            E-Commerce Website
-                        </h3>
-
-
-                        <p
-                            class="text-sm text-white/40 mt-3"
-                        >
-                            WordPress • WooCommerce • Responsive Design
-                        </p>
-
-
-                        <div
-                            class="mt-6 flex items-center justify-between"
-                        >
-
-                            <span
-                                class="text-xs text-white/30"
-                            >
-                                Website Project
-                            </span>
-
-
-                            <span
-                                class="view-project text-xs font-bold"
-                            >
-                                View Project →
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </button>
-
-            </article>
-
-
-
-            <!-- =================================================
-                 03 — UI/UX
-            ================================================== -->
-
-            <article
-                class="project-card"
-                data-category="uiux"
-            >
-
-                <button
-                    type="button"
-                    onclick="openProject('britanova')"
-                    class="project-button"
-                >
-
-                    <div
-                        class="project-image aspect-[4/3]"
-                    >
-
-                        <img
-                            src="images/projects/britanova-medic.jpg"
-                            alt="Britanova Medic UI UX"
-                            onerror="this.style.display='none';"
-                        >
-
-                        <div class="image-placeholder">
-                            Britanova Medic
-                        </div>
-
-                    </div>
-
-
-                    <div class="p-8">
-
-                        <span class="project-category">
-                            UI/UX Design
-                        </span>
-
-
-                        <h3
-                            class="text-2xl font-bold mt-2"
-                        >
-                            Britanova Medic
-                        </h3>
-
-
-                        <p
-                            class="text-sm text-white/40 mt-3"
-                        >
-                            Figma • UI Design • Prototyping
-                        </p>
-
-
-                        <div
-                            class="mt-6 flex items-center justify-between"
-                        >
-
-                            <span
-                                class="text-xs text-white/30"
-                            >
-                                UI/UX Project
-                            </span>
-
-
-                            <span
-                                class="view-project text-xs font-bold"
-                            >
-                                View Project →
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </button>
-
-            </article>
-
-
-
-            <!-- =================================================
-                 04 — UI/UX
-            ================================================== -->
-
-            <article
-                class="project-card"
-                data-category="uiux"
-            >
-
-                <button
-                    type="button"
-                    onclick="openProject('mobileApp')"
-                    class="project-button"
-                >
-
-                    <div
-                        class="project-image aspect-[4/3]"
-                    >
-
-                        <img
-                            src="images/projects/mobile-app.jpg"
-                            alt="Mobile app UI UX"
-                            onerror="this.style.display='none';"
-                        >
-
-                        <div class="image-placeholder">
-                            Mobile App
-                        </div>
-
-                    </div>
-
-
-                    <div class="p-8">
-
-                        <span class="project-category">
-                            UI/UX Design
-                        </span>
-
-
-                        <h3
-                            class="text-2xl font-bold mt-2"
-                        >
-                            Mobile App Experience
-                        </h3>
-
-
-                        <p
-                            class="text-sm text-white/40 mt-3"
-                        >
-                            Figma • Wireframes • User Flow
-                        </p>
-
-
-                        <div
-                            class="mt-6 flex items-center justify-between"
-                        >
-
-                            <span
-                                class="text-xs text-white/30"
-                            >
-                                UI/UX Project
-                            </span>
-
-
-                            <span
-                                class="view-project text-xs font-bold"
-                            >
-                                View Project →
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </button>
-
-            </article>
-
-
-
-            <!-- =================================================
-                 05 — BRAND
-            ================================================== -->
-
-            <article
-                class="project-card"
-                data-category="brand"
-            >
-
-                <button
-                    type="button"
-                    onclick="openProject('stalux')"
-                    class="project-button"
-                >
-
-                    <div
-                        class="project-image aspect-[4/3]"
-                    >
-
-                        <img
-                            src="images/projects/stalux-leather.jpg"
-                            alt="Stalux Leather branding"
-                            onerror="this.style.display='none';"
-                        >
-
-                        <div class="image-placeholder">
-                            Stalux Leather
-                        </div>
-
-                    </div>
-
-
-                    <div class="p-8">
-
-                        <span class="project-category">
-                            Brand Identity
-                        </span>
-
-
-                        <h3
-                            class="text-2xl font-bold mt-2"
-                        >
-                            Stalux Leather
-                        </h3>
-
-
-                        <p
-                            class="text-sm text-white/40 mt-3"
-                        >
-                            Logo • Visual Identity • Stationery
-                        </p>
-
-
-                        <div
-                            class="mt-6 flex items-center justify-between"
-                        >
-
-                            <span
-                                class="text-xs text-white/30"
-                            >
-                                Branding Project
-                            </span>
-
-
-                            <span
-                                class="view-project text-xs font-bold"
-                            >
-                                View Project →
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </button>
-
-            </article>
-
-
-
-            <!-- =================================================
-                 06 — BRAND
-            ================================================== -->
-
-            <article
-                class="project-card"
-                data-category="brand"
-            >
-
-                <button
-                    type="button"
-                    onclick="openProject('brandIdentity')"
-                    class="project-button"
-                >
-
-                    <div
-                        class="project-image aspect-[4/3]"
-                    >
-
-                        <img
-                            src="images/projects/brand-identity.jpg"
-                            alt="Brand identity project"
-                            onerror="this.style.display='none';"
-                        >
-
-                        <div class="image-placeholder">
-                            Brand Identity
-                        </div>
-
-                    </div>
-
-
-                    <div class="p-8">
-
-                        <span class="project-category">
-                            Brand Identity
-                        </span>
-
-
-                        <h3
-                            class="text-2xl font-bold mt-2"
-                        >
-                            Modern Brand Identity
-                        </h3>
-
-
-                        <p
-                            class="text-sm text-white/40 mt-3"
-                        >
-                            Logo • Typography • Stationery
-                        </p>
-
-
-                        <div
-                            class="mt-6 flex items-center justify-between"
-                        >
-
-                            <span
-                                class="text-xs text-white/30"
-                            >
-                                Branding Project
-                            </span>
-
-
-                            <span
-                                class="view-project text-xs font-bold"
-                            >
-                                View Project →
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </button>
-
-            </article>
-
-
-
-            <!-- =================================================
-                 07 — SOCIAL MEDIA
-                 NORMAL PROJECT — NOT COLLECTION
-            ================================================== -->
-
-            <article
-                class="project-card"
-                data-category="social"
-            >
-
-                <button
-                    type="button"
-                    onclick="openProject('restaurant')"
-                    class="project-button"
-                >
-
-                    <div
-                        class="project-image aspect-[4/3]"
-                    >
-
-                        <img
-                            src="images/social/restaurant-campaign.jpg"
-                            alt="Restaurant social media campaign"
-                            onerror="this.style.display='none';"
-                        >
-
-                        <div class="image-placeholder">
-                            Restaurant Campaign
-                        </div>
-
-                    </div>
-
-
-                    <div class="p-8">
-
-                        <span class="project-category">
-                            Social Media Design
-                        </span>
-
-
-                        <h3
-                            class="text-2xl font-bold mt-2"
-                        >
-                            Restaurant Campaign
-                        </h3>
-
-
-                        <p
-                            class="text-sm text-white/40 mt-3"
-                        >
-                            Instagram • Promotions • Campaign Design
-                        </p>
-
-
-                        <div
-                            class="mt-6 flex items-center justify-between"
-                        >
-
-                            <span
-                                class="text-xs text-white/30"
-                            >
-                                Social Media Project
-                            </span>
-
-
-                            <span
-                                class="view-project text-xs font-bold"
-                            >
-                                View Project →
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </button>
-
-            </article>
-
-
-
-            <!-- =================================================
-                 08 — SOCIAL MEDIA
-                 NORMAL PROJECT — NOT COLLECTION
-            ================================================== -->
-
-            <article
-                class="project-card"
-                data-category="social"
-            >
-
-                <button
-                    type="button"
-                    onclick="openProject('realEstate')"
-                    class="project-button"
-                >
-
-                    <div
-                        class="project-image aspect-[4/3]"
-                    >
-
-                        <img
-                            src="images/social/real-estate-campaign.jpg"
-                            alt="Real estate social media campaign"
-                            onerror="this.style.display='none';"
-                        >
-
-                        <div class="image-placeholder">
-                            Real Estate Campaign
-                        </div>
-
-                    </div>
-
-
-                    <div class="p-8">
-
-                        <span class="project-category">
-                            Social Media Design
-                        </span>
-
-
-                        <h3
-                            class="text-2xl font-bold mt-2"
-                        >
-                            Real Estate Campaign
-                        </h3>
-
-
-                        <p
-                            class="text-sm text-white/40 mt-3"
-                        >
-                            Property Posts • Ads • Banners
-                        </p>
-
-
-                        <div
-                            class="mt-6 flex items-center justify-between"
-                        >
-
-                            <span
-                                class="text-xs text-white/30"
-                            >
-                                Social Media Project
-                            </span>
-
-
-                            <span
-                                class="view-project text-xs font-bold"
-                            >
-                                View Project →
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </button>
-
-            </article>
-
-
-
-            <!-- =================================================
-                 09 — SOCIAL MEDIA
-                 NORMAL PROJECT — NOT COLLECTION
-            ================================================== -->
-
-            <article
-                class="project-card"
-                data-category="social"
-            >
-
-                <button
-                    type="button"
-                    onclick="openProject('fashion')"
-                    class="project-button"
-                >
-
-                    <div
-                        class="project-image aspect-[4/3]"
-                    >
-
-                        <img
-                            src="images/social/fashion-campaign.jpg"
-                            alt="Fashion brand social media campaign"
-                            onerror="this.style.display='none';"
-                        >
-
-                        <div class="image-placeholder">
-                            Fashion Campaign
-                        </div>
-
-                    </div>
-
-
-                    <div class="p-8">
-
-                        <span class="project-category">
-                            Social Media Design
-                        </span>
-
-
-                        <h3
-                            class="text-2xl font-bold mt-2"
-                        >
-                            Fashion Brand Campaign
-                        </h3>
-
-
-                        <p
-                            class="text-sm text-white/40 mt-3"
-                        >
-                            Instagram • Product Posts • Ads
-                        </p>
-
-
-                        <div
-                            class="mt-6 flex items-center justify-between"
-                        >
-
-                            <span
-                                class="text-xs text-white/30"
-                            >
-                                Social Media Project
-                            </span>
-
-
-                            <span
-                                class="view-project text-xs font-bold"
-                            >
-                                View Project →
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </button>
-
-            </article>
-
-
-
-            <!-- =================================================
-                 10 — SOCIAL MEDIA
-                 NORMAL PROJECT — NOT COLLECTION
-            ================================================== -->
-
-            <article
-                class="project-card"
-                data-category="social"
-            >
-
-                <button
-                    type="button"
-                    onclick="openProject('socialCampaign')"
-                    class="project-button"
-                >
-
-                    <div
-                        class="project-image aspect-[4/3]"
-                    >
-
-                        <img
-                            src="images/social/social-campaign.jpg"
-                            alt="Social media campaign"
-                            onerror="this.style.display='none';"
-                        >
-
-                        <div class="image-placeholder">
-                            Social Campaign
-                        </div>
-
-                    </div>
-
-
-                    <div class="p-8">
-
-                        <span class="project-category">
-                            Social Media Design
-                        </span>
-
-
-                        <h3
-                            class="text-2xl font-bold mt-2"
-                        >
-                            Promotional Social Campaign
-                        </h3>
-
-
-                        <p
-                            class="text-sm text-white/40 mt-3"
-                        >
-                            Social Posts • Advertising • Content
-                        </p>
-
-
-                        <div
-                            class="mt-6 flex items-center justify-between"
-                        >
-
-                            <span
-                                class="text-xs text-white/30"
-                            >
-                                Social Media Project
-                            </span>
-
-
-                            <span
-                                class="view-project text-xs font-bold"
-                            >
-                                View Project →
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </button>
-
-            </article>
-
-        </div>
-
-
-
-        <!-- =====================================================
-             GROWTH MARKETING EMPTY STATE
-        ====================================================== -->
-
-        <div
-            id="empty-category"
-            class="empty-category mt-10"
-        >
-
+        <div id="empty-category" class="empty-category mt-10">
             <div
                 class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center"
             >
-                <span class="text-2xl">
-                    🚀
-                </span>
+                <span class="text-2xl">🚀</span>
             </div>
 
-
-            <h3
-                class="text-2xl font-bold mb-3"
-            >
-                Growth Marketing
+            <h3 class="text-2xl font-bold mb-3">
+                No Projects Yet
             </h3>
-
 
             <p
                 class="text-white/40 max-w-md mx-auto text-sm leading-relaxed"
             >
-                Growth marketing projects will be added here soon.
-                This category is ready for future advertising,
-                campaign, and growth-focused work.
+                Projects for this category will be added here soon.
             </p>
-
         </div>
-
     </main>
-
-
-
-    <!-- =========================================================
-         PROJECT POPUP
-    ========================================================= -->
 
     <div
         id="projectModal"
         class="project-modal"
         onclick="closeModalFromBackground(event)"
     >
-
-        <div
-            class="modal-content"
-        >
-
+        <div class="modal-content">
             <button
                 type="button"
                 class="modal-close"
@@ -1800,52 +518,26 @@
                 ✕
             </button>
 
-
-            <div
-                id="modalBody"
-            ></div>
-
+            <div id="modalBody"></div>
         </div>
-
     </div>
 
-
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================= -->
-
-    <footer
-        class="bg-black pt-24 pb-12 border-t border-white/5"
-    >
-
+    <footer class="bg-black pt-24 pb-12 border-t border-white/5">
         <div
             class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-16 mb-24"
         >
-
-            <div
-                class="md:col-span-4"
-            >
-
-                <div
-                    class="flex items-center gap-3 mb-8"
-                >
-
+            <div class="md:col-span-4">
+                <div class="flex items-center gap-3 mb-8">
                     <div
                         class="w-10 h-10 rounded-full border border-purple-500/30 flex items-center justify-center text-xs font-bold text-purple-400"
                     >
                         SZ
                     </div>
 
-
-                    <h1
-                        class="text-xl font-bold"
-                    >
+                    <h1 class="text-xl font-bold">
                         Sumaima Zakir.
                     </h1>
-
                 </div>
-
 
                 <p
                     class="text-white/40 text-sm leading-relaxed mb-10 max-w-xs"
@@ -1854,142 +546,78 @@
                     Delivering high-performing websites, visual identities,
                     digital products, social media design, and creative work.
                 </p>
-
             </div>
 
-
-
-            <div
-                class="md:col-span-2"
-            >
-
+            <div class="md:col-span-2">
                 <h4
                     class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/30 mb-8"
                 >
                     Navigation
                 </h4>
 
-
-                <ul
-                    class="space-y-4 text-sm text-white/50"
-                >
-
+                <ul class="space-y-4 text-sm text-white/50">
                     <li>
-                        <a
-                            href="index.html"
-                            class="hover:text-white transition"
-                        >
+                        <a href="index.html" class="hover:text-white transition">
                             Home
                         </a>
                     </li>
 
                     <li>
-                        <a
-                            href="About.html"
-                            class="hover:text-white transition"
-                        >
+                        <a href="About.html" class="hover:text-white transition">
                             About
                         </a>
                     </li>
 
                     <li>
-                        <a
-                            href="Portfolio.html"
-                            class="text-white"
-                        >
+                        <a href="Portfolio.html" class="text-white">
                             Portfolio
                         </a>
                     </li>
 
                     <li>
-                        <a
-                            href="Services.html"
-                            class="hover:text-white transition"
-                        >
+                        <a href="Services.html" class="hover:text-white transition">
                             Services
                         </a>
                     </li>
 
                     <li>
-                        <a
-                            href="Resume.html"
-                            class="hover:text-white transition"
-                        >
+                        <a href="Resume.html" class="hover:text-white transition">
                             Resume
                         </a>
                     </li>
 
                     <li>
-                        <a
-                            href="Contact.html"
-                            class="hover:text-white transition"
-                        >
+                        <a href="Contact.html" class="hover:text-white transition">
                             Contact
                         </a>
                     </li>
-
                 </ul>
-
             </div>
 
-
-
-            <div
-                class="md:col-span-3"
-            >
-
+            <div class="md:col-span-3">
                 <h4
                     class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/30 mb-8"
                 >
                     Expertise
                 </h4>
 
-
-                <ul
-                    class="space-y-4 text-sm text-white/50"
-                >
-
-                    <li>
-                        Web Design & Development
-                    </li>
-
-                    <li>
-                        UI/UX Prototyping
-                    </li>
-
-                    <li>
-                        Brand Identity Design
-                    </li>
-
-                    <li>
-                        Social Media Design
-                    </li>
-
-                    <li>
-                        Growth Marketing
-                    </li>
-
+                <ul class="space-y-4 text-sm text-white/50">
+                    <li>Web Design & Development</li>
+                    <li>UI/UX Prototyping</li>
+                    <li>Brand Identity Design</li>
+                    <li>Social Media Design</li>
+                    <li>Growth Marketing</li>
                 </ul>
-
             </div>
 
-
-
-            <div
-                class="md:col-span-3"
-            >
-
+            <div class="md:col-span-3">
                 <h4
                     class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/30 mb-8"
                 >
                     Let's Connect
                 </h4>
 
-
-                <div
-                    class="flex gap-4 mb-10"
-                >
-
+                <div class="flex gap-4 mb-10">
                     <a
                         href="#"
                         class="footer-social w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center"
@@ -1997,16 +625,13 @@
                         in
                     </a>
 
-
                     <a
                         href="#"
                         class="footer-social w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center"
                     >
                         IG
                     </a>
-
                 </div>
-
 
                 <a
                     href="mailto:hello@sumaima.com"
@@ -2014,942 +639,623 @@
                 >
                     Start a Project →
                 </a>
-
             </div>
-
         </div>
-
 
         <div
             class="container mx-auto px-6 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/30 text-[12px]"
         >
-
             <p>
                 © 2026 Sumaima Zakir. All Rights Reserved.
             </p>
 
-
             <button
                 type="button"
-                onclick="window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                })"
+                onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
                 class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition"
             >
                 ↑
             </button>
-
         </div>
-
     </footer>
 
-
-
-    <!-- =========================================================
-         JAVASCRIPT
-    ========================================================= -->
-
     <script>
-
-
-        /* =========================================================
-           PROJECT DATA
-        ========================================================= */
+        const categoryKeyMap = {
+            "Web Development": "web",
+            "UI/UX Design": "uiux",
+            "Brand Identity": "brand",
+            "Social Media Design": "social",
+            "Growth Marketing": "marketing"
+        };
 
         const projects = {
-
-
-            /* -----------------------------------------------------
-               01 — ZENDEX DENTAL
-            ----------------------------------------------------- */
-
-            zendex: {
-
-                category:
-                    "Web Development",
-
-                title:
-                    "Zendex Dental",
-
+            mmsFitness: {
+                categories: ["Brand Identity"],
+                title: "MMS Fitness",
                 subtitle:
-                    "Professional dental website designed around trust, clarity, and a modern digital experience.",
+                    "Brand identity card designed for a fitness and wellness business.",
+                tools: [
+                    "Adobe Illustrator",
+                    "Adobe Photoshop",
+                    "Brand Identity",
+                    "Graphic Design"
+                ],
+                hero: "images/projects/mms-fitness-card.jpg",
+                challenge:
+                    "Create a strong and energetic visual identity that communicates fitness, motivation, and professionalism.",
+                process:
+                    "The design focused on bold typography, a powerful color palette, clear information hierarchy, and a modern fitness-oriented layout.",
+                result:
+                    "A professional brand identity card that gives MMS Fitness a memorable and confident visual presence.",
+                gallery: [
+                    "images/projects/mms-fitness-card.jpg"
+                ]
+            },
 
+            kitsuneCybersecurity: {
+                categories: [
+                    "Web Development",
+                    "UI/UX Design"
+                ],
+                title: "Kitsune Cybersecurity",
+                subtitle:
+                    "Cybersecurity website and UI/UX design created around trust, clarity, and digital protection.",
                 tools: [
                     "WordPress",
                     "Elementor",
+                    "Figma",
                     "Responsive Design",
-                    "UI Design"
+                    "UI/UX Design"
                 ],
-
-                hero:
-                    "images/projects/zendex-dental.jpg",
-
+                hero: "images/projects/kitsune-cybersecurity.jpg",
                 challenge:
-                    "Create a professional online presence that communicates the dental clinic's services clearly while making the experience easy to navigate.",
-
+                    "Create a professional digital experience that explains cybersecurity services clearly and builds trust with potential clients.",
                 process:
-                    "The design focused on visual hierarchy, service presentation, clear calls-to-action, responsive layouts, and a clean healthcare aesthetic.",
-
+                    "The project focused on information architecture, service presentation, responsive layouts, clear calls-to-action, and a modern cyber-inspired visual system.",
                 result:
-                    "A polished and responsive website that gives the dental business a stronger digital presence.",
-
+                    "A polished and responsive cybersecurity website with a clear user journey and professional interface.",
                 gallery: [
-
-                    "images/projects/zendex-dental.jpg",
-
-                    "images/projects/zendex-dental-02.jpg",
-
-                    "images/projects/zendex-dental-03.jpg"
-
+                    "images/projects/kitsune-cybersecurity.jpg",
+                    "images/projects/kitsune-cybersecurity-02.jpg",
+                    "images/projects/kitsune-cybersecurity-03.jpg"
                 ]
-
             },
 
-
-            /* -----------------------------------------------------
-               02 — ECOMMERCE
-            ----------------------------------------------------- */
-
-            ecommerce: {
-
-                category:
-                    "Web Development",
-
-                title:
-                    "E-Commerce Website",
-
+            halloweenSale: {
+                categories: ["Social Media Design"],
+                title: "Halloween Sale Campaign",
                 subtitle:
-                    "Responsive online shopping experience focused on product presentation and usability.",
-
+                    "Halloween sale advertisement designed for social media promotion.",
                 tools: [
-                    "WordPress",
-                    "WooCommerce",
-                    "Elementor",
-                    "Responsive Design"
-                ],
-
-                hero:
-                    "images/projects/ecommerce.jpg",
-
-                challenge:
-                    "Build a structured online storefront that makes it easy for customers to browse products and understand the purchasing journey.",
-
-                process:
-                    "The design focused on product hierarchy, category navigation, promotional sections, responsive layouts, and strong calls-to-action.",
-
-                result:
-                    "A clean and professional e-commerce interface designed around a straightforward shopping experience.",
-
-                gallery: [
-
-                    "images/projects/ecommerce.jpg",
-
-                    "images/projects/ecommerce-02.jpg",
-
-                    "images/projects/ecommerce-03.jpg"
-
-                ]
-
-            },
-
-
-            /* -----------------------------------------------------
-               03 — BRITANOVA MEDIC
-            ----------------------------------------------------- */
-
-            britanova: {
-
-                category:
-                    "UI/UX Design",
-
-                title:
-                    "Britanova Medic",
-
-                subtitle:
-                    "Healthcare-focused UI/UX project designed in Figma.",
-
-                tools: [
-                    "Figma",
-                    "UI Design",
-                    "UX Design",
-                    "Wireframing",
-                    "Prototyping"
-                ],
-
-                hero:
-                    "images/projects/britanova-medic.jpg",
-
-                challenge:
-                    "Design an interface that presents healthcare information in a clear, accessible, and trustworthy way.",
-
-                process:
-                    "The project included information architecture, wireframes, interface design, responsive considerations, and prototype planning.",
-
-                result:
-                    "A clean and structured healthcare interface focused on clarity and usability.",
-
-                gallery: [
-
-                    "images/projects/britanova-medic.jpg",
-
-                    "images/projects/britanova-medic-02.jpg",
-
-                    "images/projects/britanova-medic-03.jpg",
-
-                    "images/projects/britanova-medic-04.jpg"
-
-                ]
-
-            },
-
-
-            /* -----------------------------------------------------
-               04 — MOBILE APP
-            ----------------------------------------------------- */
-
-            mobileApp: {
-
-                category:
-                    "UI/UX Design",
-
-                title:
-                    "Mobile App Experience",
-
-                subtitle:
-                    "Mobile application interface focused on intuitive navigation and usability.",
-
-                tools: [
-                    "Figma",
-                    "Wireframes",
-                    "User Flow",
-                    "Prototype",
-                    "UI Design"
-                ],
-
-                hero:
-                    "images/projects/mobile-app.jpg",
-
-                challenge:
-                    "Create a mobile experience that feels simple to navigate while maintaining a polished and consistent visual system.",
-
-                process:
-                    "The design process included user-flow planning, wireframing, interface design, reusable components, and prototype development.",
-
-                result:
-                    "A modern mobile interface with a clear information hierarchy and intuitive user journey.",
-
-                gallery: [
-
-                    "images/projects/mobile-app.jpg",
-
-                    "images/projects/mobile-app-02.jpg",
-
-                    "images/projects/mobile-app-03.jpg",
-
-                    "images/projects/mobile-app-04.jpg"
-
-                ]
-
-            },
-
-
-            /* -----------------------------------------------------
-               05 — STALUX
-            ----------------------------------------------------- */
-
-            stalux: {
-
-                category:
-                    "Brand Identity",
-
-                title:
-                    "Stalux Leather",
-
-                subtitle:
-                    "Premium leather brand identity combining logo design with supporting brand materials.",
-
-                tools: [
+                    "Adobe Photoshop",
                     "Adobe Illustrator",
-                    "Adobe Photoshop",
-                    "Logo Design",
-                    "Brand Identity"
-                ],
-
-                hero:
-                    "images/projects/stalux-leather.jpg",
-
-                challenge:
-                    "Develop a visual identity that communicates quality, sophistication, and a premium leather aesthetic.",
-
-                process:
-                    "The identity focused on logo development, typography, visual direction, stationery, and consistent brand application.",
-
-                result:
-                    "A cohesive identity designed to give the brand a stronger and more premium visual presence.",
-
-                gallery: [
-
-                    "images/projects/stalux-leather.jpg",
-
-                    "images/projects/stalux-leather-02.jpg",
-
-                    "images/projects/stalux-leather-03.jpg"
-
-                ]
-
-            },
-
-
-            /* -----------------------------------------------------
-               06 — BRAND IDENTITY
-            ----------------------------------------------------- */
-
-            brandIdentity: {
-
-                category:
-                    "Brand Identity",
-
-                title:
-                    "Modern Brand Identity",
-
-                subtitle:
-                    "Brand identity project combining logo design, typography, and supporting visual applications.",
-
-                tools: [
-                    "Adobe Illustrator",
-                    "Adobe Photoshop",
-                    "Logo Design",
-                    "Typography"
-                ],
-
-                hero:
-                    "images/projects/brand-identity.jpg",
-
-                challenge:
-                    "Create a recognizable identity that communicates the brand's personality while remaining flexible across different applications.",
-
-                process:
-                    "The project explored logo concepts, typography, visual composition, supporting graphics, and practical brand applications.",
-
-                result:
-                    "A cohesive identity system with a clear visual direction.",
-
-                gallery: [
-
-                    "images/projects/brand-identity.jpg",
-
-                    "images/projects/brand-identity-02.jpg",
-
-                    "images/projects/brand-identity-03.jpg"
-
-                ]
-
-            },
-
-
-            /* -----------------------------------------------------
-               07 — RESTAURANT SOCIAL MEDIA
-               NORMAL PROJECT
-            ----------------------------------------------------- */
-
-            restaurant: {
-
-                category:
-                    "Social Media Design",
-
-                title:
-                    "Restaurant Campaign",
-
-                subtitle:
-                    "Social media campaign designed for promotional content, offers, and customer engagement.",
-
-                tools: [
-                    "Adobe Photoshop",
-                    "Canva",
-                    "Social Media Design",
-                    "Campaign Creative"
-                ],
-
-                hero:
-                    "images/social/restaurant-campaign.jpg",
-
-                challenge:
-                    "Create social content that communicates restaurant promotions quickly while maintaining an appetizing and consistent visual style.",
-
-                process:
-                    "The designs focused on food imagery, promotional hierarchy, strong headlines, offer communication, and platform-friendly compositions.",
-
-                result:
-                    "A cohesive set of social media creatives designed to work together as a campaign.",
-
-                gallery: [
-
-                    "images/social/restaurant-campaign.jpg",
-
-                    "images/social/restaurant-01.jpg",
-
-                    "images/social/restaurant-02.jpg",
-
-                    "images/social/restaurant-03.jpg",
-
-                    "images/social/restaurant-04.jpg"
-
-                ]
-
-            },
-
-
-            /* -----------------------------------------------------
-               08 — REAL ESTATE SOCIAL MEDIA
-               NORMAL PROJECT
-            ----------------------------------------------------- */
-
-            realEstate: {
-
-                category:
-                    "Social Media Design",
-
-                title:
-                    "Real Estate Campaign",
-
-                subtitle:
-                    "Property-focused social media campaign combining listings, promotional graphics, and advertising creatives.",
-
-                tools: [
-                    "Adobe Photoshop",
-                    "Canva",
                     "Social Media Design",
                     "Advertising Creative"
                 ],
-
-                hero:
-                    "images/social/real-estate-campaign.jpg",
-
+                hero: "images/social/halloween-sale.jpg",
                 challenge:
-                    "Present property information clearly while making listings visually attractive enough to stand out on social platforms.",
-
+                    "Design an eye-catching Halloween promotion that communicates the sale offer quickly and attracts attention on social media.",
                 process:
-                    "The campaign uses property imagery, information hierarchy, pricing or promotional messaging, typography, and consistent branding.",
-
+                    "The design used a Halloween-inspired color palette, promotional typography, themed graphics, strong contrast, and a clear call-to-action.",
                 result:
-                    "A cohesive set of real estate creatives suitable for social content and advertising.",
-
+                    "A bold seasonal social media advertisement suitable for promotional campaigns and digital advertising.",
                 gallery: [
-
-                    "images/social/real-estate-campaign.jpg",
-
-                    "images/social/real-estate-01.jpg",
-
-                    "images/social/real-estate-02.jpg",
-
-                    "images/social/real-estate-03.jpg",
-
-                    "images/social/real-estate-04.jpg"
-
+                    "images/social/halloween-sale.jpg"
                 ]
-
             },
 
-
-            /* -----------------------------------------------------
-               09 — FASHION SOCIAL MEDIA
-               NORMAL PROJECT
-            ----------------------------------------------------- */
-
-            fashion: {
-
-                category:
-                    "Social Media Design",
-
-                title:
-                    "Fashion Brand Campaign",
-
+            productPackaging: {
+                categories: ["Brand Identity"],
+                title: "Product & Packaging Design",
                 subtitle:
-                    "Fashion-focused social media content created for product promotion and brand communication.",
-
+                    "Product packaging design created to improve shelf presence and brand recognition.",
                 tools: [
-                    "Adobe Photoshop",
                     "Adobe Illustrator",
-                    "Social Media Design",
-                    "Campaign Creative"
+                    "Adobe Photoshop",
+                    "Packaging Design",
+                    "Brand Identity"
                 ],
-
-                hero:
-                    "images/social/fashion-campaign.jpg",
-
+                hero: "images/projects/product-packaging.jpg",
                 challenge:
-                    "Create visually attractive content that highlights products while maintaining a consistent fashion-oriented brand direction.",
-
+                    "Create attractive packaging that communicates the product clearly while remaining visually aligned with the brand.",
                 process:
-                    "The designs combine product imagery, typography, promotional messaging, and consistent visual layouts across social content.",
-
+                    "The process included packaging layout, typography, color selection, product information hierarchy, and visual presentation.",
                 result:
-                    "A reusable set of fashion-focused social media creatives for ongoing content and promotions.",
-
+                    "A cohesive product and packaging concept designed for strong visual impact and clear communication.",
                 gallery: [
-
-                    "images/social/fashion-campaign.jpg",
-
-                    "images/social/fashion-01.jpg",
-
-                    "images/social/fashion-02.jpg",
-
-                    "images/social/fashion-03.jpg",
-
-                    "images/social/fashion-04.jpg"
-
+                    "images/projects/product-packaging.jpg",
+                    "images/projects/product-packaging-02.jpg"
                 ]
-
             },
 
-
-            /* -----------------------------------------------------
-               10 — SOCIAL MEDIA CAMPAIGN
-               NORMAL PROJECT
-            ----------------------------------------------------- */
-
-            socialCampaign: {
-
-                category:
-                    "Social Media Design",
-
-                title:
-                    "Promotional Social Campaign",
-
+            businessCard: {
+                categories: ["Brand Identity"],
+                title: "Business Card Design",
                 subtitle:
-                    "Digital campaign creatives designed for promotional communication and social media advertising.",
+                    "Professional business card design created as part of a complete brand identity system.",
+                tools: [
+                    "Adobe Illustrator",
+                    "Adobe Photoshop",
+                    "Print Design",
+                    "Brand Identity"
+                ],
+                hero: "images/projects/business-card.jpg",
+                challenge:
+                    "Design a business card that presents contact information clearly while reflecting the personality of the brand.",
+                process:
+                    "The design focused on typography, spacing, hierarchy, print-ready composition, and consistent use of brand elements.",
+                result:
+                    "A clean and professional business card suitable for networking and client communication.",
+                gallery: [
+                    "images/projects/business-card.jpg"
+                ]
+            },
 
+            logoDesignOne: {
+                categories: ["Brand Identity"],
+                title: "Logo Design Collection 01",
+                subtitle:
+                    "Original logo concept developed for brand recognition and visual identity.",
+                tools: [
+                    "Adobe Illustrator",
+                    "Logo Design",
+                    "Typography",
+                    "Brand Identity"
+                ],
+                hero: "images/projects/logo-design-01.jpg",
+                challenge:
+                    "Develop a distinctive logo that is simple, memorable, and adaptable across digital and print applications.",
+                process:
+                    "The concept explored visual symbols, typography, proportion, balance, and scalable logo applications.",
+                result:
+                    "A versatile logo design with a clear and recognizable visual direction.",
+                gallery: [
+                    "images/projects/logo-design-01.jpg"
+                ]
+            },
+
+            logoDesignTwo: {
+                categories: ["Brand Identity"],
+                title: "Logo Design Collection 02",
+                subtitle:
+                    "Creative logo concept designed for a modern and memorable brand identity.",
+                tools: [
+                    "Adobe Illustrator",
+                    "Logo Design",
+                    "Visual Identity",
+                    "Typography"
+                ],
+                hero: "images/projects/logo-design-02.jpg",
+                challenge:
+                    "Create a logo that communicates the brand personality while remaining clear at different sizes.",
+                process:
+                    "The design process included sketching, concept development, typography selection, refinement, and digital application.",
+                result:
+                    "A modern logo concept prepared for use across brand materials and digital platforms.",
+                gallery: [
+                    "images/projects/logo-design-02.jpg"
+                ]
+            },
+
+            logoDesignThree: {
+                categories: ["Brand Identity"],
+                title: "Logo Design Collection 03",
+                subtitle:
+                    "Distinctive logo concept created for a flexible and professional visual identity.",
+                tools: [
+                    "Adobe Illustrator",
+                    "Logo Design",
+                    "Brand Strategy",
+                    "Typography"
+                ],
+                hero: "images/projects/logo-design-03.jpg",
+                challenge:
+                    "Design a recognizable mark that can represent the brand consistently across multiple applications.",
+                process:
+                    "The concept focused on shape development, visual balance, typography, color direction, and brand flexibility.",
+                result:
+                    "A polished logo design suitable for digital, print, and promotional use.",
+                gallery: [
+                    "images/projects/logo-design-03.jpg"
+                ]
+            },
+
+            productAdvertisement: {
+                categories: ["Social Media Design"],
+                title: "Product Advertisement",
+                subtitle:
+                    "Product advertising creative designed for social media and digital promotion.",
                 tools: [
                     "Adobe Photoshop",
                     "Adobe Illustrator",
-                    "Canva",
+                    "Product Advertising",
                     "Social Media Design"
                 ],
-
-                hero:
-                    "images/social/social-campaign.jpg",
-
+                hero: "images/social/product-advertisement.jpg",
                 challenge:
-                    "Develop promotional creatives that communicate the key message quickly while keeping the campaign visually consistent.",
-
+                    "Present the product in a visually attractive way while communicating its main benefits and promotional message.",
                 process:
-                    "The designs use strong typography, visual hierarchy, promotional messaging, imagery, and platform-friendly compositions.",
-
+                    "The design used product-focused composition, persuasive headlines, visual hierarchy, supporting graphics, and a clear call-to-action.",
                 result:
-                    "A flexible social media campaign that can be adapted across different promotional messages and platforms.",
-
+                    "A high-impact product advertisement suitable for social media posts and digital campaigns.",
                 gallery: [
-
-                    "images/social/social-campaign.jpg",
-
-                    "images/social/social-campaign-01.jpg",
-
-                    "images/social/social-campaign-02.jpg",
-
-                    "images/social/social-campaign-03.jpg",
-
-                    "images/social/social-campaign-04.jpg"
-
+                    "images/social/product-advertisement.jpg"
                 ]
+            },
 
+            socialMediaBanner: {
+                categories: ["Social Media Design"],
+                title: "Social Media Banner",
+                subtitle:
+                    "Social media banner designed to support brand communication and online promotion.",
+                tools: [
+                    "Adobe Photoshop",
+                    "Canva",
+                    "Social Media Design",
+                    "Digital Advertising"
+                ],
+                hero: "images/social/social-media-banner.jpg",
+                challenge:
+                    "Create a visually strong banner that communicates the campaign message clearly across social media platforms.",
+                process:
+                    "The layout focused on headline hierarchy, brand consistency, image treatment, spacing, and platform-friendly dimensions.",
+                result:
+                    "A flexible social media banner suitable for campaigns, announcements, and promotional communication.",
+                gallery: [
+                    "images/social/social-media-banner.jpg"
+                ]
+            },
+
+            educationAdCampaign: {
+                categories: ["Growth Marketing"],
+                title: "Education Ad Campaign",
+                subtitle:
+                    "Education advertising campaign created for students and parents.",
+                tools: [
+                    "Adobe Photoshop",
+                    "Adobe Illustrator",
+                    "Campaign Design",
+                    "Audience Targeting"
+                ],
+                hero: "images/marketing/education-ad-campaign.jpg",
+                challenge:
+                    "Create an education-focused campaign that appeals to both students and parents while presenting the opportunity clearly.",
+                process:
+                    "The campaign focused on audience-specific messaging, clear benefits, structured information, persuasive visuals, and strong calls-to-action.",
+                result:
+                    "A focused education campaign designed to support awareness, engagement, and student registrations.",
+                gallery: [
+                    "images/marketing/education-ad-campaign.jpg",
+                    "images/marketing/education-ad-campaign-02.jpg"
+                ]
+            },
+
+            catalogBrochure: {
+                categories: ["Brand Identity"],
+                title: "Catalog & Brochure Design",
+                subtitle:
+                    "Catalog and brochure layout designed to organize products and information in a clear, attractive format.",
+                tools: [
+                    "Adobe InDesign",
+                    "Adobe Illustrator",
+                    "Adobe Photoshop",
+                    "Editorial Design"
+                ],
+                hero: "images/projects/catalog-brochure.jpg",
+                challenge:
+                    "Arrange product and company information into a professional document that is easy to read and visually engaging.",
+                process:
+                    "The design process included page structure, grid systems, typography, image placement, product grouping, and consistent branding.",
+                result:
+                    "A well-structured catalog and brochure design suitable for digital sharing and print production.",
+                gallery: [
+                    "images/projects/catalog-brochure.jpg",
+                    "images/projects/catalog-brochure-02.jpg",
+                    "images/projects/catalog-brochure-03.jpg"
+                ]
             }
-
         };
 
+        function getCategoryText(project) {
+            return project.categories.join(" + ");
+        }
 
+        function getCategoryKeys(project) {
+            return project.categories
+                .map(category => categoryKeyMap[category])
+                .filter(Boolean);
+        }
 
-        /* =========================================================
-           FILTER FUNCTION
-        ========================================================= */
+        function renderProjects() {
+            const grid = document.getElementById("project-grid");
+
+            if (!grid) {
+                return;
+            }
+
+            grid.innerHTML = "";
+
+            Object.entries(projects).forEach(
+                ([projectId, project]) => {
+                    const card = document.createElement("article");
+
+                    card.className = "project-card";
+
+                    card.setAttribute(
+                        "data-category",
+                        getCategoryKeys(project).join(" ")
+                    );
+
+                    card.setAttribute(
+                        "data-project-id",
+                        projectId
+                    );
+
+                    const categoryText =
+                        getCategoryText(project);
+
+                    const toolText =
+                        project.tools.join(" • ");
+
+                    card.innerHTML = `
+                        <button
+                            type="button"
+                            onclick="openProject('${projectId}')"
+                            class="project-button"
+                        >
+                            <div class="project-image aspect-[4/3]">
+                                <img
+                                    src="${project.hero}"
+                                    alt="${project.title}"
+                                    onerror="this.style.display='none';"
+                                >
+
+                                <div class="image-placeholder">
+                                    ${project.title}
+                                </div>
+                            </div>
+
+                            <div class="p-8">
+                                <span class="project-category">
+                                    ${categoryText}
+                                </span>
+
+                                <h3 class="text-2xl font-bold mt-2">
+                                    ${project.title}
+                                </h3>
+
+                                <p class="text-sm text-white/40 mt-3">
+                                    ${toolText}
+                                </p>
+
+                                <div class="mt-6 flex items-center justify-between">
+                                    <span class="text-xs text-white/30">
+                                        ${categoryText}
+                                    </span>
+
+                                    <span class="view-project text-xs font-bold">
+                                        View Project →
+                                    </span>
+                                </div>
+                            </div>
+                        </button>
+                    `;
+
+                    grid.appendChild(card);
+                }
+            );
+        }
 
         function filterProjects(category, button) {
-
             const buttons =
-                document.querySelectorAll(
-                    ".filter-btn"
-                );
+                document.querySelectorAll(".filter-btn");
 
-
-            buttons.forEach(function(btn) {
-
-                btn.classList.remove(
-                    "active"
-                );
-
-                btn.setAttribute(
-                    "aria-pressed",
-                    "false"
-                );
-
+            buttons.forEach(btn => {
+                btn.classList.remove("active");
+                btn.setAttribute("aria-pressed", "false");
             });
 
-
-            button.classList.add(
-                "active"
-            );
-
-            button.setAttribute(
-                "aria-pressed",
-                "true"
-            );
-
+            if (button) {
+                button.classList.add("active");
+                button.setAttribute("aria-pressed", "true");
+            }
 
             const projectCards =
                 document.querySelectorAll(
-                    ".project-card"
+                    "#project-grid .project-card"
                 );
 
+            let visibleCount = 0;
 
-            projectCards.forEach(function(card) {
+            projectCards.forEach(card => {
+                const cardCategories =
+                    card.getAttribute("data-category")
+                        .split(" ");
 
-                const cardCategory =
-                    card.getAttribute(
-                        "data-category"
-                    );
-
-
-                if (
+                const shouldShow =
                     category === "all" ||
-                    cardCategory === category
-                ) {
+                    cardCategories.includes(category);
 
-                    card.classList.remove(
-                        "hidden-project"
-                    );
-
+                if (shouldShow) {
+                    card.classList.remove("hidden-project");
+                    visibleCount++;
                 } else {
-
-                    card.classList.add(
-                        "hidden-project"
-                    );
-
+                    card.classList.add("hidden-project");
                 }
-
             });
 
-
             const emptyCategory =
-                document.getElementById(
-                    "empty-category"
-                );
+                document.getElementById("empty-category");
 
-
-            if (
-                category === "marketing"
-            ) {
-
-                emptyCategory.classList.add(
-                    "show"
-                );
-
-            } else {
-
-                emptyCategory.classList.remove(
-                    "show"
-                );
-
+            if (!emptyCategory) {
+                return;
             }
 
+            if (visibleCount === 0) {
+                emptyCategory.classList.add("show");
+            } else {
+                emptyCategory.classList.remove("show");
+            }
         }
 
-
-
-        /* =========================================================
-           OPEN PROJECT POPUP
-        ========================================================= */
-
         function openProject(projectId) {
-
-            const project =
-                projects[projectId];
-
+            const project = projects[projectId];
 
             if (!project) {
                 return;
             }
 
-
             const modal =
-                document.getElementById(
-                    "projectModal"
-                );
-
+                document.getElementById("projectModal");
 
             const modalBody =
-                document.getElementById(
-                    "modalBody"
-                );
+                document.getElementById("modalBody");
 
+            const categoryText =
+                getCategoryText(project);
 
-            /* -----------------------------------------------------
-               TOOLS
-            ----------------------------------------------------- */
+            const toolsHTML =
+                project.tools
+                    .map(tool => `
+                        <span class="tool-tag">
+                            ${tool}
+                        </span>
+                    `)
+                    .join("");
 
-            let toolsHTML = "";
-
-
-            project.tools.forEach(function(tool) {
-
-                toolsHTML += `
-
-                    <span class="tool-tag">
-                        ${tool}
-                    </span>
-
-                `;
-
-            });
-
-
-            /* -----------------------------------------------------
-               GALLERY
-            ----------------------------------------------------- */
-
-            let galleryHTML = "";
-
-
-            project.gallery.forEach(function(image, index) {
-
-                galleryHTML += `
-
-                    <div class="modal-gallery-item">
-
-                        <img
-                            src="${image}"
-                            alt="${project.title} project image ${index + 1}"
-                            onerror="this.parentElement.style.display='none';"
-                        >
-
-                    </div>
-
-                `;
-
-            });
-
-
-            /* -----------------------------------------------------
-               MODAL
-            ----------------------------------------------------- */
+            const galleryHTML =
+                project.gallery
+                    .map((image, index) => `
+                        <div class="modal-gallery-item">
+                            <img
+                                src="${image}"
+                                alt="${project.title} project image ${index + 1}"
+                                onerror="this.parentElement.style.display='none';"
+                            >
+                        </div>
+                    `)
+                    .join("");
 
             modalBody.innerHTML = `
-
                 <div class="p-6 md:p-10">
-
-                    <!-- HEADER -->
-
-                    <div
-                        class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
-                    >
-
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                         <div>
-
                             <span class="project-category">
-                                ${project.category}
+                                ${categoryText}
                             </span>
 
-
-                            <h2
-                                class="text-4xl md:text-6xl font-extrabold tracking-tight mt-4 mb-5"
-                            >
+                            <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight mt-4 mb-5">
                                 ${project.title}
                             </h2>
 
-
-                            <p
-                                class="text-white/50 text-base md:text-lg leading-relaxed"
-                            >
+                            <p class="text-white/50 text-base md:text-lg leading-relaxed">
                                 ${project.subtitle}
                             </p>
 
-
                             <div class="mt-7">
-
                                 <div class="modal-label">
                                     Tools & Skills
                                 </div>
 
-
                                 <div>
                                     ${toolsHTML}
                                 </div>
-
                             </div>
-
                         </div>
 
-
                         <div>
-
                             <img
                                 src="${project.hero}"
                                 alt="${project.title}"
                                 class="modal-hero-image"
                                 onerror="this.style.display='none';"
                             >
-
                         </div>
-
                     </div>
 
-
-                    <!-- CASE STUDY -->
-
-                    <div
-                        class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14"
-                    >
-
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
                         <div class="modal-section">
-
                             <div class="modal-label">
                                 Challenge
                             </div>
 
-
-                            <p
-                                class="text-sm text-white/50 leading-relaxed"
-                            >
+                            <p class="text-sm text-white/50 leading-relaxed">
                                 ${project.challenge}
                             </p>
-
                         </div>
 
-
                         <div class="modal-section">
-
                             <div class="modal-label">
                                 Process
                             </div>
 
-
-                            <p
-                                class="text-sm text-white/50 leading-relaxed"
-                            >
+                            <p class="text-sm text-white/50 leading-relaxed">
                                 ${project.process}
                             </p>
-
                         </div>
 
-
                         <div class="modal-section">
-
                             <div class="modal-label">
                                 Result
                             </div>
 
-
-                            <p
-                                class="text-sm text-white/50 leading-relaxed"
-                            >
+                            <p class="text-sm text-white/50 leading-relaxed">
                                 ${project.result}
                             </p>
-
                         </div>
-
                     </div>
 
-
-                    <!-- PROJECT IMAGES -->
-
                     <div class="modal-section mt-14">
-
                         <div class="modal-label">
                             Project Images
                         </div>
 
-
                         <div class="modal-gallery">
-
                             ${galleryHTML}
-
                         </div>
-
                     </div>
-
                 </div>
-
             `;
 
-
-            modal.classList.add(
-                "show"
-            );
-
-
-            document.body.style.overflow =
-                "hidden";
-
+            modal.classList.add("show");
+            document.body.style.overflow = "hidden";
         }
-
-
-
-        /* =========================================================
-           CLOSE PROJECT
-        ========================================================= */
 
         function closeProject() {
-
             const modal =
-                document.getElementById(
-                    "projectModal"
-                );
+                document.getElementById("projectModal");
 
-
-            modal.classList.remove(
-                "show"
-            );
-
-
-            document.body.style.overflow =
-                "";
-
+            modal.classList.remove("show");
+            document.body.style.overflow = "";
         }
-
-
-
-        /* =========================================================
-           CLOSE MODAL BY CLICKING BACKDROP
-        ========================================================= */
 
         function closeModalFromBackground(event) {
-
             const modal =
-                document.getElementById(
-                    "projectModal"
-                );
+                document.getElementById("projectModal");
 
-
-            if (
-                event.target === modal
-            ) {
-
+            if (event.target === modal) {
                 closeProject();
-
             }
-
         }
 
+        document.addEventListener("DOMContentLoaded", () => {
+            renderProjects();
 
+            const allButton =
+                document.querySelector(
+                    ".filter-btn[onclick*=\"'all'\"]"
+                );
 
-        /* =========================================================
-           ESCAPE KEY
-        ========================================================= */
-
-        document.addEventListener(
-            "keydown",
-            function(event) {
-
-                if (
-                    event.key === "Escape"
-                ) {
-
-                    closeProject();
-
-                }
-
+            if (allButton) {
+                filterProjects("all", allButton);
             }
-        );
+        });
 
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape") {
+                closeProject();
+            }
+        });
     </script>
 
 </body>
