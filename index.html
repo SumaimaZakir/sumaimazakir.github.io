@@ -28,6 +28,10 @@
     <!-- EXTERNAL ASSETS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Swiper Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
     <!-- FAVICON (The small icon in the browser tab) -->
     <link rel="icon" type="image/png" href="favicon.png">
@@ -89,14 +93,7 @@
         .nav-link:hover { 
             color: #ffffff; 
         }
-
-        /* Portfolio Filter Active State */
-        .filter-btn.active {
-            border-color: #7C3AED;
-            color: white;
-            background: rgba(124, 58, 237, 0.1);
-        }
-    </style>
+</style>
 </head>
 <body class="selection:bg-purple-500 selection:text-white">
 
@@ -222,112 +219,468 @@ Helping startups, entrepreneurs, and businesses build beautiful brands, high-per
 </section>
 
     
-<!-- PORTFOLIO SECTION -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Section</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom Glassmorphism Effect */
-        .glass-card {
-            background: rgba(17, 17, 17, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        body {
-            background-color: #000; /* Deep black background */
-            color: white;
-            font-family: sans-serif;
-        }
+<!-- ================================
+     FEATURED PORTFOLIO
+================================ -->
+<section id="portfolio" class="py-24 px-6 max-w-7xl mx-auto">
 
-        /* Smooth transition for filtering */
-        .project-item {
-            transition: all 0.4s ease-in-out;
-        }
-        
-        .project-item.hidden {
-            display: none;
-            opacity: 0;
-            transform: scale(0.9);
-        }
-    </style>
-</head>
-<body>
-
-<!-- PORTFOLIO SECTION -->
-<section class="py-24 px-6 max-w-7xl mx-auto">
-    
-    <!-- Header & Filter Bar -->
-    <div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-12">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
         <div>
-            <p class="text-purple-500 uppercase tracking-widest text-xs font-bold mb-3">Portfolio</p>
-            <h2 class="text-5xl font-bold mb-4">Featured Portfolio</h2>
-            <p class="text-gray-400 max-w-xl">Proven digital solutions engineered for measurable business growth and high conversion.</p>
-        </div>
-        
-        <!-- Filter Bar (Pill Shape) -->
-        <div class="glass-card p-1.5 flex gap-1 rounded-full border border-white/10">
-            <button onclick="filterProjects('all', this)" class="filter-btn bg-purple-600 px-6 py-2 rounded-full text-sm font-bold text-white transition-all">All</button>
-            <button onclick="filterProjects('websites', this)" class="filter-btn px-6 py-2 text-sm text-gray-400 hover:text-white transition-all font-medium rounded-full">Websites</button>
-            <button onclick="filterProjects('branding', this)" class="filter-btn px-6 py-2 text-sm text-gray-400 hover:text-white transition-all font-medium rounded-full">Branding</button>
-            <button onclick="filterProjects('uiux', this)" class="filter-btn px-6 py-2 text-sm text-gray-400 hover:text-white transition-all font-medium rounded-full">UI/UX</button>
-            <button onclick="filterProjects('marketing', this)" class="filter-btn px-6 py-2 text-sm text-gray-400 hover:text-white transition-all font-medium rounded-full">Marketing</button>
-        </div>
-    </div>
+            <p class="text-purple-500 uppercase tracking-widest text-xs font-bold mb-3">
+                Portfolio
+            </p>
 
-    <!-- Project Grid -->
-    <div class="grid lg:grid-cols-3 gap-8" id="projects-grid">
-        
+            <h2 class="text-5xl md:text-6xl font-bold mb-4">
+                Featured Portfolio
+            </h2>
 
-        <!-- Case Study 1 -->
-                <div class="group project-item" data-category="websites">
-            <div class="glass-card overflow-hidden mb-6 relative aspect-video rounded-2xl">
-                <img src="KitsuneCover.jpeg?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-                <span class="absolute top-4 left-4 glass-card px-3 py-1 text-[10px] font-bold uppercase backdrop-blur-md rounded-lg">Cybersecurity</span>
-                <!-- Metric Badge Removed -->
-            </div>
-            <h3 class="text-2xl font-bold mb-2">Kitsune Cybersecurity</h3>
-            <p class="text-gray-500 text-sm">Enterprise Web Redesign & UI/UX</p>
-        </div>
-
-        <!-- Case Study 2 -->
-        <div class="group project-item" data-category="uiux">
-            <div class="glass-card overflow-hidden mb-6 relative aspect-video rounded-2xl">
-                <img src="MMSCover.png?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-                <span class="absolute top-4 left-4 glass-card px-3 py-1 text-[10px] font-bold uppercase backdrop-blur-md rounded-lg">Fitness</span>
-                <!-- Metric Badge Removed -->
-            </div>
-            <h3 class="text-2xl font-bold mb-2">MMS Fitness</h3>
-            <p class="text-gray-500 text-sm">Comprehensive Athletic Identity & Visual Guide</p>
-        </div>
-
-        <!-- Case Study 3 -->
-        <div class="group project-item" data-category="marketing">
-            <div class="glass-card overflow-hidden mb-6 relative aspect-video rounded-2xl">
-                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-                <span class="absolute top-4 left-4 glass-card px-3 py-1 text-[10px] font-bold uppercase backdrop-blur-md rounded-lg">Retail</span>
-                <!-- Metric Badge Removed -->
-            </div>
-            <h3 class="text-2xl font-bold mb-2">UrbanLuxe E-Commerce Store</h3>
-            <p class="text-gray-500 text-sm">High-Converting Retail Fashion Site</p>
+            <p class="text-gray-400 max-w-xl">
+                Selected digital experiences, brand identities, and marketing campaigns
+                designed to create meaningful business impact.
+            </p>
         </div>
     </div>
 
-    <!-- View All Projects CTA -->
+    <!-- Premium Portfolio Carousel -->
+    <div class="portfolio-carousel-shell">
+
+        <div class="swiper portfolioSwiper">
+            <div class="swiper-wrapper">
+
+                <!-- PROJECT 01 — KITSUNE -->
+                <div class="swiper-slide">
+                    <article class="portfolio-feature-card">
+
+                        <a href="Portfolio.html#kitsune" class="block group">
+                            <div class="portfolio-feature-image">
+
+                                <img
+                                    src="KitsuneCover.jpeg"
+                                    alt="Kitsune Cybersecurity website redesign and UI UX project"
+                                    loading="lazy">
+
+                                <div class="portfolio-feature-overlay"></div>
+
+                                <span class="portfolio-category">
+                                    Web Design
+                                </span>
+                            </div>
+
+                            <div class="portfolio-feature-content">
+
+                                <div class="portfolio-feature-number">
+                                    01 / 03
+                                </div>
+
+                                <p class="portfolio-project-meta">
+                                    Web Development • UI/UX
+                                </p>
+
+                                <h3 class="portfolio-feature-title">
+                                    Kitsune Cybersecurity
+                                </h3>
+
+                                <p class="portfolio-feature-description">
+                                    Enterprise website redesign focused on modern
+                                    cybersecurity positioning, responsive layouts,
+                                    and a polished user experience.
+                                </p>
+                            </div>
+                        </a>
+
+                    </article>
+                </div>
+
+                <!-- PROJECT 02 — iGMS -->
+                <div class="swiper-slide">
+                    <article class="portfolio-feature-card">
+
+                        <a href="Portfolio.html#igms" class="block group">
+                            <div class="portfolio-feature-image">
+
+                                <img
+                                    src="IGMSCover.png"
+                                    alt="iGMS vacation rental management social media design"
+                                    loading="lazy">
+
+                                <div class="portfolio-feature-overlay"></div>
+
+                                <span class="portfolio-category">
+                                    Social Media
+                                </span>
+                            </div>
+
+                            <div class="portfolio-feature-content">
+
+                                <div class="portfolio-feature-number">
+                                    02 / 03
+                                </div>
+
+                                <p class="portfolio-project-meta">
+                                    Social Media • Marketing
+                                </p>
+
+                                <h3 class="portfolio-feature-title">
+                                    iGMS
+                                </h3>
+
+                                <p class="portfolio-feature-description">
+                                    Promotional social media design for an all-in-one
+                                    vacation rental management solution, combining
+                                    product presentation with conversion-focused messaging.
+                                </p>
+                            </div>
+                        </a>
+
+                    </article>
+                </div>
+
+                <!-- PROJECT 03 — ATP STEM -->
+                <div class="swiper-slide">
+                    <article class="portfolio-feature-card">
+
+                        <a href="Portfolio.html#atp-stem" class="block group">
+                            <div class="portfolio-feature-image">
+
+                                <img
+                                    src="ATPSTEMCover.png"
+                                    alt="ATP STEM education advertising campaign"
+                                    loading="lazy">
+
+                                <div class="portfolio-feature-overlay"></div>
+
+                                <span class="portfolio-category">
+                                    Marketing
+                                </span>
+                            </div>
+
+                            <div class="portfolio-feature-content">
+
+                                <div class="portfolio-feature-number">
+                                    03 / 03
+                                </div>
+
+                                <p class="portfolio-project-meta">
+                                    Marketing • Advertising
+                                </p>
+
+                                <h3 class="portfolio-feature-title">
+                                    ATP STEM
+                                </h3>
+
+                                <p class="portfolio-feature-description">
+                                    Education advertising campaign designed to communicate
+                                    STEM learning opportunities through engaging promotional
+                                    visuals and digital campaign assets.
+                                </p>
+                            </div>
+                        </a>
+
+                    </article>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Side preview fade -->
+        <div class="portfolio-side-fade portfolio-side-fade-left"></div>
+        <div class="portfolio-side-fade portfolio-side-fade-right"></div>
+    </div>
+
+    <!-- Carousel Bottom Controls -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6 mt-8">
+
+        <div class="portfolio-pagination"></div>
+
+        <div class="flex items-center gap-3">
+            <span class="w-8 h-px bg-white/10"></span>
+
+            <span class="text-[10px] uppercase tracking-widest font-bold text-gray-600">
+                Selected Work
+            </span>
+        </div>
+    </div>
+
+    <!-- View All Projects -->
     <div class="flex justify-center mt-14">
-        <a href="/portfolio" class="group inline-flex items-center gap-3 glass-card px-8 py-4 rounded-xl border border-purple-500/20 hover:border-purple-500/50 hover:bg-purple-500/10 transition-all duration-300">
-            <span class="text-sm font-bold text-white uppercase tracking-wider">View All Projects</span>
-            <span class="text-purple-400 group-hover:translate-x-1 transition-transform duration-300">→</span>
+        <a
+            href="Portfolio.html"
+            class="group inline-flex items-center gap-3
+                   glass-card px-8 py-4 rounded-xl
+                   border border-purple-500/20
+                   hover:border-purple-500/50
+                   hover:bg-purple-500/10
+                   transition-all duration-300">
+
+            <span class="text-sm font-bold text-white uppercase tracking-wider">
+                View All Projects
+            </span>
         </a>
     </div>
 
 </section>
 
+<!-- ================================
+     PREMIUM PORTFOLIO CAROUSEL CSS
+================================ -->
+<style>
+    .portfolio-carousel-shell {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .portfolioSwiper {
+        width: 100%;
+        overflow: visible;
+    }
+
+    .portfolioSwiper .swiper-wrapper {
+        align-items: stretch;
+    }
+
+    .portfolioSwiper .swiper-slide {
+        height: auto;
+    }
+
+    .portfolio-feature-card {
+        height: 100%;
+    }
+
+    .portfolio-feature-image {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+        border-radius: 26px;
+        background: #111111;
+        border: 1px solid rgba(255,255,255,0.09);
+    }
+
+    .portfolio-feature-image img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition:
+            transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
+            filter 0.6s ease;
+    }
+
+    .portfolio-slide-card:hover .portfolio-feature-image img,
+    .portfolio-feature-card:hover .portfolio-feature-image img {
+        transform: scale(1.035);
+    }
+
+    .portfolio-feature-overlay {
+        position: absolute;
+        inset: 0;
+        background:
+            linear-gradient(
+                to top,
+                rgba(0,0,0,0.62) 0%,
+                rgba(0,0,0,0.08) 58%,
+                rgba(0,0,0,0.02) 100%
+            );
+        pointer-events: none;
+    }
+
+    .portfolio-category {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 3;
+        padding: 8px 13px;
+        border-radius: 10px;
+        background: rgba(8,8,8,0.64);
+        border: 1px solid rgba(255,255,255,0.14);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        color: #ffffff;
+        font-size: 10px;
+        line-height: 1;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+    }
+.portfolio-feature-content {
+        position: relative;
+        padding: 22px 4px 4px;
+    }
+
+    .portfolio-feature-number {
+        position: absolute;
+        right: 4px;
+        top: 25px;
+        color: rgba(255,255,255,0.22);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+    }
+
+    .portfolio-project-meta {
+        color: #A78BFA;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        margin-bottom: 9px;
+    }
+
+    .portfolio-feature-title {
+        font-size: clamp(1.75rem, 3vw, 2.55rem);
+        line-height: 1.1;
+        font-weight: 800;
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+    }
+
+    .portfolio-feature-card:hover .portfolio-feature-title {
+        color: #A78BFA;
+    }
+
+    .portfolio-feature-description {
+        max-width: 720px;
+        color: #6B7280;
+        font-size: 14px;
+        line-height: 1.75;
+        margin-bottom: 15px;
+    }
+
+    /* Pagination */
+    .portfolio-pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        min-height: 8px;
+    }
+
+    .portfolio-pagination .swiper-pagination-bullet {
+        width: 7px;
+        height: 7px;
+        margin: 0 !important;
+        border-radius: 999px;
+        background: #ffffff;
+        opacity: 0.22;
+        transition: all 0.35s ease;
+    }
+
+    .portfolio-pagination .swiper-pagination-bullet-active {
+        width: 28px;
+        background: #7C3AED;
+        opacity: 1;
+    }
+
+    /* Mobile */
+    @media (max-width: 767px) {
+
+        .portfolio-carousel-shell {
+            overflow: visible;
+        }
+
+        .portfolioSwiper {
+            overflow: visible;
+        }
+
+        .portfolioSwiper .swiper-slide {
+            opacity: 1;
+            transform: none;
+        }
+
+        .portfolio-feature-image {
+            aspect-ratio: 4 / 3;
+            border-radius: 20px;
+        }
+
+        .portfolio-category {
+            top: 14px;
+            left: 14px;
+        }
+
+        .portfolio-open-project {
+            width: 44px;
+            height: 44px;
+            right: 14px;
+            bottom: 14px;
+            opacity: 1;
+            transform: none;
+        }
+
+        .portfolio-feature-content {
+            padding-top: 18px;
+        }
+
+        .portfolio-feature-number {
+            top: 21px;
+        }
+
+        .portfolio-feature-description {
+            font-size: 13px;
+        }
+    }
+</style>
+
+<!-- ================================
+     PREMIUM PORTFOLIO CAROUSEL JS
+================================ -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (typeof Swiper === "undefined") {
+        console.error("Swiper could not be loaded.");
+        return;
+    }
+
+    new Swiper(".portfolioSwiper", {
+
+        slidesPerView: 1,
+        spaceBetween: 22,
+
+        loop: true,
+
+        speed: 750,
+
+        grabCursor: true,
+
+
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true
+        },
+
+        pagination: {
+            el: ".portfolio-pagination",
+            clickable: true
+        },
+
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+        },
+
+        breakpoints: {
+            640: {
+                slidesPerView: 1.15,
+                spaceBetween: 20
+            },
+
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 24
+            },
+
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 28
+            }
+        }
+
+    });
+
+});
+</script>
 
 <!-- SERVICES SECTION -->
 <section class="py-24 bg-[#080808] text-white">
@@ -1007,29 +1360,7 @@ backToTop.addEventListener("click", () => {
 });
     
 </style>
-    <!-- Filter Script -->
-<script>
-    function filterProjects(category, btn) {
-        // 1. Update active button style
-        const buttons = document.querySelectorAll('.filter-btn');
-        buttons.forEach(button => {
-            button.classList.remove('bg-purple-600', 'text-white', 'font-bold');
-            button.classList.add('text-gray-400', 'font-medium');
-        });
-        btn.classList.add('bg-purple-600', 'text-white', 'font-bold');
-        btn.classList.remove('text-gray-400', 'font-medium');
 
-        // 2. Filter projects
-        const items = document.querySelectorAll('.project-item');
-        items.forEach(item => {
-            if (category === 'all' || item.getAttribute('data-category') === category) {
-                item.classList.remove('hidden');
-            } else {
-                item.classList.add('hidden');
-            }
-        });
-    }
-</script>
 </body>
 </html>
 
