@@ -1,749 +1,1981 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- PRIMARY SEO -->
+    <title>Sumaima Zakir | Digital Designer & Strategist | Dubai</title>
+    <meta name="title" content="Sumaima Zakir | Digital Designer & Strategist | Dubai">
+    <meta name="description" content="Personal portfolio of Sumaima Zakir. Designing digital experiences that grow businesses through high-performing websites and strategic visual identity.">
+    <meta name="keywords" content="Digital Designer, UI/UX Strategist, Web Design Dubai, Brand Identity, Sumaima Zakir Portfolio">
+    <meta name="author" content="Sumaima Zakir">
 
-  <title>Contact | Sumaima Zakir</title>
+    <!-- OPEN GRAPH / FACEBOOK / LINKEDIN (How the link looks when shared) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sumaimazakir.github.io/">
+    <meta property="og:title" content="Sumaima Zakir | Digital Designer & Strategist">
+    <meta property="og:description" content="Designing digital experiences that grow businesses. View my latest work in Web Design and UI/UX.">
+    <meta property="og:image" content="https://sumaimazakir.github.io/assets/og-preview.jpg"> <!-- Create this image and link it! -->
 
-  <meta
-    name="description"
-    content="Get in touch with Sumaima Zakir for web design, development, branding, UI/UX, social media, and digital marketing projects."
-  />
+    <!-- TWITTER CARD -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sumaimazakir.github.io/">
+    <meta property="twitter:title" content="Sumaima Zakir | Digital Designer & Strategist">
+    <meta property="twitter:description" content="Designing digital experiences that grow businesses.">
+    <meta property="twitter:image" content="https://sumaimazakir.github.io/assets/og-preview.jpg">
 
-  <meta name="author" content="Sumaima Zakir" />
+    <!-- EXTERNAL ASSETS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Swiper Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- FAVICON (The small icon in the browser tab) -->
+    <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- Inter Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+    <style>
+        /* SMOOTH SCROLLING */
+        html { scroll-behavior: smooth; }
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            inter: ["Inter", "sans-serif"],
-          },
-          colors: {
-            accent: "#7C5DFA",
-          },
-          boxShadow: {
-            glow: "0 0 40px rgba(124, 93, 250, 0.15)",
-          },
-        },
-      },
-    };
-  </script>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #050505; 
+            color: #ffffff; 
+        }
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
+        /* GRID BACKGROUND */
+        .bg-grid {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
 
-    body {
-      font-family: "Inter", sans-serif;
-      background: #050505;
-    }
+        .glass-card { 
+            background: rgba(255, 255, 255, 0.03); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            border-radius: 24px; 
+            backdrop-filter: blur(10px);
+        }
 
-    ::selection {
-      background: rgba(124, 93, 250, 0.35);
-      color: white;
-    }
+        .purple-gradient-text { 
+            background: linear-gradient(90deg, #FFFFFF 0%, #A78BFA 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
 
-    .gradient-text {
-      background: linear-gradient(90deg, #ffffff, #b9a9ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+        .purple-glow { 
+            box-shadow: 0 0 40px rgba(139, 92, 246, 0.15); 
+        }
 
-    .grid-bg {
-      background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 50px 50px;
-    }
-  </style>
+        .btn-primary { 
+            background: #7C3AED; 
+            color: white; 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+
+        .btn-primary:hover { 
+            background: #6D28D9; 
+            transform: translateY(-2px); 
+            box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+        }
+
+        .nav-link { 
+            color: #9CA3AF; 
+            transition: color 0.3s; 
+            font-size: 14px; 
+            font-weight: 500;
+        }
+
+        .nav-link:hover { 
+            color: #ffffff; 
+        }
+</style>
 </head>
+<body class="selection:bg-purple-500 selection:text-white">
 
-<body class="bg-[#050505] text-white antialiased">
+<!-- NAVIGATION -->
+<nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50">
+<div class="glass-card px-8 py-4 flex items-center justify-between backdrop-blur-md">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-purple-900/50 rounded-full flex items-center justify-center border border-purple-500/30 text-purple-300 font-bold">SZ</div>
+<div>
+<h1 class="font-bold text-lg leading-tight">Sumaima Zakir<span class="text-purple-500">.</span></h1>
+<p class="text-[10px] text-gray-400 tracking-widest uppercase">Digital Designer & Strategist</p>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a href="index.html" class="nav-link">Home</a>
+<a href="About.html" class="nav-link">About</a>
+<a href="Portfolio.html" class="nav-link">Portfolio</a>
+<a href="Services.html" class="nav-link">Services</a>
+<a href="Resume.html" class="nav-link">Resume</a>
+<a href="Contact.html" class="nav-link">Contact</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="btn-primary px-6 py-2.5 rounded-full font-semibold text-sm flex items-center gap-2">
+<span>Start Your Project</span>
+</button>
+</div>
+</div>
+</nav>
 
-  <!-- ================= HEADER ================= -->
-  <header class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#050505]/90 backdrop-blur-xl">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="h-20 flex items-center justify-between">
+<!-- HERO SECTION -->
+<section class="pt-40 pb-20 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+<div>
+<div class="inline-flex items-center gap-3 glass-card px-4 py-1.5 rounded-full border-white/10 mb-8">
+<span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+<span class="text-xs font-medium text-gray-300">Dubai• <span class="text-purple-400"> Available for Q3/Q4 Projects </span></span>
+</div>
+<h1 class="text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
+Designing Digital Experiences That Grow <span class="text-purple-500">Businesses.</span>
+</h1>
+<p class="text-lg text-gray-400 leading-relaxed max-w-lg mb-10">
+Helping startups, entrepreneurs, and businesses build beautiful brands, high-performing websites, and digital marketing strategies that drive measurable growth.
+</p>
+<div class="flex flex-wrap gap-4 items-center">
+<a href="Portfolio.html" class="btn-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 transition-all hover:gap-4">
+    View Projects <span>→</span>
+</a>
+<button class="bg-white/5 border border-white/10 px-8 py-4 rounded-full font-bold hover:bg-white/10 transition flex items-center gap-2">Let's Work Together </button>
+</div>
+</div>
 
-        <!-- Logo -->
-        <a
-          href="index.html"
-          class="text-lg font-bold tracking-tight hover:text-accent transition"
-        >
-          Sumaima Zakir<span class="text-accent">.</span>
-        </a>
+<!-- HERO IMAGE AREA -->
+<div class="relative">
+<div class="aspect-[4/5] glass-card overflow-hidden relative purple-glow">
+<!-- Profile Image Placeholder -->
+<img src="Images/PROFILEPICHOME.png" alt="Sumaima Zakir" class="w-full h-full object-cover">
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden lg:flex items-center gap-8 text-sm text-gray-400">
+<!-- Floating Stats -->
+<div class="absolute top-6 right-6 glass-card p-4 backdrop-blur-xl border-white/20">
+<p class="text-2xl font-bold">5+</p>
+<p class="text-[10px] uppercase tracking-tighter text-gray-400">Years Experience<br>Design & Strategy</p>
+</div>
 
-          <a
-            href="index.html"
-            class="hover:text-white transition"
-          >
-            Home
-          </a>
+<div class="absolute bottom-6 left-6 right-6 glass-card p-4 flex items-center justify-between backdrop-blur-xl border-white/20">
+<div>
+<p class="text-xs font-bold">Sumaima Zakir</p>
+<p class="text-[10px] text-purple-400">Digital Designer & Strategist</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-          <a
-            href="About.html"
-            class="hover:text-white transition"
-          >
-            About
-          </a>
+<!-- TRUST & KEY STATS -->
+<section class="py-20 border-t border-white/5">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-16">
+<div class="flex items-center gap-4">
+<div class="flex text-amber-400 text-xl">★★★★★</div>
+<div>
+<p class="font-bold">4 Out of 5 Stars</p>
+<p class="text-xs text-gray-500">Based on verified client outcomes</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-4">
+<p class="text-xs font-bold text-gray-500 uppercase tracking-widest mr-4">Industries Worked With:</p>
+<span class="glass-card px-4 py-2 text-xs font-medium text-gray-300">Healthcare</span>
+<span class="glass-card px-4 py-2 text-xs font-medium text-gray-300">Education</span>
+<span class="glass-card px-4 py-2 text-xs font-medium text-gray-300">Retail & E-Com</span>
+<span class="glass-card px-4 py-2 text-xs font-medium text-gray-300">Agencies</span>
+<span class="glass-card px-4 py-2 text-xs font-medium text-gray-300">Startups</span>
+</div>
+</div>
 
-          <a
-            href="Portfolio.html"
-            class="hover:text-white transition"
-          >
-            Portfolio
-          </a>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="glass-card p-8">
+<h3 class="text-4xl font-extrabold mb-2">20+</h3>
+<p class="font-bold text-sm mb-1">Businesses Helped</p>
+<p class="text-xs text-gray-500">Global Startups & SMEs</p>
+</div>
+<div class="glass-card p-8">
+<h3 class="text-4xl font-extrabold mb-2">50+</h3>
+<p class="font-bold text-sm mb-1">Projects Delivered</p>
+<p class="text-xs text-gray-500">Websites, Brands & Apps</p>
+</div>
+<div class="glass-card p-8 border-purple-500/20 bg-purple-500/5">
+<h3 class="text-4xl font-extrabold mb-2">5+</h3>
+<p class="font-bold text-sm mb-1">Years Experience</p>
+<p class="text-xs text-gray-500">Proven Digital Growth</p>
+</div>
+<div class="glass-card p-8">
+<h3 class="text-4xl font-extrabold mb-2">100%</h3>
+<p class="font-bold text-sm mb-1">Mobile Responsive</p>
+<p class="text-xs text-gray-500">Pixel-Perfect Build</p>
+</div>
+</div>
+</div>
+</section>
 
-          <a
-            href="Services.html"
-            class="hover:text-white transition"
-          >
-            Services
-          </a>
+    
+<!-- ================================
+     FEATURED PORTFOLIO
+================================ -->
+<section id="portfolio" class="py-24 px-6 max-w-7xl mx-auto">
 
-          <a
-            href="Resume.html"
-            class="hover:text-white transition"
-          >
-            Resume
-          </a>
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
 
-          <a
-            href="Contact.html"
-            class="text-white"
-          >
-            Contact
-          </a>
-
-        </nav>
-
-        <!-- Header CTA -->
-        <a
-          href="#contact-form"
-          class="hidden sm:inline-flex items-center justify-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#6d4ff0] transition"
-        >
-          Start a Project
-        </a>
-
-      </div>
-    </div>
-  </header>
-
-
-  <!-- ================= MAIN ================= -->
-  <main>
-
-    <!-- ================= HERO ================= -->
-    <section class="relative pt-40 pb-24 overflow-hidden grid-bg">
-
-      <!-- Background Glow -->
-      <div class="absolute top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-accent/10 blur-[120px] rounded-full pointer-events-none"></div>
-
-      <div class="relative max-w-5xl mx-auto px-6 lg:px-8 text-center">
-
-        <span class="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm text-purple-200 mb-8">
-          Let's Work Together
-        </span>
-
-        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-tight">
-          Let's Build Something
-          <span class="gradient-text">Meaningful.</span>
-        </h1>
-
-        <p class="mt-7 max-w-2xl mx-auto text-lg leading-8 text-gray-400">
-          Have a website, brand, digital marketing, or creative project in mind?
-          Tell me what you're working on and let's explore how I can help.
-        </p>
-
-        <div class="mt-10 flex justify-center">
-          <a
-            href="#contact-form"
-            class="inline-flex items-center justify-center rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-white hover:bg-[#6d4ff0] transition shadow-glow"
-          >
-            Send a Message
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ================= CONTACT + FORM ================= -->
-    <section
-      id="contact-form"
-      class="py-24 border-t border-white/10"
-    >
-
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
-        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
-
-          <!-- Contact Information -->
-          <div>
-
-            <span class="text-sm font-semibold uppercase tracking-widest text-accent">
-              Get In Touch
-            </span>
-
-            <h2 class="mt-4 text-3xl sm:text-4xl font-bold">
-              Tell me about your project.
-            </h2>
-
-            <p class="mt-6 text-gray-400 leading-8 max-w-lg">
-              Whether you need a new website, a stronger brand presence,
-              social media support, or digital marketing help, you can
-              reach out using the form.
+        <div>
+            <p class="text-purple-500 uppercase tracking-widest text-xs font-bold mb-3">
+                Portfolio
             </p>
 
+            <h2 class="text-5xl md:text-6xl font-bold mb-4">
+                Featured Work
+            </h2>
 
-            <!-- Email -->
-            <div class="mt-10 flex items-start gap-4">
+            <p class="text-gray-400 max-w-xl">
+                A selection of web, UI/UX, graphic design, social media,
+                and digital marketing projects.
+            </p>
+        </div>
 
-              <div class="w-11 h-11 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
-                <svg
-                  class="w-5 h-5 text-accent"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.8"
-                    d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
+    </div>
 
-              <div>
-                <p class="text-sm text-gray-500">
-                  Email
-                </p>
 
-                <a
-                  href="mailto:hello@sumaimazakir.pro"
-                  class="mt-1 inline-block text-white hover:text-accent transition"
-                >
-                  hello@sumaimazakir.pro
-                </a>
-              </div>
+    <!-- ================================
+         PORTFOLIO CAROUSEL
+    ================================= -->
+    <div class="portfolio-carousel-shell">
+
+        <div class="swiper portfolioSwiper">
+
+            <div class="swiper-wrapper">
+
+
+                <!-- =================================
+                     PROJECT 01 — KITSUNE
+                ================================== -->
+                <div class="swiper-slide">
+
+                    <article class="portfolio-feature-card">
+
+                        <a
+                            href="Portfolio.html#kitsune"
+                            class="block group"
+                            aria-label="View Kitsune Cybersecurity project"
+                        >
+
+                            <!-- Image -->
+                            <div class="portfolio-feature-image">
+
+                                <img
+                                    src="KitsuneCover.jpeg"
+                                    alt="Kitsune Cybersecurity website redesign and UI UX project"
+                                    loading="lazy"
+                                >
+
+                                <div class="portfolio-feature-overlay"></div>
+
+                                <span class="portfolio-category">
+                                    Web Design
+                                </span>
+
+                            </div>
+
+
+                            <!-- Content -->
+                            <div class="portfolio-feature-content">
+
+                                <p class="portfolio-project-meta">
+                                    Web Development • UI/UX
+                                </p>
+
+                                <h3 class="portfolio-feature-title">
+                                    Kitsune Cybersecurity
+                                </h3>
+
+                                <p class="portfolio-feature-description">
+                                    Enterprise website redesign focused on modern
+                                    cybersecurity positioning, responsive layouts,
+                                    and a polished user experience.
+                                </p>
+
+                                <span class="portfolio-view-link">
+                                    View Project
+                                    <span class="portfolio-arrow">→</span>
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+                </div>
+
+
+
+                <!-- =================================
+                     PROJECT 02 — iGMS
+                ================================== -->
+                <div class="swiper-slide">
+
+                    <article class="portfolio-feature-card">
+
+                        <a
+                            href="Portfolio.html#igms"
+                            class="block group"
+                            aria-label="View iGMS social media project"
+                        >
+
+                            <!-- Image -->
+                            <div class="portfolio-feature-image">
+
+                                <img
+                                    src="Images/IGMSCOVER.png"
+                                    alt="iGMS vacation rental management social media design"
+                                    loading="lazy"
+                                >
+
+                                <div class="portfolio-feature-overlay"></div>
+
+                                <span class="portfolio-category">
+                                    Social Media
+                                </span>
+
+                            </div>
+
+
+                            <!-- Content -->
+                            <div class="portfolio-feature-content">
+
+                                <p class="portfolio-project-meta">
+                                    Social Media • Marketing
+                                </p>
+
+                                <h3 class="portfolio-feature-title">
+                                    iGMS
+                                </h3>
+
+                                <p class="portfolio-feature-description">
+                                    Promotional social media design for an all-in-one
+                                    vacation rental management solution, combining
+                                    product presentation with conversion-focused messaging.
+                                </p>
+
+                                <span class="portfolio-view-link">
+                                    View Project
+                                    <span class="portfolio-arrow">→</span>
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+                </div>
+
+
+
+                <!-- =================================
+                     PROJECT 03 — ATP STEM
+                ================================== -->
+                <div class="swiper-slide">
+
+                    <article class="portfolio-feature-card">
+
+                        <a
+                            href="Portfolio.html#atp-stem"
+                            class="block group"
+                            aria-label="View ATP STEM marketing project"
+                        >
+
+                            <!-- Image -->
+                            <div class="portfolio-feature-image">
+
+                                <img
+                                    src="Images/ATPSTEMCOVER.png"
+                                    alt="ATP STEM education advertising campaign"
+                                    loading="lazy"
+                                >
+
+                                <div class="portfolio-feature-overlay"></div>
+
+                                <span class="portfolio-category">
+                                    Marketing
+                                </span>
+
+                            </div>
+
+
+                            <!-- Content -->
+                            <div class="portfolio-feature-content">
+
+                                <p class="portfolio-project-meta">
+                                    Marketing • Advertising
+                                </p>
+
+                                <h3 class="portfolio-feature-title">
+                                    ATP STEM
+                                </h3>
+
+                                <p class="portfolio-feature-description">
+                                    Education advertising campaign designed to communicate
+                                    STEM learning opportunities through engaging promotional
+                                    visuals and digital campaign assets.
+                                </p>
+
+                                <span class="portfolio-view-link">
+                                    View Project
+                                    <span class="portfolio-arrow">→</span>
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    </article>
+
+                </div>
 
             </div>
 
-
-            <!-- Location -->
-            <div class="mt-7 flex items-start gap-4">
-
-              <div class="w-11 h-11 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
-                <svg
-                  class="w-5 h-5 text-accent"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.8"
-                    d="M12 21s7-5.2 7-11a7 7 0 10-14 0c0 5.8 7 11 7 11z"
-                  />
-                  <circle
-                    cx="12"
-                    cy="10"
-                    r="2.2"
-                    stroke-width="1.8"
-                  />
-                </svg>
-              </div>
-
-              <div>
-                <p class="text-sm text-gray-500">
-                  Location
-                </p>
-
-                <p class="mt-1 text-white">
-                  Dubai, UAE
-                </p>
-              </div>
-
-            </div>
+        </div>
 
 
-            <!-- Work Type -->
-            <div class="mt-7 flex items-start gap-4">
+        <!-- Side Preview Fade -->
+        <div class="portfolio-side-fade portfolio-side-fade-left"></div>
+        <div class="portfolio-side-fade portfolio-side-fade-right"></div>
 
-              <div class="w-11 h-11 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
-                <svg
-                  class="w-5 h-5 text-accent"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.8"
-                    d="M12 3v18M3 12h18"
-                  />
-                </svg>
-              </div>
+    </div>
 
-              <div>
-                <p class="text-sm text-gray-500">
-                  Work Type
-                </p>
 
-                <p class="mt-1 text-white">
-                  Freelance & Contract Projects
-                </p>
-              </div>
+    <!-- ================================
+         CAROUSEL CONTROLS
+    ================================= -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6 mt-8">
 
-            </div>
+        <!-- Pagination -->
+        <div
+            class="portfolio-pagination"
+            aria-label="Portfolio slides"
+        ></div>
 
+
+        <!-- Label -->
+        <div class="flex items-center gap-3">
+
+            <span class="w-8 h-px bg-white/10"></span>
+
+            <span class="text-[10px] uppercase tracking-widest font-bold text-gray-600">
+                Selected Work
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         VIEW ALL PROJECTS
+    ================================= -->
+    <div class="flex justify-center mt-14">
+
+        <a
+            href="Portfolio.html"
+            class="group inline-flex items-center gap-3
+                   glass-card px-8 py-4 rounded-xl
+                   border border-purple-500/20
+                   hover:border-purple-500/50
+                   hover:bg-purple-500/10
+                   transition-all duration-300"
+        >
+
+            <span class="text-sm font-bold text-white uppercase tracking-wider">
+                Explore All Projects
+            </span>
+
+            <span
+                class="text-purple-400 text-lg transition-transform duration-300
+                       group-hover:translate-x-1"
+                aria-hidden="true"
+            >
+                →
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     PORTFOLIO CSS
+================================ -->
+<style>
+
+    /* --------------------------------
+       CAROUSEL
+    --------------------------------- */
+
+    .portfolio-carousel-shell {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+
+    .portfolioSwiper {
+        width: 100%;
+        overflow: visible;
+    }
+
+
+    .portfolioSwiper .swiper-wrapper {
+        align-items: stretch;
+    }
+
+
+    .portfolioSwiper .swiper-slide {
+        height: auto;
+    }
+
+
+    /* --------------------------------
+       CARD
+    --------------------------------- */
+
+    .portfolio-feature-card {
+        height: 100%;
+    }
+
+
+    /* --------------------------------
+       IMAGE
+    --------------------------------- */
+
+    .portfolio-feature-image {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+
+        border-radius: 26px;
+
+        background: #111111;
+
+        border: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+
+    .portfolio-feature-image img {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: cover;
+
+        transition:
+            transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
+            filter 0.6s ease;
+    }
+
+
+    .portfolio-feature-card:hover
+    .portfolio-feature-image img {
+        transform: scale(1.035);
+    }
+
+
+    /* --------------------------------
+       IMAGE OVERLAY
+    --------------------------------- */
+
+    .portfolio-feature-overlay {
+        position: absolute;
+        inset: 0;
+
+        background:
+            linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.62) 0%,
+                rgba(0, 0, 0, 0.08) 58%,
+                rgba(0, 0, 0, 0.02) 100%
+            );
+
+        pointer-events: none;
+    }
+
+
+    /* --------------------------------
+       CATEGORY
+    --------------------------------- */
+
+    .portfolio-category {
+        position: absolute;
+
+        top: 20px;
+        left: 20px;
+
+        z-index: 3;
+
+        padding: 8px 13px;
+
+        border-radius: 10px;
+
+        background: rgba(8, 8, 8, 0.64);
+
+        border: 1px solid rgba(255, 255, 255, 0.14);
+
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+
+        color: #ffffff;
+
+        font-size: 10px;
+        line-height: 1;
+
+        font-weight: 800;
+
+        letter-spacing: 0.12em;
+
+        text-transform: uppercase;
+    }
+
+
+    /* --------------------------------
+       CONTENT
+    --------------------------------- */
+
+    .portfolio-feature-content {
+        position: relative;
+
+        padding: 22px 4px 4px;
+    }
+
+
+    /* --------------------------------
+       PROJECT META
+    --------------------------------- */
+
+    .portfolio-project-meta {
+        color: #A78BFA;
+
+        font-size: 10px;
+
+        font-weight: 800;
+
+        letter-spacing: 0.13em;
+
+        text-transform: uppercase;
+
+        margin-bottom: 9px;
+    }
+
+
+    /* --------------------------------
+       TITLE
+    --------------------------------- */
+
+    .portfolio-feature-title {
+        font-size: clamp(1.75rem, 3vw, 2.55rem);
+
+        line-height: 1.1;
+
+        font-weight: 800;
+
+        margin-bottom: 10px;
+
+        transition: color 0.3s ease;
+    }
+
+
+    .portfolio-feature-card:hover
+    .portfolio-feature-title {
+        color: #A78BFA;
+    }
+
+
+    /* --------------------------------
+       DESCRIPTION
+    --------------------------------- */
+
+    .portfolio-feature-description {
+        max-width: 720px;
+
+        color: #6B7280;
+
+        font-size: 14px;
+
+        line-height: 1.75;
+
+        margin-bottom: 16px;
+    }
+
+
+    /* --------------------------------
+       VIEW PROJECT LINK
+    --------------------------------- */
+
+    .portfolio-view-link {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        color: #ffffff;
+
+        font-size: 11px;
+
+        font-weight: 800;
+
+        letter-spacing: 0.12em;
+
+        text-transform: uppercase;
+
+        transition:
+            color 0.3s ease,
+            gap 0.3s ease;
+    }
+
+
+    .portfolio-arrow {
+        color: #A78BFA;
+
+        font-size: 16px;
+
+        line-height: 1;
+
+        transition: transform 0.3s ease;
+    }
+
+
+    .portfolio-feature-card:hover
+    .portfolio-view-link {
+        color: #A78BFA;
+
+        gap: 11px;
+    }
+
+
+    .portfolio-feature-card:hover
+    .portfolio-arrow {
+        transform: translateX(3px);
+    }
+
+
+    /* --------------------------------
+       PAGINATION
+    --------------------------------- */
+
+    .portfolio-pagination {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 7px;
+
+        min-height: 8px;
+    }
+
+
+    .portfolio-pagination
+    .swiper-pagination-bullet {
+        width: 7px;
+        height: 7px;
+
+        margin: 0 !important;
+
+        border-radius: 999px;
+
+        background: #ffffff;
+
+        opacity: 0.22;
+
+        transition: all 0.35s ease;
+    }
+
+
+    .portfolio-pagination
+    .swiper-pagination-bullet-active {
+        width: 28px;
+
+        background: #7C3AED;
+
+        opacity: 1;
+    }
+
+
+    /* --------------------------------
+       MOBILE
+    --------------------------------- */
+
+    @media (max-width: 767px) {
+
+        .portfolio-carousel-shell {
+            overflow: visible;
+        }
+
+
+        .portfolioSwiper {
+            overflow: visible;
+        }
+
+
+        .portfolioSwiper .swiper-slide {
+            opacity: 1;
+
+            transform: none;
+        }
+
+
+        .portfolio-feature-image {
+            aspect-ratio: 4 / 3;
+
+            border-radius: 20px;
+        }
+
+
+        .portfolio-category {
+            top: 14px;
+            left: 14px;
+        }
+
+
+        .portfolio-feature-content {
+            padding-top: 18px;
+        }
+
+
+        .portfolio-feature-description {
+            font-size: 13px;
+        }
+
+
+        .portfolio-view-link {
+            font-size: 10px;
+        }
+
+    }
+
+</style>
+
+
+
+<!-- ================================
+     PORTFOLIO JAVASCRIPT
+================================ -->
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* --------------------------------
+       CHECK SWIPER
+    --------------------------------- */
+
+    if (typeof Swiper === "undefined") {
+
+        console.error("Swiper could not be loaded.");
+
+        return;
+    }
+
+
+    /* --------------------------------
+       INITIALIZE PORTFOLIO CAROUSEL
+    --------------------------------- */
+
+    new Swiper(".portfolioSwiper", {
+
+        slidesPerView: 1,
+
+        spaceBetween: 22,
+
+        loop: true,
+
+        speed: 750,
+
+        grabCursor: true,
+
+
+        /* Keyboard Navigation */
+
+        keyboard: {
+
+            enabled: true,
+
+            onlyInViewport: true
+
+        },
+
+
+        /* Pagination */
+
+        pagination: {
+
+            el: ".portfolio-pagination",
+
+            clickable: true
+
+        },
+
+
+        /* Autoplay */
+
+        autoplay: {
+
+            delay: 5000,
+
+            disableOnInteraction: false,
+
+            pauseOnMouseEnter: true
+
+        },
+
+
+        /* Responsive */
+
+        breakpoints: {
+
+            640: {
+
+                slidesPerView: 1.15,
+
+                spaceBetween: 20
+
+            },
+
+
+            768: {
+
+                slidesPerView: 2,
+
+                spaceBetween: 24
+
+            },
+
+
+            1024: {
+
+                slidesPerView: 3,
+
+                spaceBetween: 28
+
+            }
+
+        }
+
+    });
+
+});
+
+</script>
+
+
+<!-- =========================================
+     SERVICES SECTION
+========================================= -->
+<section id="services" class="py-24 bg-[#080808] text-white">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- =========================
+         SECTION HEADER
+    ========================== -->
+    <div class="max-w-3xl mb-16">
+
+      <p class="text-purple-500 uppercase tracking-[0.3em] text-xs font-bold mb-4">
+        Services
+      </p>
+
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+        Design, Digital & Web Solutions.
+      </h2>
+
+      <p class="text-gray-400 max-w-2xl text-base md:text-lg leading-relaxed">
+        I create practical digital solutions across web design, development,
+        UI/UX, graphic design, social media, and digital marketing.
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         SERVICES GRID
+    ========================== -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+
+      <!-- =================================
+           SERVICE 01
+      ================================== -->
+      <article class="service-card">
+
+        <div class="service-icon">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            />
+          </svg>
+        </div>
+
+        <p class="service-label">
+          01 / WEB
+        </p>
+
+        <h3 class="service-title">
+          Web Design & Development
+        </h3>
+
+        <p class="service-description">
+          Responsive websites and landing pages designed around your brand,
+          audience, and business goals.
+        </p>
+
+        <div class="service-list">
+
+          <div class="service-item">
+            <span>✓</span>
+            <p>Responsive web design</p>
           </div>
 
+          <div class="service-item">
+            <span>✓</span>
+            <p>Front-end development</p>
+          </div>
 
-          <!-- ================= FORM ================= -->
-          <div class="rounded-3xl border border-white/10 bg-white/[0.03] p-6 sm:p-8 shadow-glow">
+          <div class="service-item">
+            <span>✓</span>
+            <p>Landing pages</p>
+          </div>
 
-            <form
-              action="https://formspree.io/f/YOUR_FORM_ID"
-              method="POST"
-              class="space-y-6"
-            >
+          <div class="service-item">
+            <span>✓</span>
+            <p>Website optimization</p>
+          </div>
 
-              <!-- Name -->
-              <div>
+        </div>
 
-                <label
-                  for="name"
-                  class="block text-sm font-medium text-gray-300 mb-2"
-                >
-                  Full Name *
-                </label>
-
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  placeholder="Your name"
-                  class="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3.5 text-white placeholder-gray-600 outline-none focus:border-accent transition"
-                />
-
-              </div>
+      </article>
 
 
-              <!-- Email -->
-              <div>
 
-                <label
-                  for="email"
-                  class="block text-sm font-medium text-gray-300 mb-2"
-                >
-                  Email Address *
-                </label>
+      <!-- =================================
+           SERVICE 02
+      ================================== -->
+      <article class="service-card">
 
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  placeholder="you@example.com"
-                  class="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3.5 text-white placeholder-gray-600 outline-none focus:border-accent transition"
-                />
+        <div class="service-icon">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+            />
+          </svg>
+        </div>
 
-              </div>
+        <p class="service-label">
+          02 / UX
+        </p>
 
+        <h3 class="service-title">
+          UI/UX Design
+        </h3>
 
-              <!-- Company -->
-              <div>
+        <p class="service-description">
+          Clear and intuitive interfaces that turn ideas and requirements
+          into thoughtful digital experiences.
+        </p>
 
-                <label
-                  for="company"
-                  class="block text-sm font-medium text-gray-300 mb-2"
-                >
-                  Company / Brand
-                  <span class="text-gray-600">
-                    (Optional)
-                  </span>
-                </label>
+        <div class="service-list">
 
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  placeholder="Company or brand name"
-                  class="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3.5 text-white placeholder-gray-600 outline-none focus:border-accent transition"
-                />
+          <div class="service-item">
+            <span>✓</span>
+            <p>User flows</p>
+          </div>
 
-              </div>
+          <div class="service-item">
+            <span>✓</span>
+            <p>Wireframes</p>
+          </div>
 
+          <div class="service-item">
+            <span>✓</span>
+            <p>Figma prototypes</p>
+          </div>
 
-              <!-- Service -->
-              <div>
+          <div class="service-item">
+            <span>✓</span>
+            <p>Responsive interface design</p>
+          </div>
 
-                <label
-                  for="service"
-                  class="block text-sm font-medium text-gray-300 mb-2"
-                >
-                  What do you need help with? *
-                </label>
+        </div>
 
-                <select
-                  id="service"
-                  name="service"
-                  required
-                  class="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3.5 text-white outline-none focus:border-accent transition"
-                >
-
-                  <option value="" class="bg-[#111]">
-                    Select a service
-                  </option>
-
-                  <option value="Web Design & Development" class="bg-[#111]">
-                    Web Design & Development
-                  </option>
-
-                  <option value="WordPress Development" class="bg-[#111]">
-                    WordPress Development
-                  </option>
-
-                  <option value="UI/UX Design" class="bg-[#111]">
-                    UI/UX Design
-                  </option>
-
-                  <option value="Brand Identity" class="bg-[#111]">
-                    Brand Identity
-                  </option>
-
-                  <option value="Graphic Design" class="bg-[#111]">
-                    Graphic Design
-                  </option>
-
-                  <option value="Social Media Management" class="bg-[#111]">
-                    Social Media Management
-                  </option>
-
-                  <option value="Digital Marketing" class="bg-[#111]">
-                    Digital Marketing
-                  </option>
-
-                  <option value="SEO" class="bg-[#111]">
-                    SEO
-                  </option>
-
-                  <option value="Other" class="bg-[#111]">
-                    Other
-                  </option>
-
-                </select>
-
-              </div>
+      </article>
 
 
-              <!-- Project Details -->
-              <div>
 
-                <label
-                  for="message"
-                  class="block text-sm font-medium text-gray-300 mb-2"
-                >
-                  Project Details *
-                </label>
+      <!-- =================================
+           SERVICE 03
+      ================================== -->
+      <article class="service-card">
 
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="6"
-                  required
-                  placeholder="Tell me about your project, goals, timeline, and anything else that would be helpful..."
-                  class="w-full resize-none rounded-xl border border-white/10 bg-black/30 px-4 py-3.5 text-white placeholder-gray-600 outline-none focus:border-accent transition"
-                ></textarea>
+        <div class="service-icon">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M12 2v20M5 5h14M5 19h14M7 9h10M7 15h10"
+            />
+          </svg>
+        </div>
 
-              </div>
+        <p class="service-label">
+          03 / CMS
+        </p>
+
+        <h3 class="service-title">
+          WordPress Development
+        </h3>
+
+        <p class="service-description">
+          Professional WordPress websites that are responsive, easy to manage,
+          and tailored to your content and brand.
+        </p>
+
+        <div class="service-list">
+
+          <div class="service-item">
+            <span>✓</span>
+            <p>WordPress website setup</p>
+          </div>
+
+          <div class="service-item">
+            <span>✓</span>
+            <p>Custom page design</p>
+          </div>
+
+          <div class="service-item">
+            <span>✓</span>
+            <p>Content management</p>
+          </div>
+
+          <div class="service-item">
+            <span>✓</span>
+            <p>Responsive optimization</p>
+          </div>
+
+        </div>
+
+      </article>
 
 
-              <!-- Submit -->
-              <button
-                type="submit"
-                class="w-full rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-white hover:bg-[#6d4ff0] transition"
-              >
-                Send Message
-              </button>
+
+      <!-- =================================
+           SERVICE 04
+      ================================== -->
+      <article class="service-card">
+
+        <div class="service-icon">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M12 3l1.9 5.8H20l-4.9 3.6 1.9 5.8L12 14.6 7 18.2l1.9-5.8L4 8.8h6.1L12 3z"
+            />
+          </svg>
+        </div>
+
+        <p class="service-label">
+          04 / VISUAL
+        </p>
+
+        <h3 class="service-title">
+          Graphic Design & Branding
+        </h3>
+
+        <p class="service-description">
+          Visual identities and marketing materials that create consistency,
+          recognition, and a stronger brand presence.
+        </p>
+
+        <div class="service-list">
+
+          <div class="service-item">
+            <span>✓</span>
+            <p>Logo & visual identity</p>
+          </div>
+
+          <div class="service-item">
+            <span>✓</span>
+            <p>Social media graphics</p>
+          </div>
+
+          <div class="service-item">
+            <span>✓</span>
+            <p>Marketing materials</p>
+          </div>
+
+          <div class="service-item">
+            <span>✓</span>
+            <p>Digital & print design</p>
+          </div>
+
+        </div>
+
+      </article>
 
 
-              <p class="text-xs text-center text-gray-600">
-                I'll review your message and get back to you as soon as possible.
-              </p>
 
-            </form>
+      <!-- =================================
+           SERVICE 05
+      ================================== -->
+      <article class="service-card">
+
+        <div class="service-icon">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+            />
+          </svg>
+        </div>
+
+        <p class="service-label">
+          05 / SOCIAL
+        </p>
+
+        <h3 class="service-title">
+          Social Media Management
+        </h3>
+
+        <p class="service-description">
+          Branded social content designed to maintain a consistent presence
+          and communicate effectively with your audience.
+        </p>
+
+        <div class="service-list">
+
+          <div class="service-item">
+            <span>✓</span>
+            <p>Content planning</p>
+          </div>
+
+          <div class="service-item">
+            <span>✓</span>
+            <p>Social media graphics</p>
+          </div>
+
+          <div class="service-item">
+            <span>✓</span>
+            <p>Content scheduling</p>
+          </div>
+
+          <div class="service-item">
+            <span>✓</span>
+            <p>Performance tracking</p>
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =================================
+           SERVICE 06
+      ================================== -->
+      <article class="service-card">
+
+        <div class="service-icon">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+            />
+          </svg>
+        </div>
+
+        <p class="service-label">
+          06 / GROWTH
+        </p>
+
+        <h3 class="service-title">
+          Digital Marketing & SEO
+        </h3>
+
+        <p class="service-description">
+          Digital marketing support focused on improving online visibility,
+          content, and audience reach.
+        </p>
+
+        <div class="service-list">
+
+          <div class="service-item">
+            <span>✓</span>
+            <p>SEO fundamentals</p>
+          </div>
+
+          <div class="service-item">
+            <span>✓</span>
+            <p>Content marketing</p>
+          </div>
+
+          <div class="service-item">
+            <span>✓</span>
+            <p>Digital campaign support</p>
+          </div>
+
+          <div class="service-item">
+            <span>✓</span>
+            <p>Analytics & reporting</p>
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <!-- =========================
+         SINGLE CTA
+    ========================== -->
+    <div class="flex justify-center mt-14">
+
+      <a
+        href="#contact"
+        class="service-main-cta group inline-flex items-center gap-3"
+      >
+
+        <span>
+          Start a Project
+        </span>
+
+        <span class="service-main-cta-arrow">
+          →
+        </span>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SERVICES STYLES
+========================================= -->
+<style>
+
+  /* =========================
+     SERVICE CARD
+  ========================== */
+
+  .service-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 500px;
+
+    padding: 2rem;
+
+    border-radius: 1.5rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(255, 255, 255, 0.035);
+
+    transition:
+      transform 0.35s ease,
+      border-color 0.35s ease,
+      background 0.35s ease;
+  }
+
+
+  .service-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(124, 58, 237, 0.45);
+
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+
+  /* =========================
+     ICON
+  ========================== */
+
+  .service-icon {
+    width: 3rem;
+    height: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 1.5rem;
+
+    border-radius: 0.85rem;
+
+    border: 1px solid rgba(139, 92, 246, 0.3);
+
+    background: rgba(91, 33, 182, 0.18);
+
+    color: #a78bfa;
+
+    transition:
+      transform 0.35s ease,
+      background 0.35s ease;
+  }
+
+
+  .service-card:hover .service-icon {
+    transform: scale(1.08);
+
+    background: rgba(91, 33, 182, 0.28);
+  }
+
+
+  /* =========================
+     LABEL
+  ========================== */
+
+  .service-label {
+    margin-bottom: 0.7rem;
+
+    color: #8b5cf6;
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+  }
+
+
+  /* =========================
+     TITLE
+  ========================== */
+
+  .service-title {
+    margin-bottom: 1rem;
+
+    color: #ffffff;
+
+    font-size: 1.45rem;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+  }
+
+
+  /* =========================
+     DESCRIPTION
+  ========================== */
+
+  .service-description {
+    margin-bottom: 1.75rem;
+
+    color: #9ca3af;
+
+    font-size: 0.875rem;
+
+    line-height: 1.7;
+  }
+
+
+  /* =========================
+     SERVICE LIST
+  ========================== */
+
+  .service-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.75rem;
+  }
+
+
+  .service-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.7rem;
+
+    color: #d1d5db;
+
+    font-size: 0.8rem;
+  }
+
+
+  .service-item span {
+    flex-shrink: 0;
+
+    color: #8b5cf6;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+  }
+
+
+  .service-item p {
+    margin: 0;
+  }
+
+
+  /* =========================
+     MAIN CTA
+  ========================== */
+
+  .service-main-cta {
+    padding: 0.95rem 1.75rem;
+
+    border-radius: 0.8rem;
+
+    border: 1px solid rgba(139, 92, 246, 0.35);
+
+    background: rgba(124, 58, 237, 0.1);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+
+    transition:
+      background 0.3s ease,
+      border-color 0.3s ease,
+      gap 0.3s ease;
+  }
+
+
+  .service-main-cta:hover {
+    background: rgba(124, 58, 237, 0.2);
+
+    border-color: rgba(139, 92, 246, 0.6);
+
+    gap: 1rem;
+  }
+
+
+  .service-main-cta-arrow {
+    color: #a78bfa;
+
+    font-size: 1rem;
+
+    transition: transform 0.3s ease;
+  }
+
+
+  .service-main-cta:hover .service-main-cta-arrow {
+    transform: translateX(3px);
+  }
+
+
+  /* =========================
+     MOBILE
+  ========================== */
+
+  @media (max-width: 767px) {
+
+    .service-card {
+      min-height: auto;
+
+      padding: 1.75rem;
+
+      border-radius: 1.25rem;
+    }
+
+
+    .service-title {
+      font-size: 1.3rem;
+    }
+
+
+    .service-description {
+      font-size: 0.82rem;
+    }
+
+
+    .service-main-cta {
+      width: 100%;
+
+      justify-content: center;
+    }
+
+  }
+
+</style>
+
+<!-- PROCESS SECTION -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<p class="text-purple-500 uppercase tracking-widest text-xs font-bold mb-3">Process</p>
+<h2 class="text-5xl font-bold mb-6">How We Build Together</h2>
+<p class="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">A battle-tested 6-step methodology engineered to take your project from initial concept to high-converting digital launch.</p>
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-6 gap-4">
+<div class="glass-card p-6 border-white/5">
+<span class="text-3xl font-black text-purple-900/50 block mb-6">01</span>
+<h4 class="font-bold text-lg mb-2">Discovery</h4>
+<p class="text-purple-400 text-xs font-bold mb-4 italic">We discuss your goals.</p>
+<p class="text-gray-500 text-[11px] leading-relaxed">We begin with an in-depth consultation to analyze your business goals, target audience, brand positioning, and key project deliverables.</p>
+</div>
+<div class="glass-card p-6 border-white/5">
+<span class="text-3xl font-black text-purple-900/50 block mb-6">02</span>
+<h4 class="font-bold text-lg mb-2">Research</h4>
+<p class="text-purple-400 text-xs font-bold mb-4 italic">Auditing competitors & user needs.</p>
+<p class="text-gray-500 text-[11px] leading-relaxed">I conduct competitor benchmarks, user persona research, and market analysis to identify strategic opportunities for differentiation.</p>
+</div>
+<div class="glass-card p-6 border-white/5">
+<span class="text-3xl font-black text-purple-900/50 block mb-6">03</span>
+<h4 class="font-bold text-lg mb-2">Design</h4>
+<p class="text-purple-400 text-xs font-bold mb-4 italic">Crafting modern visual concepts.</p>
+<p class="text-gray-500 text-[11px] leading-relaxed">Developing wireframes, mood boards, and polished UI screens in Figma, incorporating your feedback until every pixel feels right.</p>
+</div>
+<div class="glass-card p-6 border-white/5">
+<span class="text-3xl font-black text-purple-900/50 block mb-6">04</span>
+<h4 class="font-bold text-lg mb-2">Development</h4>
+<p class="text-purple-400 text-xs font-bold mb-4 italic">Building clean, fast code.</p>
+<p class="text-gray-500 text-[11px] leading-relaxed">Translating approved designs into lightning-fast, fully responsive websites with clean code, CMS controls, and seamless animations.</p>
+</div>
+<div class="glass-card p-6 border-white/5">
+<span class="text-3xl font-black text-purple-900/50 block mb-6">05</span>
+<h4 class="font-bold text-lg mb-2">Testing</h4>
+<p class="text-purple-400 text-xs font-bold mb-4 italic">Rigorously testing quality & speed.</p>
+<p class="text-gray-500 text-[11px] leading-relaxed">Cross-browser testing, mobile responsiveness checks, speed optimization, SEO auditing, and security checks prior to release.</p>
+</div>
+<div class="glass-card p-6 border-white/5">
+<span class="text-3xl font-black text-purple-900/50 block mb-6">06</span>
+<h4 class="font-bold text-lg mb-2">Launch</h4>
+<p class="text-purple-400 text-xs font-bold mb-4 italic">Deploying & growing your brand.</p>
+<p class="text-gray-500 text-[11px] leading-relaxed">Flawless server deployment, analytics setup, staff training, and ongoing strategic support to ensure long-term business success.</p>
+</div>
+</div>
+</section>
+
+<!-- =========================================
+     ABOUT SECTION
+========================================= -->
+<section id="about" class="py-24 px-6 bg-[#050505] text-white">
+
+  <div class="max-w-7xl mx-auto">
+
+    <!-- =====================================
+         SECTION HEADER
+    ====================================== -->
+    <div class="mb-12 max-w-3xl">
+
+      <p class="text-purple-500 uppercase tracking-[0.28em] text-[10px] font-bold mb-3">
+        About
+      </p>
+
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+        About Sumaima Zakir
+      </h2>
+
+      <p class="text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl">
+        Bridging pixel-perfect design with strategic marketing to help
+        brands scale worldwide.
+      </p>
+
+    </div>
+
+
+    <!-- =====================================
+         MAIN ABOUT GRID
+    ====================================== -->
+    <div class="grid grid-cols-1 lg:grid-cols-[1.8fr_1fr] gap-6">
+
+
+      <!-- ===================================
+           LEFT — ABOUT ME
+      ==================================== -->
+      <div class="about-main-card">
+
+
+        <!-- Profile Header -->
+        <div class="flex items-center gap-4 mb-8">
+
+          <div class="about-avatar">
+            SZ
+          </div>
+
+          <div>
+
+            <h3 class="text-lg md:text-xl font-bold text-white">
+              Sumaima Zakir
+            </h3>
+
+            <p class="text-[9px] md:text-[10px] text-purple-400 font-semibold">
+              Digital Designer, Web Developer & Marketing Strategist
+            </p>
 
           </div>
 
         </div>
 
-      </div>
 
-    </section>
+        <!-- About Text -->
+        <div class="max-w-2xl">
 
+          <p class="text-gray-400 text-sm leading-7">
 
-    <!-- ================= AVAILABILITY ================= -->
-    <section class="py-24 border-t border-white/10">
+            I'm Sumaima Zakir, a multidisciplinary Digital Designer,
+            Web Developer, and Marketing Strategist with 5+ years of
+            experience helping businesses turn ideas into meaningful
+            digital experiences.
 
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          </p>
 
-        <div class="max-w-3xl">
+          <p class="text-gray-400 text-sm leading-7 mt-4">
 
-          <span class="text-sm font-semibold uppercase tracking-widest text-accent">
-            Availability
-          </span>
+            My work sits at the intersection of design, technology,
+            and strategy — from branding and websites to UI/UX and
+            digital marketing. I focus on creating work that not only
+            looks good, but communicates clearly, connects with people,
+            and supports real business goals.
 
-          <h2 class="mt-4 text-3xl sm:text-4xl font-bold">
-            Available for new projects.
-          </h2>
-
-          <p class="mt-6 text-gray-400 leading-8">
-            I work with businesses, startups, entrepreneurs, and teams on
-            digital design, web development, branding, and marketing projects.
           </p>
 
         </div>
 
 
-        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-          <!-- Card -->
-          <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-            <p class="text-sm text-gray-500">
-              Availability
-            </p>
-
-            <p class="mt-2 font-semibold text-white">
-              Open for Projects
-            </p>
-          </div>
+        <!-- =================================
+             LOCATION / AVAILABILITY
+        ================================== -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12">
 
 
-          <!-- Card -->
-          <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-            <p class="text-sm text-gray-500">
-              Work Type
-            </p>
+          <!-- Location -->
+          <div class="about-info-card">
 
-            <p class="mt-2 font-semibold text-white">
-              Freelance & Contract
-            </p>
-          </div>
-
-
-          <!-- Card -->
-          <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-            <p class="text-sm text-gray-500">
+            <p class="about-info-label">
               Location
             </p>
 
-            <p class="mt-2 font-semibold text-white">
-              Dubai, UAE
+            <p class="about-info-value">
+              Dubai / Available Globally
             </p>
+
           </div>
 
 
-          <!-- Card -->
-          <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-            <p class="text-sm text-gray-500">
-              Remote
+          <!-- Availability -->
+          <div class="about-info-card about-availability">
+
+            <p class="about-info-label">
+              Availability
             </p>
 
-            <p class="mt-2 font-semibold text-white">
-              Worldwide
+            <p class="about-info-value text-emerald-400">
+              Available for Projects
             </p>
+
           </div>
+
 
         </div>
 
       </div>
 
-    </section>
 
 
-    <!-- ================= FAQ ================= -->
-    <section class="py-24 border-t border-white/10">
-
-      <div class="max-w-5xl mx-auto px-6 lg:px-8">
-
-        <div class="text-center">
-
-          <span class="text-sm font-semibold uppercase tracking-widest text-accent">
-            FAQ
-          </span>
-
-          <h2 class="mt-4 text-3xl sm:text-4xl font-bold">
-            Before you reach out.
-          </h2>
-
-        </div>
+      <!-- ===================================
+           RIGHT COLUMN
+      ==================================== -->
+      <div class="flex flex-col gap-6">
 
 
-        <div class="mt-14 space-y-4">
+        <!-- =================================
+             CERTIFICATIONS
+        ================================== -->
+        <div class="about-side-card">
 
-          <!-- FAQ 1 -->
-          <details class="group rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+          <div class="about-side-heading">
 
-            <summary class="cursor-pointer list-none flex items-center justify-between gap-6 font-semibold">
+            <span class="about-heading-icon">
+              ✦
+            </span>
 
-              <span>
-                What services do you offer?
-              </span>
+            <h3>
+              Certifications
+            </h3>
 
-              <span class="text-accent text-xl group-open:rotate-45 transition">
-                +
-              </span>
-
-            </summary>
-
-            <p class="mt-4 text-gray-400 leading-7">
-              I offer web design and development, WordPress development,
-              UI/UX design, brand identity, graphic design, social media
-              management, digital marketing, and SEO.
-            </p>
-
-          </details>
+          </div>
 
 
-          <!-- FAQ 2 -->
-          <details class="group rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+          <div class="certification-list">
 
-            <summary class="cursor-pointer list-none flex items-center justify-between gap-6 font-semibold">
+            <div class="certification-item">
+              <span>Google Digital Marketing Specialist</span>
+            </div>
 
-              <span>
-                How long does a typical project take?
-              </span>
+            <div class="certification-item">
+              <span>Meta Certified Media Associate</span>
+            </div>
 
-              <span class="text-accent text-xl group-open:rotate-45 transition">
-                +
-              </span>
+            <div class="certification-item">
+              <span>HubSpot Content Marketing</span>
+            </div>
 
-            </summary>
+            <div class="certification-item">
+              <span>Responsive Web Design — FreeCodeCamp</span>
+            </div>
 
-            <p class="mt-4 text-gray-400 leading-7">
-              Project timelines depend on the scope, number of deliverables,
-              revisions, and overall requirements. After reviewing your
-              project, I can provide a more suitable timeline.
-            </p>
+            <div class="certification-item">
+              <span>Marketing Analytics — University of Virginia</span>
+            </div>
 
-          </details>
+            <div class="certification-item">
+              <span>The Strategy of Content Marketing — UC Davis</span>
+            </div>
 
-
-          <!-- FAQ 3 -->
-          <details class="group rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-
-            <summary class="cursor-pointer list-none flex items-center justify-between gap-6 font-semibold">
-
-              <span>
-                Do you work with clients outside the UAE?
-              </span>
-
-              <span class="text-accent text-xl group-open:rotate-45 transition">
-                +
-              </span>
-
-            </summary>
-
-            <p class="mt-4 text-gray-400 leading-7">
-              Yes. I am available for remote freelance and contract projects
-              with clients and teams worldwide.
-            </p>
-
-          </details>
-
-
-          <!-- FAQ 4 -->
-          <details class="group rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-
-            <summary class="cursor-pointer list-none flex items-center justify-between gap-6 font-semibold">
-
-              <span>
-                Do you offer support after launch?
-              </span>
-
-              <span class="text-accent text-xl group-open:rotate-45 transition">
-                +
-              </span>
-
-            </summary>
-
-            <p class="mt-4 text-gray-400 leading-7">
-              Post-launch support can be discussed depending on the project
-              and the type of ongoing assistance required.
-            </p>
-
-          </details>
+          </div>
 
         </div>
 
-      </div>
-
-    </section>
 
 
-    <!-- ================= FINAL CTA ================= -->
-    <section class="py-24 border-t border-white/10">
+        <!-- =================================
+             EXPERTISE & TOOLS
+        ================================== -->
+        <div class="about-side-card">
 
-      <div class="max-w-5xl mx-auto px-6 lg:px-8">
+          <div class="about-side-heading">
 
-        <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-8 sm:p-12 lg:p-16 text-center">
+            <span class="about-heading-icon">
+              ⚙
+            </span>
 
-          <div class="absolute inset-0 bg-accent/5 pointer-events-none"></div>
+            <h3>
+              Expertise & Tools
+            </h3>
 
-          <div class="relative">
+          </div>
 
-            <p class="text-sm font-semibold uppercase tracking-widest text-accent">
-              Start a Conversation
+
+          <!-- Design -->
+          <div class="skill-group">
+
+            <p class="skill-group-title design">
+              Design & UI/UX
             </p>
 
-            <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold">
-              Have a project in mind?
-            </h2>
+            <div class="skill-tags">
 
-            <p class="mt-5 max-w-2xl mx-auto text-gray-400 leading-8">
-              Share a few details about what you're building and I'll take
-              it from there.
+              <span>Adobe Photoshop</span>
+              <span>Illustrator</span>
+              <span>InDesign</span>
+              <span>Figma</span>
+              <span>UI/UX Design</span>
+              <span>Branding</span>
+              <span>Wireframes</span>
+              <span>Layout</span>
+
+            </div>
+
+          </div>
+
+
+          <!-- Web -->
+          <div class="skill-group">
+
+            <p class="skill-group-title web">
+              Web Development
             </p>
 
-            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <div class="skill-tags">
 
-              <a
-                href="#contact-form"
-                class="inline-flex items-center justify-center rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-white hover:bg-[#6d4ff0] transition"
-              >
-                Start a Project
-              </a>
+              <span>HTML/CSS</span>
+              <span>JavaScript</span>
+              <span>Responsive Design</span>
+              <span>SEO Optimization</span>
+              <span>Web Performance</span>
+              <span>Git</span>
 
-              <a
-                href="mailto:hello@sumaimazakir.pro"
-                class="inline-flex items-center justify-center rounded-full border border-white/15 px-7 py-3.5 text-sm font-semibold text-white hover:bg-white/5 transition"
-              >
-                Email Me
-              </a>
+            </div>
+
+          </div>
+
+
+          <!-- Marketing -->
+          <div class="skill-group">
+
+            <p class="skill-group-title marketing">
+              Marketing & Social
+            </p>
+
+            <div class="skill-tags">
+
+              <span>Social Strategy</span>
+              <span>Content Creation</span>
+              <span>SEO Basics</span>
+              <span>Google Analytics</span>
+              <span>Copywriting</span>
 
             </div>
 
@@ -751,205 +1983,1031 @@
 
         </div>
 
-      </div>
-
-    </section>
-
-  </main>
 
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="border-t border-white/10">
+        <!-- =================================
+             CLIENT SECTORS
+        ================================== -->
+        <div class="about-side-card">
 
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-14">
+          <div class="about-side-heading">
 
-      <div class="grid md:grid-cols-3 gap-10">
+            <span class="about-heading-icon">
+              ◈
+            </span>
 
-        <!-- Brand -->
-        <div>
+            <h3>
+              Client Sectors
+            </h3>
 
-          <a
-            href="index.html"
-            class="text-lg font-bold"
-          >
-            Sumaima Zakir<span class="text-accent">.</span>
-          </a>
-
-          <p class="mt-4 max-w-sm text-sm leading-7 text-gray-500">
-            Digital designer, web developer, and marketing strategist
-            helping businesses build stronger digital experiences.
-          </p>
-
-        </div>
+          </div>
 
 
-        <!-- Navigation -->
-        <div>
+          <div class="sector-grid">
 
-          <h3 class="text-sm font-semibold text-white">
-            Navigation
-          </h3>
+            <span>Healthcare</span>
+            <span>Education</span>
 
-          <ul class="mt-4 space-y-3 text-sm text-gray-500">
+            <span>Retail & E-Commerce</span>
+            <span>Real Estate</span>
 
-            <li>
-              <a
-                href="index.html"
-                class="hover:text-white transition"
-              >
-                Home
-              </a>
-            </li>
+            <span>Technology</span>
+            <span>Agencies</span>
 
-            <li>
-              <a
-                href="About.html"
-                class="hover:text-white transition"
-              >
-                About
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="Portfolio.html"
-                class="hover:text-white transition"
-              >
-                Portfolio
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="Services.html"
-                class="hover:text-white transition"
-              >
-                Services
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="Resume.html"
-                class="hover:text-white transition"
-              >
-                Resume
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="Contact.html"
-                class="hover:text-white transition"
-              >
-                Contact
-              </a>
-            </li>
-
-          </ul>
+          </div>
 
         </div>
 
-
-        <!-- Services -->
-        <div>
-
-          <h3 class="text-sm font-semibold text-white">
-            Services
-          </h3>
-
-          <ul class="mt-4 space-y-3 text-sm text-gray-500">
-
-            <li>
-              <a
-                href="Services.html"
-                class="hover:text-white transition"
-              >
-                Web Design & Development
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="Services.html"
-                class="hover:text-white transition"
-              >
-                WordPress Development
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="Services.html"
-                class="hover:text-white transition"
-              >
-                UI/UX & Branding
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="Services.html"
-                class="hover:text-white transition"
-              >
-                Social Media & Marketing
-              </a>
-            </li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-
-      <!-- Bottom Footer -->
-      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-
-        <p class="text-xs text-gray-600">
-          © 2026 Sumaima Zakir. All rights reserved.
-        </p>
-
-
-        <!-- Social Links -->
-        <div class="flex items-center gap-5 text-sm text-gray-500">
-
-          <!-- Replace # with your real URLs -->
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hover:text-white transition"
-          >
-            LinkedIn
-          </a>
-
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hover:text-white transition"
-          >
-            GitHub
-          </a>
-
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hover:text-white transition"
-          >
-            Instagram
-          </a>
-
-        </div>
 
       </div>
 
     </div>
 
-  </footer>
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     ABOUT SECTION STYLES
+========================================= -->
+<style>
+
+  /* =====================================
+     MAIN ABOUT CARD
+  ====================================== */
+
+  .about-main-card {
+
+    position: relative;
+
+    min-height: 500px;
+
+    padding: 2rem;
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    border-radius: 1rem;
+
+    background: rgba(255,255,255,0.025);
+
+    display: flex;
+
+    flex-direction: column;
+
+  }
+
+
+  /* =====================================
+     AVATAR
+  ====================================== */
+
+  .about-avatar {
+
+    width: 2.75rem;
+    height: 2.75rem;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(124,58,237,0.18);
+
+    border: 1px solid rgba(139,92,246,0.35);
+
+    color: #c4b5fd;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+  }
+
+
+  /* =====================================
+     INFO CARDS
+  ====================================== */
+
+  .about-info-card {
+
+    padding: 1rem 1.1rem;
+
+    border-radius: 0.8rem;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    background: rgba(255,255,255,0.035);
+
+  }
+
+
+  .about-availability {
+
+    border-color: rgba(16,185,129,0.18);
+
+    background: rgba(16,185,129,0.035);
+
+  }
+
+
+  .about-info-label {
+
+    margin-bottom: 0.4rem;
+
+    color: #6b7280;
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+  }
+
+
+  .about-info-value {
+
+    color: #e5e7eb;
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+
+  }
+
+
+  /* =====================================
+     SIDE CARDS
+  ====================================== */
+
+  .about-side-card {
+
+    padding: 1.5rem;
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    border-radius: 1rem;
+
+    background: rgba(255,255,255,0.025);
+
+  }
+
+
+  /* =====================================
+     SIDE HEADINGS
+  ====================================== */
+
+  .about-side-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.65rem;
+
+    margin-bottom: 1.15rem;
+
+  }
+
+
+  .about-side-heading h3 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+  }
+
+
+  .about-heading-icon {
+
+    color: #a78bfa;
+
+    font-size: 0.75rem;
+
+  }
+
+
+  /* =====================================
+     CERTIFICATIONS
+  ====================================== */
+
+  .certification-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.5rem;
+
+  }
+
+
+  .certification-item {
+
+    padding: 0.6rem 0.7rem;
+
+    border: 1px solid rgba(255,255,255,0.07);
+
+    border-radius: 0.5rem;
+
+    background: rgba(255,255,255,0.025);
+
+    color: #d1d5db;
+
+    font-size: 0.65rem;
+
+    line-height: 1.35;
+
+    transition:
+      border-color 0.25s ease,
+      background 0.25s ease;
+
+  }
+
+
+  .certification-item:hover {
+
+    border-color: rgba(139,92,246,0.3);
+
+    background: rgba(124,58,237,0.05);
+
+  }
+
+
+  /* =====================================
+     SKILL GROUP
+  ====================================== */
+
+  .skill-group {
+
+    margin-bottom: 1rem;
+
+  }
+
+
+  .skill-group:last-child {
+
+    margin-bottom: 0;
+
+  }
+
+
+  .skill-group-title {
+
+    margin-bottom: 0.55rem;
+
+    font-size: 0.5rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+
+  }
+
+
+  .skill-group-title.design {
+
+    color: #a78bfa;
+
+  }
+
+
+  .skill-group-title.web {
+
+    color: #60a5fa;
+
+  }
+
+
+  .skill-group-title.marketing {
+
+    color: #34d399;
+
+  }
+
+
+  /* =====================================
+     SKILL TAGS
+  ====================================== */
+
+  .skill-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.35rem;
+
+  }
+
+
+  .skill-tags span {
+
+    padding: 0.35rem 0.5rem;
+
+    border-radius: 0.35rem;
+
+    border: 1px solid rgba(255,255,255,0.07);
+
+    background: rgba(255,255,255,0.025);
+
+    color: #bfc3ca;
+
+    font-size: 0.55rem;
+
+    line-height: 1;
+
+  }
+
+
+  /* =====================================
+     CLIENT SECTORS
+  ====================================== */
+
+  .sector-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 0.6rem 1rem;
+
+  }
+
+
+  .sector-grid span {
+
+    position: relative;
+
+    padding-left: 0.8rem;
+
+    color: #9ca3af;
+
+    font-size: 0.62rem;
+
+  }
+
+
+  .sector-grid span::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 50%;
+
+    width: 3px;
+
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #8b5cf6;
+
+    transform: translateY(-50%);
+
+  }
+
+
+  /* =====================================
+     HOVER EFFECT
+  ====================================== */
+
+  .about-main-card,
+  .about-side-card {
+
+    transition:
+      border-color 0.3s ease,
+      background 0.3s ease;
+
+  }
+
+
+  .about-main-card:hover,
+  .about-side-card:hover {
+
+    border-color: rgba(139,92,246,0.2);
+
+  }
+
+
+  /* =====================================
+     TABLET
+  ====================================== */
+
+  @media (max-width: 1023px) {
+
+    .about-main-card {
+
+      min-height: auto;
+
+    }
+
+  }
+
+
+  /* =====================================
+     MOBILE
+  ====================================== */
+
+  @media (max-width: 639px) {
+
+    .about-main-card {
+
+      padding: 1.5rem;
+
+      border-radius: 0.9rem;
+
+    }
+
+
+    .about-side-card {
+
+      padding: 1.25rem;
+
+      border-radius: 0.9rem;
+
+    }
+
+
+    .sector-grid {
+
+      gap: 0.55rem;
+
+    }
+
+  }
+
+</style>
+
+
+<!-- =========================================
+     TESTIMONIALS SECTION
+========================================= -->
+<section id="testimonials" class="py-24 px-6 bg-[#050505] text-white">
+
+  <div class="max-w-7xl mx-auto">
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+    <div class="text-center mb-14">
+
+      <p class="text-purple-500 uppercase tracking-[0.3em] text-xs font-bold mb-3">
+        Testimonials
+      </p>
+
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-5">
+        What Clients Say
+      </h2>
+
+      <p class="text-gray-400 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+        Feedback from clients and collaborators on design, development,
+        and digital projects.
+      </p>
+
+    </div>
+
+
+    <!-- =====================================
+         TESTIMONIAL GRID
+    ====================================== -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+
+      <!-- ===================================
+           TESTIMONIAL 01
+      ==================================== -->
+      <article class="testimonial-card">
+
+        <div class="testimonial-quote">
+          “
+        </div>
+
+        <!-- Rating -->
+        <div class="flex text-amber-400 text-sm tracking-wider mb-7">
+          ★★★★★
+        </div>
+
+        <!-- Testimonial -->
+        <p class="testimonial-text">
+          “Sumaima understood what we needed and turned our ideas into
+          a clean, professional digital experience. She was responsive,
+          creative, and easy to work with throughout the project.”
+        </p>
+
+        <!-- Client -->
+        <div class="testimonial-client">
+
+          <img
+            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150"
+            alt="Client"
+            class="testimonial-avatar"
+          >
+
+          <div>
+
+            <p class="testimonial-name">
+              Sarah Jenkins
+              <span class="text-emerald-400 ml-1">✓</span>
+            </p>
+
+            <p class="testimonial-role">
+              CEO & Founder, PulseCare Health
+            </p>
+
+            <p class="testimonial-industry">
+              Healthcare
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ===================================
+           TESTIMONIAL 02
+      ==================================== -->
+      <article class="testimonial-card">
+
+        <div class="testimonial-quote">
+          “
+        </div>
+
+        <!-- Rating -->
+        <div class="flex text-amber-400 text-sm tracking-wider mb-7">
+          ★★★★★
+        </div>
+
+        <!-- Testimonial -->
+        <p class="testimonial-text">
+          “Sumaima brought a strong design perspective to the project
+          and paid attention to details that made a real difference.
+          She delivered a polished result and communicated clearly
+          from start to finish.”
+        </p>
+
+        <!-- Client -->
+        <div class="testimonial-client">
+
+          <img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150"
+            alt="Client"
+            class="testimonial-avatar"
+          >
+
+          <div>
+
+            <p class="testimonial-name">
+              Marcus Vance
+              <span class="text-emerald-400 ml-1">✓</span>
+            </p>
+
+            <p class="testimonial-role">
+              Marketing Director, UrbanLuxe Retail
+            </p>
+
+            <p class="testimonial-industry">
+              Retail
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ===================================
+           TESTIMONIAL 03
+      ==================================== -->
+      <article class="testimonial-card">
+
+        <div class="testimonial-quote">
+          “
+        </div>
+
+        <!-- Rating -->
+        <div class="flex text-amber-400 text-sm tracking-wider mb-7">
+          ★★★★★
+        </div>
+
+        <!-- Testimonial -->
+        <p class="testimonial-text">
+          “Working with Sumaima made the process much easier than expected.
+          She combined design, web development, and marketing thinking
+          really well and gave our project a clear visual direction.”
+        </p>
+
+        <!-- Client -->
+        <div class="testimonial-client">
+
+          <img
+            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150"
+            alt="Client"
+            class="testimonial-avatar"
+          >
+
+          <div>
+
+            <p class="testimonial-name">
+              Emily Carter
+              <span class="text-emerald-400 ml-1">✓</span>
+            </p>
+
+            <p class="testimonial-role">
+              Founder, BrightPath Education
+            </p>
+
+            <p class="testimonial-industry">
+              Education
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     TESTIMONIAL STYLES
+========================================= -->
+<style>
+
+  /* =====================================
+     TESTIMONIAL CARD
+  ====================================== */
+
+  .testimonial-card {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 430px;
+
+    padding: 2rem;
+
+    border-radius: 1.25rem;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    background: rgba(255,255,255,0.025);
+
+    overflow: hidden;
+
+    transition:
+      transform 0.35s ease,
+      border-color 0.35s ease,
+      background 0.35s ease;
+
+  }
+
+
+  .testimonial-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: rgba(139,92,246,0.3);
+
+    background: rgba(255,255,255,0.04);
+
+  }
+
+
+  /* =====================================
+     QUOTE MARK
+  ====================================== */
+
+  .testimonial-quote {
+
+    position: absolute;
+
+    top: 1rem;
+
+    right: 1.5rem;
+
+    color: rgba(255,255,255,0.045);
+
+    font-family: Georgia, serif;
+
+    font-size: 5rem;
+
+    font-style: italic;
+
+    line-height: 1;
+
+    pointer-events: none;
+
+  }
+
+
+  /* =====================================
+     TESTIMONIAL TEXT
+  ====================================== */
+
+  .testimonial-text {
+
+    position: relative;
+
+    z-index: 1;
+
+    margin-bottom: 2rem;
+
+    color: #d1d5db;
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+
+  }
+
+
+  /* =====================================
+     CLIENT
+  ====================================== */
+
+  .testimonial-client {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.85rem;
+
+    margin-top: auto;
+
+  }
+
+
+  .testimonial-avatar {
+
+    width: 2.75rem;
+
+    height: 2.75rem;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+  }
+
+
+  .testimonial-name {
+
+    margin: 0 0 0.25rem;
+
+    color: #ffffff;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+  }
+
+
+  .testimonial-role {
+
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 0.55rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    line-height: 1.5;
+
+    text-transform: uppercase;
+
+  }
+
+
+  .testimonial-industry {
+
+    margin-top: 0.15rem;
+
+    color: #a78bfa;
+
+    font-size: 0.55rem;
+
+  }
+
+
+  /* =====================================
+     MOBILE
+  ====================================== */
+
+  @media (max-width: 767px) {
+
+    .testimonial-card {
+
+      min-height: auto;
+
+      padding: 1.5rem;
+
+    }
+
+
+    .testimonial-text {
+
+      font-size: 0.875rem;
+
+    }
+
+  }
+
+</style>
+
+<!-- CONTACT SECTION -->
+<section class="py-24 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-20">
+<div>
+<p class="text-purple-500 uppercase tracking-widest text-xs font-bold mb-3">Get In Touch</p>
+<h2 class="text-6xl font-black mb-8">Let's Build Something Great Together.</h2>
+<p class="text-gray-400 text-xl leading-relaxed mb-12">Have a new project, website redesign, or digital marketing inquiry? Select an option below to connect directly with Sumaima Zakir.</p>
+
+<div class="space-y-4">
+<div class="glass-card p-8 flex items-center gap-6 border-purple-500/20 bg-purple-500/5">
+<div class="w-12 h-12 bg-purple-900/30 rounded-xl flex items-center justify-center">
+<svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+</div>
+<div>
+<p class="font-bold mb-1">Book a 15-Min Discovery Call</p>
+<p class="text-xs text-gray-500 mb-4">Fastest way to get project scope, estimated timeline, and fixed quote assessment.</p>
+<button class="btn-primary px-6 py-2 rounded-lg text-sm font-bold flex items-center gap-2">Schedule Free Call <span>→</span></button>
+</div>
+</div>
+
+<div class="grid md:grid-cols-2 gap-4">
+<div class="glass-card p-6 flex items-center gap-4">
+<div class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-gray-400">@</div>
+<div>
+<p class="text-[10px] font-bold text-gray-500 uppercase">Email Directly</p>
+<p class="text-sm font-bold truncate">sumaimazakir@hotmail.com</p>
+</div>
+</div>
+<div class="glass-card p-6 flex items-center gap-4">
+<div class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center text-gray-400">W</div>
+<div>
+<p class="text-[10px] font-bold text-gray-500 uppercase">WhatsApp Chat</p>
+<p class="text-sm font-bold">Instant Messaging</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="glass-card p-12">
+<h3 class="text-2xl font-bold mb-2">Send a Message</h3>
+<p class="text-gray-500 text-sm mb-10">Fill out the form below and Sumaima will respond within 12 hours.</p>
+
+<form class="space-y-6">
+<div>
+<label class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-3">Your Full Name *</label>
+<input type="text" placeholder="e.g. Sarah Jenkins" class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 outline-none focus:border-purple-500 transition">
+</div>
+<div>
+<label class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-3">Email Address *</label>
+<input type="email" placeholder="sarah@example.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 outline-none focus:border-purple-500 transition">
+</div>
+<div>
+<label class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-3">Required Service</label>
+<select class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 outline-none focus:border-purple-500 transition appearance-none">
+<option>Web Design & Development</option>
+<option>UI/UX Design</option>
+<option>WordPress Development</option>
+<option>Brand Identity</option>
+</select>
+</div>
+<div>
+<label class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-3">Project Details & Goals</label>
+<textarea rows="4" placeholder="Briefly describe your project goals, scope, or timeline..." class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 outline-none focus:border-purple-500 transition"></textarea>
+</div>
+<button class="w-full btn-primary py-5 rounded-xl font-bold flex items-center justify-center gap-2">Send Inquiry Message <span>➤</span></button>
+</form>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-20 px-6 border-t border-white/5 max-w-7xl mx-auto">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-purple-900/50 rounded-full flex items-center justify-center border border-purple-500/30 text-purple-300 font-bold">SZ</div>
+<h1 class="font-bold text-lg">Sumaima Zakir<span class="text-purple-500">.</span></h1>
+</div>
+<p class="text-gray-500 text-sm leading-relaxed">Designing digital experiences that grow businesses. Delivering high-performing websites, visual identity, and growth marketing strategies.</p>
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-xs font-bold"><span class="text-purple-500 italic">Location:</span> UAE / Remote Global</div>
+<div class="flex items-center gap-2 text-xs font-bold"><span class="text-emerald-400">Status:</span> Available for Q3/Q4 Projects</div>
+</div>
+</div>
+
+<div>
+<h4 class="font-bold uppercase text-[10px] tracking-widest text-gray-600 mb-8">Navigation</h4>
+<ul class="space-y-4">
+<li><a href="index.html" class="nav-link">Home</a></li>
+<li><a href="About.html" class="nav-link">About</a></li>
+<li><a href="Portfolio.html" class="nav-link">Portfolio</a></li>
+<li><a href="Services.html" class="nav-link">Services</a></li>
+<li><a href="Resume.html" class="nav-link">Resume</a></li>
+<li><a href="Contact.html" class="nav-link">Contact</a></li>
+</ul>
+</div>
+
+<div>
+<h4 class="font-bold uppercase text-[10px] tracking-widest text-gray-600 mb-8">Services Offered</h4>
+<ul class="space-y-4">
+<li><a href="#" class="nav-link">Web Design & Development</a></li>
+<li><a href="#" class="nav-link">UI/UX Prototyping</a></li>
+<li><a href="#" class="nav-link">WordPress Development</a></li>
+<li><a href="#" class="nav-link">Brand Identity Design</a></li>
+<li><a href="#" class="nav-link">Social Media Management</a></li>
+<li><a href="#" class="nav-link">Digital Marketing & SEO</a></li>
+</ul>
+</div>
+
+<div class="space-y-8">
+<div>
+<h4 class="font-bold uppercase text-[10px] tracking-widest text-gray-600 mb-8">Connect</h4>
+<div class="flex gap-4">
+<a href="#" class="w-10 h-10 glass-card flex items-center justify-center hover:bg-purple-600 transition">in</a>
+<a href="#" class="w-10 h-10 glass-card flex items-center justify-center hover:bg-purple-600 transition">ig</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-[10px] font-bold text-gray-600">© 2026 Sumaima Zakir. All Rights Reserved.</p>
+<p class="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Designed & Engineered for Digital Growth</p>
+</div>
+</footer>
+
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-[#7C5DFA] rounded-full flex items-center justify-center opacity-0 translate-y-10 transition-all duration-500 z-[100] shadow-[0_0_20px_rgba(124,93,250,0.5)]">
+    <span class="text-white text-xl">↑</span>
+</button>
+
+<style>
+    #backToTop.show {
+        opacity: 1;
+        translate-y: 0;
+    }
+    const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 400) {
+        backToTop.classList.add("show");
+        backToTop.style.transform = "translateY(0)";
+    } else {
+        backToTop.classList.remove("show");
+        backToTop.style.transform = "translateY(40px)";
+    }
+});
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+    
+</style>
 
 </body>
 </html>
-
