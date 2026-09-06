@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Portfolio | Sumaima Zakir</title>
+    <meta name="description" content="Selected digital design, web development, UI/UX, branding, social media, and marketing projects by Sumaima Zakir.">
+
+    <link rel="icon" type="image/png" href="favicon.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -17,25 +20,42 @@
     <style>
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
             font-family: "Inter", sans-serif;
             background: #000;
             color: #fff;
-
             background-image:
-                linear-gradient(
-                    rgba(255,255,255,0.025) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(255,255,255,0.025) 1px,
-                    transparent 1px
-                );
-
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
             background-size: 50px 50px;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button,
+        a,
+        input,
+        textarea,
+        select {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button,
+        a {
+            touch-action: manipulation;
         }
 
         .nav-link {
@@ -57,11 +77,44 @@
             box-shadow: 0 0 30px rgba(124, 93, 250, 0.6);
         }
 
+        .mobile-menu-button {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.10);
+            background: rgba(255,255,255,0.04);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: rgba(0,0,0,0.96);
+            backdrop-filter: blur(16px);
+        }
+
+        .mobile-nav-link {
+            display: block;
+            min-height: 44px;
+            padding: 12px 14px;
+            border-radius: 12px;
+            color: rgba(255,255,255,0.70);
+            transition: all 0.25s ease;
+        }
+
+        .mobile-nav-link:hover,
+        .mobile-nav-link.active {
+            color: #fff;
+            background: rgba(124,93,250,0.10);
+        }
+
         .filter-btn {
             background: #09090b;
             border: 1px solid rgba(255,255,255,0.10);
             color: #71717a;
             padding: 10px 22px;
+            min-height: 44px;
             border-radius: 9999px;
             font-size: 12px;
             font-weight: 700;
@@ -84,9 +137,7 @@
         }
 
         .project-card {
-            transition:
-                opacity 0.35s ease,
-                transform 0.35s ease;
+            transition: opacity 0.35s ease, transform 0.35s ease;
         }
 
         .project-card.hidden-project {
@@ -95,13 +146,13 @@
 
         .project-button {
             width: 100%;
+            min-height: 100%;
             text-align: left;
             cursor: pointer;
             background: rgba(24, 24, 27, 0.50);
             border: 1px solid rgba(255,255,255,0.06);
             border-radius: 32px;
             overflow: hidden;
-
             transition:
                 border-color 0.35s ease,
                 transform 0.35s ease,
@@ -124,7 +175,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
             transition: transform 0.6s ease;
         }
 
@@ -136,24 +186,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                to top,
-                rgba(0,0,0,0.25),
-                transparent 60%
-            );
-            pointer-events: none;
-        }
-
-        .image-placeholder {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255,255,255,0.20);
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
+            background: linear-gradient(to top, rgba(0,0,0,0.25), transparent 60%);
             pointer-events: none;
         }
 
@@ -246,7 +279,6 @@
             object-fit: cover;
             border-radius: 20px;
             border: 1px solid rgba(255,255,255,0.08);
-            display: block;
         }
 
         .modal-section {
@@ -290,7 +322,6 @@
         .modal-gallery-item img {
             width: 100%;
             height: auto;
-            display: block;
             transition: transform 0.4s ease;
         }
 
@@ -321,10 +352,46 @@
             transform: translateY(-3px);
         }
 
-        @media (max-width: 640px) {
-            .filter-btn {
-                padding: 9px 15px;
-                font-size: 10px;
+        @media (max-width: 767px) {
+            html,
+            body {
+                overflow-x: hidden;
+            }
+
+            section,
+            main,
+            footer {
+                max-width: 100%;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            p,
+            a,
+            span {
+                overflow-wrap: break-word;
+            }
+
+            .purple-glow-btn:hover,
+            .filter-btn:hover,
+            .project-button:hover,
+            .footer-social:hover {
+                transform: none;
+            }
+
+            .project-button {
+                border-radius: 24px;
+            }
+
+            .modal-content {
+                max-height: 94vh;
+                border-radius: 20px;
+            }
+
+            .modal-close {
+                margin: 12px 12px 0 0;
             }
 
             .modal-gallery {
@@ -332,11 +399,34 @@
             }
 
             .project-modal {
-                padding: 10px;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .filter-btn {
+                padding: 9px 14px;
+                font-size: 10px;
             }
 
-            .modal-content {
+            .modal-hero-image {
+                border-radius: 14px;
+            }
+        }
+
+        @media (max-width: 374px) {
+            .filter-btn {
+                font-size: 9px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .project-button {
                 border-radius: 20px;
+            }
+
+            .project-button > div:last-child {
+                padding: 20px !important;
             }
         }
     </style>
@@ -344,171 +434,139 @@
 
 <body class="min-h-screen flex flex-col">
 
-    <header
-        class="w-full border-b border-white/10 px-6 py-4 flex justify-between items-center bg-black/60 backdrop-blur-md sticky top-0 z-50"
-    >
-        <div class="flex items-center gap-3">
-            <div
-                class="w-10 h-10 rounded-full border border-purple-500/50 flex items-center justify-center text-xs font-bold text-purple-400"
-            >
-                SZ
-            </div>
+    <header class="w-full border-b border-white/10 bg-black/60 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center gap-4">
+            <a href="index.html" class="flex items-center gap-3 min-w-0">
+                <div class="w-10 h-10 shrink-0 rounded-full border border-purple-500/50 flex items-center justify-center text-xs font-bold text-purple-400">
+                    SZ
+                </div>
 
-            <div>
-                <h1 class="text-sm font-bold tracking-tight">
-                    Sumaima Zakir.
-                </h1>
+                <div class="min-w-0">
+                    <h1 class="text-sm font-bold tracking-tight">Sumaima Zakir.</h1>
+                    <p class="text-[9px] uppercase tracking-[0.2em] text-white/50">
+                        Digital Designer & Strategist
+                    </p>
+                </div>
+            </a>
 
-                <p class="text-[9px] uppercase tracking-[0.2em] text-white/50">
-                    Digital Designer & Strategist
-                </p>
+            <nav class="hidden lg:flex items-center gap-8 text-[13px] font-medium text-white/70">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="About.html" class="nav-link">About</a>
+                <a href="Portfolio.html" class="text-white border-b border-purple-500 pb-1">Portfolio</a>
+                <a href="Services.html" class="nav-link">Services</a>
+                <a href="Resume.html" class="nav-link">Resume</a>
+                <a href="Contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-2">
+                <a
+                    href="Contact.html"
+                    class="hidden sm:flex purple-glow-btn px-5 py-2.5 rounded-full text-[13px] font-bold items-center gap-2 min-h-[44px]"
+                >
+                    Start Your Project
+                </a>
+
+                <button
+                    id="mobileMenuButton"
+                    type="button"
+                    class="mobile-menu-button lg:hidden"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu"
+                    aria-label="Open menu"
+                >
+                    <span id="menuIcon">☰</span>
+                </button>
             </div>
         </div>
 
-        <nav
-            class="hidden lg:flex items-center gap-8 text-[13px] font-medium text-white/70"
-        >
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="About.html" class="nav-link">About</a>
-            <a
-                href="Portfolio.html"
-                class="text-white border-b border-purple-500 pb-1"
-            >
-                Portfolio
-            </a>
-            <a href="Services.html" class="nav-link">Services</a>
-            <a href="Resume.html" class="nav-link">Resume</a>
-            <a href="Contact.html" class="nav-link">Contact</a>
-        </nav>
+        <div id="mobileMenu" class="mobile-menu hidden lg:hidden">
+            <nav class="container mx-auto px-4 sm:px-6 py-4">
+                <div class="grid gap-1">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="About.html" class="mobile-nav-link">About</a>
+                    <a href="Portfolio.html" class="mobile-nav-link active">Portfolio</a>
+                    <a href="Services.html" class="mobile-nav-link">Services</a>
+                    <a href="Resume.html" class="mobile-nav-link">Resume</a>
+                    <a href="Contact.html" class="mobile-nav-link">Contact</a>
+                </div>
 
-        <a
-            href="Contact.html"
-            class="purple-glow-btn px-5 py-2.5 rounded-full text-[13px] font-bold flex items-center gap-2"
-        >
-            <span></span>
-            Start Your Project
-        </a>
+                <a
+                    href="Contact.html"
+                    class="purple-glow-btn mt-3 flex items-center justify-center rounded-xl px-5 py-3 text-sm font-bold min-h-[48px]"
+                >
+                    Start Your Project
+                </a>
+            </nav>
+        </div>
     </header>
 
-    <main class="flex-grow container mx-auto px-6 py-24">
+    <main class="flex-grow">
+        <section class="container mx-auto px-4 sm:px-6 pt-20 sm:pt-28 lg:pt-32 pb-10 sm:pb-14">
+            <div class="max-w-5xl">
+                <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-6 sm:mb-8">
+                    <span class="w-2 h-2 shrink-0 rounded-full bg-green-500 animate-pulse"></span>
+                    <span class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-white/70">
+                        Available for New Projects
+                    </span>
+                </div>
 
-        <section class="max-w-5xl mb-16">
-            <div
-                class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-8"
-            >
-                <span
-                    class="w-2 h-2 rounded-full bg-green-500 animate-pulse"
-                ></span>
+                <h2 class="text-[2.8rem] sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.02] mb-6 sm:mb-8 tracking-tighter">
+                    Selected <span class="text-[#7C5DFA]">Works.</span>
+                </h2>
 
-                <span
-                    class="text-[11px] font-semibold uppercase tracking-widest text-white/70"
-                >
-                    Available for New Projects
-                </span>
+                <p class="text-base sm:text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed">
+                    A selection of websites, digital products, brand identities,
+                    social media campaigns, advertisements, and creative work
+                    designed to help businesses look better and grow faster.
+                </p>
             </div>
-
-            <h2
-                class="text-6xl md:text-8xl font-extrabold leading-[1.05] mb-8 tracking-tighter"
-            >
-                Selected
-                <span class="text-[#7C5DFA]">Works.</span>
-            </h2>
-
-            <p
-                class="text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed"
-            >
-                A selection of websites, digital products, brand identities,
-                social media campaigns, advertisements, and creative work
-                designed to help businesses look better and grow faster.
-            </p>
         </section>
 
-        <div class="flex flex-wrap justify-start gap-3 mb-16">
-            <button
-                type="button"
-                class="filter-btn active"
-                onclick="filterProjects('all', this)"
-                aria-pressed="true"
-            >
-                All Projects
-            </button>
+        <section class="container mx-auto px-4 sm:px-6 pb-16 sm:pb-24" aria-label="Portfolio projects">
+            <div class="flex flex-wrap justify-start gap-2 sm:gap-3 mb-10 sm:mb-16">
+                <button type="button" class="filter-btn active" onclick="filterProjects('all', this)" aria-pressed="true">
+                    All Projects
+                </button>
 
-            <button
-                type="button"
-                class="filter-btn"
-                onclick="filterProjects('web', this)"
-                aria-pressed="false"
-            >
-                Web Development
-            </button>
+                <button type="button" class="filter-btn" onclick="filterProjects('web', this)" aria-pressed="false">
+                    Web Development
+                </button>
 
-            <button
-                type="button"
-                class="filter-btn"
-                onclick="filterProjects('uiux', this)"
-                aria-pressed="false"
-            >
-                UI/UX Design
-            </button>
+                <button type="button" class="filter-btn" onclick="filterProjects('uiux', this)" aria-pressed="false">
+                    UI/UX Design
+                </button>
 
-            <button
-                type="button"
-                class="filter-btn"
-                onclick="filterProjects('brand', this)"
-                aria-pressed="false"
-            >
-                Brand Identity
-            </button>
+                <button type="button" class="filter-btn" onclick="filterProjects('brand', this)" aria-pressed="false">
+                    Brand Identity
+                </button>
 
-            <button
-                type="button"
-                class="filter-btn"
-                onclick="filterProjects('social', this)"
-                aria-pressed="false"
-            >
-                Social Media Design
-            </button>
+                <button type="button" class="filter-btn" onclick="filterProjects('social', this)" aria-pressed="false">
+                    Social Media Design
+                </button>
 
-            <button
-                type="button"
-                class="filter-btn"
-                onclick="filterProjects('marketing', this)"
-                aria-pressed="false"
-            >
-                Growth Marketing
-            </button>
-        </div>
-
-        <div
-            id="project-grid"
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
-        ></div>
-
-        <div id="empty-category" class="empty-category mt-10">
-            <div
-                class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center"
-            >
-                <span class="text-2xl">🚀</span>
+                <button type="button" class="filter-btn" onclick="filterProjects('marketing', this)" aria-pressed="false">
+                    Growth Marketing
+                </button>
             </div>
 
-            <h3 class="text-2xl font-bold mb-3">
-                No Projects Yet
-            </h3>
+            <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10"></div>
 
-            <p
-                class="text-white/40 max-w-md mx-auto text-sm leading-relaxed"
-            >
-                Projects for this category will be added here soon.
-            </p>
-        </div>
+            <div id="empty-category" class="empty-category mt-8 sm:mt-10">
+                <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
+                    <span class="text-2xl">🚀</span>
+                </div>
+
+                <h3 class="text-2xl font-bold mb-3">No Projects Yet</h3>
+
+                <p class="text-white/40 max-w-md mx-auto text-sm leading-relaxed">
+                    Projects for this category will be added here soon.
+                </p>
+            </div>
+        </section>
     </main>
 
-    <div
-        id="projectModal"
-        class="project-modal"
-        onclick="closeModalFromBackground(event)"
-    >
-        <div class="modal-content">
+    <div id="projectModal" class="project-modal" onclick="closeModalFromBackground(event)" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
             <button
                 type="button"
                 class="modal-close"
@@ -522,137 +580,93 @@
         </div>
     </div>
 
-    <footer class="bg-black pt-24 pb-12 border-t border-white/5">
-        <div
-            class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-16 mb-24"
-        >
+    <footer class="bg-black pt-16 sm:pt-24 pb-10 sm:pb-12 border-t border-white/5">
+        <div class="container mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-12 gap-10 sm:gap-16 mb-16 sm:mb-24">
             <div class="md:col-span-4">
-                <div class="flex items-center gap-3 mb-8">
-                    <div
-                        class="w-10 h-10 rounded-full border border-purple-500/30 flex items-center justify-center text-xs font-bold text-purple-400"
-                    >
+                <div class="flex items-center gap-3 mb-6 sm:mb-8">
+                    <div class="w-10 h-10 shrink-0 rounded-full border border-purple-500/30 flex items-center justify-center text-xs font-bold text-purple-400">
                         SZ
                     </div>
 
-                    <h1 class="text-xl font-bold">
-                        Sumaima Zakir.
-                    </h1>
+                    <h1 class="text-xl font-bold">Sumaima Zakir.</h1>
                 </div>
 
-                <p
-                    class="text-white/40 text-sm leading-relaxed mb-10 max-w-xs"
-                >
+                <p class="text-white/40 text-sm leading-relaxed mb-8 sm:mb-10 max-w-xs">
                     Designing digital experiences that grow businesses.
-                    Delivering high-performing websites, visual identities,
-                    digital products, social media design, and creative work.
+                    Delivering high-performing websites, visual identity,
+                    and growth marketing strategies.
                 </p>
+
+                <div class="space-y-2 text-xs text-white/40">
+                    <p><span class="text-white/25">Location:</span> Dubai · Available Globally</p>
+                    <p><span class="text-white/25">Status:</span> Available for New Projects</p>
+                </div>
             </div>
 
             <div class="md:col-span-2">
-                <h4
-                    class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/30 mb-8"
-                >
+                <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/30 mb-6 sm:mb-8">
                     Navigation
                 </h4>
 
-                <ul class="space-y-4 text-sm text-white/50">
-                    <li>
-                        <a href="index.html" class="hover:text-white transition">
-                            Home
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="About.html" class="hover:text-white transition">
-                            About
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="Portfolio.html" class="text-white">
-                            Portfolio
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="Services.html" class="hover:text-white transition">
-                            Services
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="Resume.html" class="hover:text-white transition">
-                            Resume
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="Contact.html" class="hover:text-white transition">
-                            Contact
-                        </a>
-                    </li>
+                <ul class="space-y-3 sm:space-y-4 text-sm text-white/50">
+                    <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                    <li><a href="About.html" class="hover:text-white transition">About</a></li>
+                    <li><a href="Portfolio.html" class="text-white">Portfolio</a></li>
+                    <li><a href="Services.html" class="hover:text-white transition">Services</a></li>
+                    <li><a href="Resume.html" class="hover:text-white transition">Resume</a></li>
+                    <li><a href="Contact.html" class="hover:text-white transition">Contact</a></li>
                 </ul>
             </div>
 
             <div class="md:col-span-3">
-                <h4
-                    class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/30 mb-8"
-                >
-                    Expertise
+                <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/30 mb-6 sm:mb-8">
+                    Services Offered
                 </h4>
 
-                <ul class="space-y-4 text-sm text-white/50">
+                <ul class="space-y-3 sm:space-y-4 text-sm text-white/50">
                     <li>Web Design & Development</li>
                     <li>UI/UX Prototyping</li>
+                    <li>WordPress Development</li>
                     <li>Brand Identity Design</li>
-                    <li>Social Media Design</li>
-                    <li>Growth Marketing</li>
+                    <li>Social Media Management</li>
+                    <li>Digital Marketing & SEO</li>
                 </ul>
             </div>
 
             <div class="md:col-span-3">
-                <h4
-                    class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/30 mb-8"
-                >
+                <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/30 mb-6 sm:mb-8">
                     Let's Connect
                 </h4>
 
-                <div class="flex gap-4 mb-10">
-                    <a
-                        href="#"
-                        class="footer-social w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center"
-                    >
+                <div class="flex gap-3 sm:gap-4 mb-8 sm:mb-10">
+                    <a href="#" aria-label="LinkedIn" class="footer-social w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
                         in
                     </a>
 
-                    <a
-                        href="#"
-                        class="footer-social w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center"
-                    >
+                    <a href="#" aria-label="Instagram" class="footer-social w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
                         IG
                     </a>
                 </div>
 
                 <a
-                    href="mailto:hello@sumaima.com"
+                    href="Contact.html"
                     class="text-[#7C5DFA] border-b border-[#7C5DFA] pb-1 text-sm font-bold hover:text-white transition"
                 >
-                    
+                    Start a Conversation →
                 </a>
             </div>
         </div>
 
-        <div
-            class="container mx-auto px-6 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/30 text-[12px]"
-        >
-            <p>
+        <div class="container mx-auto px-4 sm:px-6 pt-8 sm:pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-5 sm:gap-6 text-white/30 text-[12px]">
+            <p class="text-center md:text-left">
                 © 2026 Sumaima Zakir. All Rights Reserved.
             </p>
 
             <button
                 type="button"
                 onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-                class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition"
+                class="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition"
+                aria-label="Back to top"
             >
                 ↑
             </button>
@@ -672,209 +686,116 @@
             logoDesignOne: {
                 categories: ["Brand Identity"],
                 title: "Thottle Clutch Logo Design",
-                subtitle:
-                    "Original logo concept developed for brand recognition and visual identity.",
-                tools: [
-                    "Adobe Illustrator",
-                    "Logo Design",
-                    "Typography",
-                    "Brand Identity"
-                ],
+                subtitle: "Original logo concept developed for brand recognition and visual identity.",
+                tools: ["Adobe Illustrator", "Logo Design", "Typography", "Brand Identity"],
                 hero: "Images/ThrottleCover.png",
-                challenge:
-                    "Develop a distinctive logo that is simple, memorable, and adaptable across digital and print applications.",
-                process:
-                    "The concept explored visual symbols, typography, proportion, balance, and scalable logo applications.",
-                result:
-                    "A versatile logo design with a clear and recognizable visual direction.",
-                gallery: [
-                    "Images/Throttle.png"
-                ]
+                challenge: "Develop a distinctive logo that is simple, memorable, and adaptable across digital and print applications.",
+                process: "The concept explored visual symbols, typography, proportion, balance, and scalable logo applications.",
+                result: "A versatile logo design with a clear and recognizable visual direction.",
+                gallery: ["Images/Throttle.png"]
             },
+
             mmsFitness: {
                 categories: ["Brand Identity"],
                 title: "MMS Fitness",
-                subtitle:
-                    "Brand identity card designed for a fitness and wellness business.",
-                tools: [
-                    "Adobe Illustrator",
-                    "Adobe Photoshop",
-                    "Brand Identity",
-                    "Graphic Design"
-                ],
+                subtitle: "Brand identity card designed for a fitness and wellness business.",
+                tools: ["Adobe Illustrator", "Adobe Photoshop", "Brand Identity", "Graphic Design"],
                 hero: "MMSCover.png",
-                challenge:
-                    "Create a strong and energetic visual identity that communicates fitness, motivation, and professionalism.",
-                process:
-                    "The design focused on bold typography, a powerful color palette, clear information hierarchy, and a modern fitness-oriented layout.",
-                result:
-                    "A professional brand identity card that gives MMS Fitness a memorable and confident visual presence.",
-                gallery: [
-                    "Images/MMS.png"
-                ]
+                challenge: "Create a strong and energetic visual identity that communicates fitness, motivation, and professionalism.",
+                process: "The design focused on bold typography, a powerful color palette, clear information hierarchy, and a modern fitness-oriented layout.",
+                result: "A professional brand identity card that gives MMS Fitness a memorable and confident visual presence.",
+                gallery: ["Images/MMS.png"]
             },
 
             kitsuneCybersecurity: {
-                categories: [
-                    "Web Development",
-                    "UI/UX Design"
-                ],
+                categories: ["Web Development", "UI/UX Design"],
                 title: "Kitsune Cybersecurity",
-                subtitle:
-                    "Cybersecurity website and UI/UX design created around trust, clarity, and digital protection.",
-                tools: [
-                    "WordPress",
-                    "Elementor",
-                    "Figma",
-                    "Responsive Design",
-                    "UI/UX Design"
-                ],
+                subtitle: "Cybersecurity website and UI/UX design created around trust, clarity, and digital protection.",
+                tools: ["WordPress", "Elementor", "Figma", "Responsive Design", "UI/UX Design"],
                 hero: "KitsuneCover.jpeg",
-                challenge:
-                    "Create a professional digital experience that explains cybersecurity services clearly and builds trust with potential clients.",
-                process:
-                    "The project focused on information architecture, service presentation, responsive layouts, clear calls-to-action, and a modern cyber-inspired visual system.",
-                result:
-                    "A polished and responsive cybersecurity website with a clear user journey and professional interface.",
+                challenge: "Create a professional digital experience that explains cybersecurity services clearly and builds trust with potential clients.",
+                process: "The project focused on information architecture, service presentation, responsive layouts, clear calls-to-action, and a modern cyber-inspired visual system.",
+                result: "A polished and responsive cybersecurity website with a clear user journey and professional interface.",
                 gallery: [
                     "Kitsuen full.jpeg",
                     "images/projects/kitsune-cybersecurity-02.jpg",
                     "images/projects/kitsune-cybersecurity-03.jpg"
                 ]
             },
+
             socialMediaBanner: {
                 categories: ["Social Media Design"],
                 title: "Social Media Banner",
-                subtitle:
-                    "Social media banner designed to support brand communication and online promotion.",
-                tools: [
-                    "Adobe Photoshop",
-                    "Canva",
-                    "Social Media Design",
-                    "Digital Advertising"
-                ],
+                subtitle: "Social media banner designed to support brand communication and online promotion.",
+                tools: ["Adobe Photoshop", "Canva", "Social Media Design", "Digital Advertising"],
                 hero: "Images/CyberCover.png",
-                challenge:
-                    "Create a visually strong banner that communicates the campaign message clearly across social media platforms.",
-                process:
-                    "The layout focused on headline hierarchy, brand consistency, image treatment, spacing, and platform-friendly dimensions.",
-                result:
-                    "A flexible social media banner suitable for campaigns, announcements, and promotional communication.",
-                gallery: [
-                    "Images/Cyberscribe.png"
-                ]
+                challenge: "Create a visually strong banner that communicates the campaign message clearly across social media platforms.",
+                process: "The layout focused on headline hierarchy, brand consistency, image treatment, spacing, and platform-friendly dimensions.",
+                result: "A flexible social media banner suitable for campaigns, announcements, and promotional communication.",
+                gallery: ["Images/Cyberscribe.png"]
             },
+
             productAdvertisement: {
                 categories: ["Social Media Design"],
                 title: "Product Advertisement",
-                subtitle:
-                    "Product advertising creative designed for social media and digital promotion.",
-                tools: [
-                    "Adobe Photoshop",
-                    "Adobe Illustrator",
-                    "Product Advertising",
-                    "Social Media Design"
-                ],
+                subtitle: "Product advertising creative designed for social media and digital promotion.",
+                tools: ["Adobe Photoshop", "Adobe Illustrator", "Product Advertising", "Social Media Design"],
                 hero: "Images/IGUARDCOVER.png",
-                challenge:
-                    "Present the product in a visually attractive way while communicating its main benefits and promotional message.",
-                process:
-                    "The design used product-focused composition, persuasive headlines, visual hierarchy, supporting graphics, and a clear call-to-action.",
-                result:
-                    "A high-impact product advertisement suitable for social media posts and digital campaigns.",
-                gallery: [
-                    "Images/IGUARD.png"
-                ]
+                challenge: "Present the product in a visually attractive way while communicating its main benefits and promotional message.",
+                process: "The design used product-focused composition, persuasive headlines, visual hierarchy, supporting graphics, and a clear call-to-action.",
+                result: "A high-impact product advertisement suitable for social media posts and digital campaigns.",
+                gallery: ["Images/IGUARD.png"]
             },
+
             educationAdCampaign: {
                 categories: ["Growth Marketing"],
                 title: "Education Ad Campaign",
-                subtitle:
-                    "Education advertising campaign created for students and parents.",
-                tools: [
-                    "Adobe Photoshop",
-                    "Adobe Illustrator",
-                    "Campaign Design",
-                    "Audience Targeting"
-                ],
+                subtitle: "Education advertising campaign created for students and parents.",
+                tools: ["Adobe Photoshop", "Adobe Illustrator", "Campaign Design", "Audience Targeting"],
                 hero: "Images/ATPSTEMCOVER.png",
-                challenge:
-                    "Create an education-focused campaign that appeals to both students and parents while presenting the opportunity clearly.",
-                process:
-                    "The campaign focused on audience-specific messaging, clear benefits, structured information, persuasive visuals, and strong calls-to-action.",
-                result:
-                    "A focused education campaign designed to support awareness, engagement, and student registrations.",
+                challenge: "Create an education-focused campaign that appeals to both students and parents while presenting the opportunity clearly.",
+                process: "The campaign focused on audience-specific messaging, clear benefits, structured information, persuasive visuals, and strong calls-to-action.",
+                result: "A focused education campaign designed to support awareness, engagement, and student registrations.",
                 gallery: [
                     "Images/ATPSTEM.png",
                     "images/marketing/education-ad-campaign-02.jpg"
                 ]
             },
+
             halloweenSale: {
                 categories: ["Social Media Design"],
                 title: "Halloween Sale",
-                subtitle:
-                    "Halloween sale advertisement designed for social media promotion.",
-                tools: [
-                    "Adobe Photoshop",
-                    "Adobe Illustrator",
-                    "Social Media Design",
-                    "Advertising Creative"
-                ],
+                subtitle: "Halloween sale advertisement designed for social media promotion.",
+                tools: ["Adobe Photoshop", "Adobe Illustrator", "Social Media Design", "Advertising Creative"],
                 hero: "Images/HalloweenCover.png",
-                challenge:
-                    "Design an eye-catching Halloween promotion that communicates the sale offer quickly and attracts attention on social media.",
-                process:
-                    "The design used a Halloween-inspired color palette, promotional typography, themed graphics, strong contrast, and a clear call-to-action.",
-                result:
-                    "A bold seasonal social media advertisement suitable for promotional campaigns and digital advertising.",
-                gallery: [
-                    "Images/Halloween.png"
-                ]
+                challenge: "Design an eye-catching Halloween promotion that communicates the sale offer quickly and attracts attention on social media.",
+                process: "The design used a Halloween-inspired color palette, promotional typography, themed graphics, strong contrast, and a clear call-to-action.",
+                result: "A bold seasonal social media advertisement suitable for promotional campaigns and digital advertising.",
+                gallery: ["Images/Halloween.png"]
             },
 
             logoDesignTwo: {
                 categories: ["Brand Identity"],
                 title: "Heba Holding Logo",
-                subtitle:
-                    "Creative logo concept designed for a modern and memorable brand identity.",
-                tools: [
-                    "Adobe Illustrator",
-                    "Logo Design",
-                    "Visual Identity",
-                    "Typography"
-                ],
+                subtitle: "Creative logo concept designed for a modern and memorable brand identity.",
+                tools: ["Adobe Illustrator", "Logo Design", "Visual Identity", "Typography"],
                 hero: "Images/HebaCover.png",
-                challenge:
-                    "Create a logo that communicates the brand personality while remaining clear at different sizes.",
-                process:
-                    "The design process included sketching, concept development, typography selection, refinement, and digital application.",
-                result:
-                    "A modern logo concept prepared for use across brand materials and digital platforms.",
-                gallery: [
-                    "Images/Heba.png"
-                ]
+                challenge: "Create a logo that communicates the brand personality while remaining clear at different sizes.",
+                process: "The design process included sketching, concept development, typography selection, refinement, and digital application.",
+                result: "A modern logo concept prepared for use across brand materials and digital platforms.",
+                gallery: ["Images/Heba.png"]
             },
-            
-                        techEventGraphics: {
+
+            techEventGraphics: {
                 categories: ["Social Media Design"],
                 title: "IGMS",
                 subtitle: "Promotional graphics designed for a high-profile technology summit.",
-                tools: [
-                    "Adobe Photoshop",
-                    "Adobe Illustrator",
-                ],
+                tools: ["Adobe Photoshop", "Adobe Illustrator"],
                 hero: "Images/IGMSCOVER.png",
-                challenge: 
-                "Design a compelling social media campaign visual for iGMS that communicates its all-in-one vacation rental management solution while capturing the attention of property managers and vacation rental hosts.",
-
-                process: 
-                    "Created a bold, modern composition using iGMS's blue and yellow color palette, strong typographic hierarchy, property imagery, smartphone product visualization, feature highlights, statistics, and a prominent call-to-action.",
-
-                result: 
-                    "Delivered a polished marketing visual that combines product communication and social media design to present iGMS as a streamlined, professional solution for managing vacation rental properties.",
-                gallery: [
-                    "Images/IGMS.png"
-                ]
+                challenge: "Design a compelling social media campaign visual for iGMS that communicates its all-in-one vacation rental management solution while capturing the attention of property managers and vacation rental hosts.",
+                process: "Created a bold, modern composition using iGMS's blue and yellow color palette, strong typographic hierarchy, property imagery, smartphone product visualization, feature highlights, statistics, and a prominent call-to-action.",
+                result: "Delivered a polished marketing visual that combines product communication and social media design to present iGMS as a streamlined, professional solution for managing vacation rental properties.",
+                gallery: ["Images/IGMS.png"]
             }
         };
 
@@ -891,82 +812,66 @@
         function renderProjects() {
             const grid = document.getElementById("project-grid");
 
-            if (!grid) {
-                return;
-            }
+            if (!grid) return;
 
             grid.innerHTML = "";
 
-            Object.entries(projects).forEach(
-                ([projectId, project]) => {
-                    const card = document.createElement("article");
+            Object.entries(projects).forEach(([projectId, project]) => {
+                const card = document.createElement("article");
 
-                    card.className = "project-card";
+                card.className = "project-card";
+                card.setAttribute("data-category", getCategoryKeys(project).join(" "));
+                card.setAttribute("data-project-id", projectId);
 
-                    card.setAttribute(
-                        "data-category",
-                        getCategoryKeys(project).join(" ")
-                    );
+                const categoryText = getCategoryText(project);
+                const toolText = project.tools.join(" • ");
 
-                    card.setAttribute(
-                        "data-project-id",
-                        projectId
-                    );
+                card.innerHTML = `
+                    <button
+                        type="button"
+                        onclick="openProject('${projectId}')"
+                        class="project-button"
+                        aria-label="View ${project.title} project"
+                    >
+                        <div class="project-image aspect-[4/3]">
+                            <img
+                                src="${project.hero}"
+                                alt="${project.title}"
+                                loading="lazy"
+                                onerror="this.style.display='none';"
+                            >
+                        </div>
 
-                    const categoryText =
-                        getCategoryText(project);
+                        <div class="p-6 sm:p-8">
+                            <span class="project-category">${categoryText}</span>
 
-                    const toolText =
-                        project.tools.join(" • ");
+                            <h3 class="text-xl sm:text-2xl font-bold mt-2">
+                                ${project.title}
+                            </h3>
 
-                    card.innerHTML = `
-                        <button
-                            type="button"
-                            onclick="openProject('${projectId}')"
-                            class="project-button"
-                        >
-                            <div class="project-image aspect-[4/3]">
-                                <img
-                                    src="${project.hero}"
-                                    alt="${project.title}"
-                                    onerror="this.style.display='none';"
-                                >
-                            </div>
+                            <p class="text-xs sm:text-sm text-white/40 mt-3 leading-relaxed">
+                                ${toolText}
+                            </p>
 
-                            <div class="p-8">
-                                <span class="project-category">
+                            <div class="mt-5 sm:mt-6 flex items-center justify-between gap-4">
+                                <span class="text-[11px] sm:text-xs text-white/30">
                                     ${categoryText}
                                 </span>
 
-                                <h3 class="text-2xl font-bold mt-2">
-                                    ${project.title}
-                                </h3>
-
-                                <p class="text-sm text-white/40 mt-3">
-                                    ${toolText}
-                                </p>
-
-                                <div class="mt-6 flex items-center justify-between">
-                                    <span class="text-xs text-white/30">
-                                        ${categoryText}
-                                    </span>
-
-                                    <span class="view-project text-xs font-bold">
-                                        View Project →
-                                    </span>
-                                </div>
+                                <span class="view-project text-xs font-bold shrink-0">
+                                    View Project →
+                                </span>
                             </div>
-                        </button>
-                    `;
+                        </div>
+                    </button>
+                `;
 
-                    grid.appendChild(card);
-                }
-            );
+                grid.appendChild(card);
+            });
         }
 
         function filterProjects(category, button) {
-            const buttons =
-                document.querySelectorAll(".filter-btn");
+            const buttons = document.querySelectorAll(".filter-btn");
 
             buttons.forEach(btn => {
                 btn.classList.remove("active");
@@ -978,17 +883,11 @@
                 button.setAttribute("aria-pressed", "true");
             }
 
-            const projectCards =
-                document.querySelectorAll(
-                    "#project-grid .project-card"
-                );
-
+            const projectCards = document.querySelectorAll("#project-grid .project-card");
             let visibleCount = 0;
 
             projectCards.forEach(card => {
-                const cardCategories =
-                    card.getAttribute("data-category")
-                        .split(" ");
+                const cardCategories = (card.getAttribute("data-category") || "").split(" ");
 
                 const shouldShow =
                     category === "all" ||
@@ -1002,82 +901,57 @@
                 }
             });
 
-            const emptyCategory =
-                document.getElementById("empty-category");
+            const emptyCategory = document.getElementById("empty-category");
 
-            if (!emptyCategory) {
-                return;
-            }
+            if (!emptyCategory) return;
 
-            if (visibleCount === 0) {
-                emptyCategory.classList.add("show");
-            } else {
-                emptyCategory.classList.remove("show");
-            }
+            emptyCategory.classList.toggle("show", visibleCount === 0);
         }
 
         function openProject(projectId) {
             const project = projects[projectId];
 
-            if (!project) {
-                return;
-            }
+            if (!project) return;
 
-            const modal =
-                document.getElementById("projectModal");
+            const modal = document.getElementById("projectModal");
+            const modalBody = document.getElementById("modalBody");
 
-            const modalBody =
-                document.getElementById("modalBody");
+            const categoryText = getCategoryText(project);
 
-            const categoryText =
-                getCategoryText(project);
+            const toolsHTML = project.tools
+                .map(tool => `<span class="tool-tag">${tool}</span>`)
+                .join("");
 
-            const toolsHTML =
-                project.tools
-                    .map(tool => `
-                        <span class="tool-tag">
-                            ${tool}
-                        </span>
-                    `)
-                    .join("");
-
-            const galleryHTML =
-                project.gallery
-                    .map((image, index) => `
-                        <div class="modal-gallery-item">
-                            <img
-                                src="${image}"
-                                alt="${project.title} project image ${index + 1}"
-                                onerror="this.parentElement.style.display='none';"
-                            >
-                        </div>
-                    `)
-                    .join("");
+            const galleryHTML = project.gallery
+                .map((image, index) => `
+                    <div class="modal-gallery-item">
+                        <img
+                            src="${image}"
+                            alt="${project.title} project image ${index + 1}"
+                            loading="lazy"
+                            onerror="this.parentElement.style.display='none';"
+                        >
+                    </div>
+                `)
+                .join("");
 
             modalBody.innerHTML = `
-                <div class="p-6 md:p-10">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div class="p-5 sm:p-6 md:p-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 items-center">
                         <div>
-                            <span class="project-category">
-                                ${categoryText}
-                            </span>
+                            <span class="project-category">${categoryText}</span>
 
-                            <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight mt-4 mb-5">
+                            <h2 id="modalTitle" class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight mt-4 mb-5">
                                 ${project.title}
                             </h2>
 
-                            <p class="text-white/50 text-base md:text-lg leading-relaxed">
+                            <p class="text-white/50 text-sm sm:text-base md:text-lg leading-relaxed">
                                 ${project.subtitle}
                             </p>
 
                             <div class="mt-7">
-                                <div class="modal-label">
-                                    Tools & Skills
-                                </div>
-
-                                <div>
-                                    ${toolsHTML}
-                                </div>
+                                <div class="modal-label">Tools & Skills</div>
+                                <div>${toolsHTML}</div>
                             </div>
                         </div>
 
@@ -1091,65 +965,50 @@
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-7 sm:gap-8 mt-10 sm:mt-14">
                         <div class="modal-section">
-                            <div class="modal-label">
-                                Challenge
-                            </div>
-
-                            <p class="text-sm text-white/50 leading-relaxed">
-                                ${project.challenge}
-                            </p>
+                            <div class="modal-label">Challenge</div>
+                            <p class="text-sm text-white/50 leading-relaxed">${project.challenge}</p>
                         </div>
 
                         <div class="modal-section">
-                            <div class="modal-label">
-                                Process
-                            </div>
-
-                            <p class="text-sm text-white/50 leading-relaxed">
-                                ${project.process}
-                            </p>
+                            <div class="modal-label">Process</div>
+                            <p class="text-sm text-white/50 leading-relaxed">${project.process}</p>
                         </div>
 
                         <div class="modal-section">
-                            <div class="modal-label">
-                                Result
-                            </div>
-
-                            <p class="text-sm text-white/50 leading-relaxed">
-                                ${project.result}
-                            </p>
+                            <div class="modal-label">Result</div>
+                            <p class="text-sm text-white/50 leading-relaxed">${project.result}</p>
                         </div>
                     </div>
 
-                    <div class="modal-section mt-14">
-                        <div class="modal-label">
-                            Project Images
-                        </div>
-
-                        <div class="modal-gallery">
-                            ${galleryHTML}
-                        </div>
+                    <div class="modal-section mt-10 sm:mt-14">
+                        <div class="modal-label">Project Images</div>
+                        <div class="modal-gallery">${galleryHTML}</div>
                     </div>
                 </div>
             `;
 
             modal.classList.add("show");
+            modal.setAttribute("aria-hidden", "false");
             document.body.style.overflow = "hidden";
+
+            const closeButton = modal.querySelector(".modal-close");
+            if (closeButton) closeButton.focus();
         }
 
         function closeProject() {
-            const modal =
-                document.getElementById("projectModal");
+            const modal = document.getElementById("projectModal");
+
+            if (!modal) return;
 
             modal.classList.remove("show");
+            modal.setAttribute("aria-hidden", "true");
             document.body.style.overflow = "";
         }
 
         function closeModalFromBackground(event) {
-            const modal =
-                document.getElementById("projectModal");
+            const modal = document.getElementById("projectModal");
 
             if (event.target === modal) {
                 closeProject();
@@ -1159,13 +1018,40 @@
         document.addEventListener("DOMContentLoaded", () => {
             renderProjects();
 
-            const allButton =
-                document.querySelector(
-                    ".filter-btn[onclick*=\"'all'\"]"
-                );
+            const allButton = document.querySelector(".filter-btn[onclick*=\"'all'\"]");
 
             if (allButton) {
                 filterProjects("all", allButton);
+            }
+
+            const mobileMenuButton = document.getElementById("mobileMenuButton");
+            const mobileMenu = document.getElementById("mobileMenu");
+            const menuIcon = document.getElementById("menuIcon");
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener("click", () => {
+                    const isOpen = !mobileMenu.classList.contains("hidden");
+
+                    mobileMenu.classList.toggle("hidden");
+                    mobileMenuButton.setAttribute("aria-expanded", String(!isOpen));
+                    mobileMenuButton.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+
+                    if (menuIcon) {
+                        menuIcon.textContent = isOpen ? "☰" : "✕";
+                    }
+                });
+
+                mobileMenu.querySelectorAll("a").forEach(link => {
+                    link.addEventListener("click", () => {
+                        mobileMenu.classList.add("hidden");
+                        mobileMenuButton.setAttribute("aria-expanded", "false");
+                        mobileMenuButton.setAttribute("aria-label", "Open menu");
+
+                        if (menuIcon) {
+                            menuIcon.textContent = "☰";
+                        }
+                    });
+                });
             }
         });
 
