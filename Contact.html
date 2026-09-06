@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,8 @@
         content="Get in touch with Sumaima Zakir for web design, development, WordPress, UI/UX, branding, graphic design, social media, and digital marketing projects."
     >
 
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link
@@ -19,56 +22,107 @@
     >
 
     <style>
-
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #000000;
-            color: #ffffff;
-
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            font-family: "Inter", sans-serif;
+            background-color: #000;
+            color: #fff;
             background-image:
-                linear-gradient(
-                    rgba(255, 255, 255, 0.03) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(255, 255, 255, 0.03) 1px,
-                    transparent 1px
-                );
-
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
             background-size: 50px 50px;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button,
+        a,
+        input,
+        textarea,
+        select {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button,
+        a {
+            touch-action: manipulation;
         }
 
         .purple-glow-btn {
             background: #7C5DFA;
             box-shadow: 0 0 20px rgba(124, 93, 250, 0.35);
+            transition: all 0.3s ease;
         }
 
         .purple-glow-btn:hover {
+            transform: translateY(-2px);
             box-shadow: 0 0 30px rgba(124, 93, 250, 0.55);
         }
 
         .nav-link {
-            transition: 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         .nav-link:hover {
             color: #7C5DFA;
         }
 
+        .mobile-menu-button {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.10);
+            background: rgba(255,255,255,0.04);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: rgba(0,0,0,0.96);
+            backdrop-filter: blur(16px);
+        }
+
+        .mobile-nav-link {
+            display: block;
+            min-height: 44px;
+            padding: 12px 14px;
+            border-radius: 12px;
+            color: rgba(255,255,255,0.70);
+            transition: all 0.25s ease;
+        }
+
+        .mobile-nav-link:hover,
+        .mobile-nav-link.active {
+            color: #fff;
+            background: rgba(124,93,250,0.10);
+        }
+
         .input-field {
             width: 100%;
+            min-height: 52px;
             background: #050505;
             border: 1px solid rgba(255,255,255,0.10);
             border-radius: 16px;
             padding: 15px 18px;
             color: white;
             outline: none;
-            transition: 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .input-field::placeholder {
@@ -80,11 +134,15 @@
             box-shadow: 0 0 0 3px rgba(124,93,250,0.08);
         }
 
+        select.input-field {
+            appearance: auto;
+        }
+
         .info-card {
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 20px;
-            transition: 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .info-card:hover {
@@ -97,7 +155,7 @@
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 20px;
             overflow: hidden;
-            transition: 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .faq-item:hover {
@@ -108,7 +166,8 @@
             list-style: none;
             cursor: pointer;
             position: relative;
-            padding: 24px 58px 24px 26px;
+            min-height: 44px;
+            padding: 22px 58px 22px 24px;
             font-size: 16px;
             font-weight: 600;
         }
@@ -121,11 +180,11 @@
             content: "+";
             position: absolute;
             right: 24px;
-            top: 18px;
+            top: 16px;
             font-size: 25px;
             font-weight: 400;
             color: #7C5DFA;
-            transition: 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .faq-item[open] summary::after {
@@ -133,7 +192,7 @@
         }
 
         .faq-item p {
-            padding: 0 26px 25px;
+            padding: 0 24px 24px;
             color: rgba(255,255,255,0.58);
             line-height: 1.8;
             font-size: 14px;
@@ -147,1055 +206,653 @@
             letter-spacing: 0.3em;
         }
 
+        .footer-social {
+            transition: all 0.3s ease;
+        }
+
+        .footer-social:hover {
+            background: rgba(124,93,250,0.10);
+            border-color: rgba(124,93,250,0.40);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 767px) {
+            html,
+            body {
+                overflow-x: hidden;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            p,
+            a,
+            span {
+                overflow-wrap: break-word;
+            }
+
+            .purple-glow-btn:hover,
+            .info-card:hover,
+            .footer-social:hover {
+                transform: none;
+            }
+
+            input,
+            textarea,
+            select {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .faq-item summary {
+                padding: 19px 52px 19px 20px;
+                font-size: 15px;
+            }
+
+            .faq-item summary::after {
+                right: 19px;
+            }
+
+            .faq-item p {
+                padding: 0 20px 20px;
+            }
+        }
+
+        @media (max-width: 374px) {
+            .section-label {
+                font-size: 10px;
+            }
+        }
     </style>
 </head>
 
-
 <body class="min-h-screen flex flex-col">
 
-
-<!-- ========================================================= -->
-<!-- HEADER -->
-<!-- ========================================================= -->
-
-<header
-    class="w-full border-b border-white/10 px-6 py-4 flex justify-between items-center bg-black/70 backdrop-blur-md sticky top-0 z-50"
->
-
-    <!-- Logo -->
-    <div class="flex items-center gap-3">
-
-        <div
-            class="w-10 h-10 rounded-full border border-purple-500/50 flex items-center justify-center text-xs font-bold text-purple-400"
-        >
-            SZ
-        </div>
-
-        <div>
-            <h1 class="text-sm font-bold tracking-tight">
-                Sumaima Zakir.
-            </h1>
-
-            <p class="text-[9px] uppercase tracking-[0.2em] text-white/50">
-                Digital Designer & Strategist
-            </p>
-        </div>
-
-    </div>
-
-
-    <!-- Navigation -->
-    <nav
-        class="hidden lg:flex items-center gap-8 text-[13px] font-medium text-white/70"
-    >
-
-        <a href="index.html" class="nav-link">
-            Home
-        </a>
-
-        <a href="About.html" class="nav-link">
-            About
-        </a>
-
-        <a href="Portfolio.html" class="nav-link">
-            Portfolio
-        </a>
-
-        <a href="Services.html" class="nav-link">
-            Services
-        </a>
-
-        <a href="Resume.html" class="nav-link">
-            Resume
-        </a>
-
-        <a
-            href="Contact.html"
-            class="text-white border-b border-purple-500 pb-1"
-        >
-            Contact
-        </a>
-
-    </nav>
-
-
-    <!-- Header CTA -->
-    <div class="flex items-center gap-5">
-
-        <a
-            href="Resume.html"
-            class="hidden md:block text-[13px] text-white/60 hover:text-white transition"
-        >
-        </a>
-
-        <a
-            href="#contact-form"
-            class="purple-glow-btn px-5 py-2.5 rounded-full text-[13px] font-bold hover:scale-105 transition-all"
-        >
-            Start a Project
-        </a>
-
-    </div>
-
-</header>
-
-
-
-<!-- ========================================================= -->
-<!-- MAIN -->
-<!-- ========================================================= -->
-
-<main class="flex-grow">
-
-
-<!-- ========================================================= -->
-<!-- CONTACT HERO -->
-<!-- ========================================================= -->
-
-<section class="py-28 md:py-32 px-6">
-
-    <div class="max-w-5xl mx-auto text-center">
-
-        <p class="section-label mb-5">
-            Contact
-        </p>
-
-        <h2
-            class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-7"
-        >
-            Let's Build Something
-            <span class="text-[#7C5DFA]">
-                Meaningful.
-            </span>
-        </h2>
-
-        <p
-            class="text-white/60 text-base md:text-lg max-w-2xl mx-auto leading-8"
-        >
-            Have a project in mind? I help businesses create effective
-            websites, visual identities, digital experiences, and marketing
-            materials that support their goals.
-        </p>
-
-        <div class="mt-10">
-
-            <a
-                href="#contact-form"
-                class="purple-glow-btn inline-flex items-center px-8 py-4 rounded-full font-semibold hover:scale-105 transition"
-            >
-                Send a Message
-                <span class="ml-2">→</span>
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ========================================================= -->
-<!-- CONTACT FORM -->
-<!-- ========================================================= -->
-
-<section
-    id="contact-form"
-    class="py-24 px-6 border-t border-white/5"
->
-
-    <div
-        class="max-w-7xl mx-auto grid lg:grid-cols-[0.85fr_1.15fr] gap-14 lg:gap-20"
-    >
-
-
-        <!-- LEFT CONTENT -->
-        <div>
-
-            <p class="section-label mb-4">
-                Get In Touch
-            </p>
-
-            <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-
-                Let's Discuss Your
-                <span class="text-[#7C5DFA]">
-                    Project.
-                </span>
-
-            </h2>
-
-            <p
-                class="text-white/55 leading-8 max-w-lg mb-10"
-            >
-                Tell me a little about what you're working on, what you need,
-                and what you'd like to achieve. I'll review your message and
-                get back to you as soon as possible.
-            </p>
-
-
-            <!-- CONTACT INFO -->
-
-            <div class="space-y-4">
-
-
-                <!-- EMAIL -->
-
-                <div class="info-card p-5">
-
-                    <p class="section-label mb-2">
-                        Email
-                    </p>
-
-                    <a
-                        href="mailto:sumaimazakir@hotmail.com"
-                        class="text-base md:text-lg font-semibold hover:text-purple-400 transition"
-                    >
-                        sumaimazakir@hotmail.com
-                    </a>
-
-                </div>
-
-                <!-- WHATSAPP -->
-    <div class="info-card p-5">
-
-        <p class="section-label mb-2">
-            WhatsApp
-        </p>
-
-        <a
-            href="https://wa.me/971547540293"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-base md:text-lg font-semibold hover:text-purple-400 transition inline-flex items-center gap-2"
-        >
-            Chat with me on WhatsApp <span>→</span>
-        </a>
-
-        <p class="text-white/45 text-sm mt-1">
-            Quick questions? Message me directly.
-        </p>
-
-    </div>
-
-
-                <!-- LOCATION -->
-
-                <div class="info-card p-5">
-
-                    <p class="section-label mb-2">
-                        Location
-                    </p>
-
-                    <h3 class="text-base md:text-lg font-semibold">
-                        Dubai, UAE
-                    </h3>
-
-                    <p class="text-white/45 text-sm mt-1">
-                        Available for remote projects worldwide.
-                    </p>
-
-                </div>
-
-
-                <!-- WORK TYPE -->
-
-                <div class="info-card p-5">
-
-                    <p class="section-label mb-2">
-                        Work With Me
-                    </p>
-
-                    <h3 class="text-base md:text-lg font-semibold">
-                        Freelance • Contract • Project-Based
-                    </h3>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- RIGHT FORM -->
-
-        <div
-            class="bg-white/[0.035] border border-white/10 rounded-[28px] p-7 md:p-10"
-        >
-
-            <form
-                action="https://formspree.io/f/YOUR_FORM_ID"
-                method="POST"
-                class="space-y-6"
-            >
-
-
-                <!-- NAME + EMAIL -->
-
-                <div class="grid md:grid-cols-2 gap-5">
-
-                    <div>
-
-                        <label
-                            for="name"
-                            class="block mb-2 text-sm font-medium"
-                        >
-                            Full Name
-                        </label>
-
-                        <input
-                            id="name"
-                            name="name"
-                            type="text"
-                            required
-                            placeholder="Your name"
-                            class="input-field"
-                        >
-
-                    </div>
-
-
-                    <div>
-
-                        <label
-                            for="email"
-                            class="block mb-2 text-sm font-medium"
-                        >
-                            Email
-                        </label>
-
-                        <input
-                            id="email"
-                            name="email"
-                            type="email"
-                            required
-                            placeholder="you@email.com"
-                            class="input-field"
-                        >
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- COMPANY + SERVICE -->
-
-                <div class="grid md:grid-cols-2 gap-5">
-
-                    <div>
-
-                        <label
-                            for="company"
-                            class="block mb-2 text-sm font-medium"
-                        >
-                            Company
-                            <span class="text-white/30">
-                                (Optional)
-                            </span>
-                        </label>
-
-                        <input
-                            id="company"
-                            name="company"
-                            type="text"
-                            placeholder="Company or brand"
-                            class="input-field"
-                        >
-
-                    </div>
-
-
-                    <div>
-
-                        <label
-                            for="service"
-                            class="block mb-2 text-sm font-medium"
-                        >
-                            What do you need?
-                        </label>
-
-                        <select
-                            id="service"
-                            name="service"
-                            required
-                            class="input-field"
-                        >
-
-                            <option value="">
-                                Select a service
-                            </option>
-
-                            <option>
-                                Web Design & Development
-                            </option>
-
-                            <option>
-                                WordPress Development
-                            </option>
-
-                            <option>
-                                UI/UX Design
-                            </option>
-
-                            <option>
-                                Brand Identity
-                            </option>
-
-                            <option>
-                                Graphic Design
-                            </option>
-
-                            <option>
-                                Social Media & Marketing
-                            </option>
-
-                            <option>
-                                Multiple Services
-                            </option>
-
-                            <option>
-                                Other
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- PROJECT DETAILS -->
-
-                <div>
-
-                    <label
-                        for="message"
-                        class="block mb-2 text-sm font-medium"
-                    >
-                        Tell me about your project
-                    </label>
-
-                    <textarea
-                        id="message"
-                        name="message"
-                        rows="7"
-                        required
-                        placeholder="Tell me about your project, goals, requirements, and anything else that would be helpful..."
-                        class="input-field resize-none"
-                    ></textarea>
-
-                </div>
-
-
-
-                <!-- SUBMIT -->
-
-                <button
-                    type="submit"
-                    class="purple-glow-btn inline-flex items-center px-8 py-4 rounded-full font-semibold hover:scale-105 transition"
-                >
-                    Send Message
-                    <span class="ml-2">→</span>
-                </button>
-
-
-                <p class="text-xs text-white/35">
-                    Your information will only be used to respond to your inquiry.
-                </p>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ========================================================= -->
-<!-- AVAILABILITY -->
-<!-- ========================================================= -->
-
-<section
-    id="availability"
-    class="py-24 px-6"
->
-
-    <div class="max-w-7xl mx-auto">
-
-        <div
-            class="rounded-[32px] border border-white/10 bg-gradient-to-br from-purple-500/10 via-white/[0.025] to-transparent p-8 md:p-12 lg:p-14"
-        >
-
-            <div
-                class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
-            >
-
-
-                <!-- LEFT -->
-
-                <div>
-
-                    <p class="section-label mb-5">
-                        Availability
-                    </p>
-
-                    <h2
-                        class="text-4xl md:text-5xl font-bold leading-tight mb-6"
-                    >
-                        Available for
-                        <span class="text-[#7C5DFA]">
-                            New Projects.
-                        </span>
-                    </h2>
-
-                    <p
-                        class="text-white/55 text-base md:text-lg leading-8 max-w-xl"
-                    >
-                        I'm open to freelance projects, contract work,
-                        and long-term collaborations with businesses,
-                        startups, and individuals.
-                    </p>
-
-                </div>
-
-
-
-                <!-- RIGHT -->
-
-                <div class="grid sm:grid-cols-2 gap-4">
-
-
-                    <!-- STATUS -->
-
-                    <div class="info-card p-5">
-
-                        <p class="section-label mb-3">
-                            Status
-                        </p>
-
-                        <h3
-                            class="text-lg font-bold text-emerald-400"
-                        >
-                            ● Available
-                        </h3>
-
-                    </div>
-
-
-                    <!-- WORK TYPE -->
-
-                    <div class="info-card p-5">
-
-                        <p class="section-label mb-3">
-                            Work Type
-                        </p>
-
-                        <h3 class="text-lg font-bold">
-                            Freelance & Contract
-                        </h3>
-
-                    </div>
-
-
-                    <!-- LOCATION -->
-
-                    <div class="info-card p-5">
-
-                        <p class="section-label mb-3">
-                            Location
-                        </p>
-
-                        <h3 class="text-lg font-bold">
-                            Remote Worldwide
-                        </h3>
-
-                    </div>
-
-
-                    <!-- SERVICES -->
-
-                    <div class="info-card p-5">
-
-                        <p class="section-label mb-3">
-                            Focus
-                        </p>
-
-                        <h3 class="text-base font-bold leading-relaxed">
-                            Websites • Design • Development • Marketing
-                        </h3>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ========================================================= -->
-<!-- FAQ -->
-<!-- ========================================================= -->
-
-<section class="py-24 px-6">
-
-    <div class="max-w-4xl mx-auto">
-
-
-        <!-- HEADING -->
-
-        <div class="text-center mb-14">
-
-            <p class="section-label mb-4">
-                FAQ
-            </p>
-
-            <h2
-                class="text-4xl md:text-5xl font-bold mb-5"
-            >
-                Frequently Asked
-                <span class="text-[#7C5DFA]">
-                    Questions.
-                </span>
-            </h2>
-
-            <p
-                class="text-white/50 max-w-2xl mx-auto leading-7"
-            >
-                A few things clients often want to know before starting
-                a project.
-            </p>
-
-        </div>
-
-
-
-        <!-- QUESTIONS -->
-
-        <div class="space-y-4">
-
-
-            <!-- FAQ 1 -->
-
-            <details class="faq-item">
-
-                <summary>
-                    What services do you provide?
-                </summary>
-
-                <p>
-                    I work across web design and development, WordPress,
-                    UI/UX design, branding, graphic design, social media,
-                    and digital marketing. Projects can focus on one area
-                    or combine multiple services.
-                </p>
-
-            </details>
-
-
-
-            <!-- FAQ 2 -->
-
-            <details class="faq-item">
-
-                <summary>
-                    How long does a typical project take?
-                </summary>
-
-                <p>
-                    Timelines depend on the scope and complexity of the
-                    project. A smaller website or design project may take
-                    a few weeks, while larger projects can require more
-                    time.
-                </p>
-
-            </details>
-
-
-
-            <!-- FAQ 3 -->
-
-            <details class="faq-item">
-
-                <summary>
-                    Do you work with clients outside the UAE?
-                </summary>
-
-                <p>
-                    Yes. I work remotely with clients and businesses
-                    worldwide through email, video calls, and online
-                    collaboration tools.
-                </p>
-
-            </details>
-
-
-
-            <!-- FAQ 4 -->
-
-            <details class="faq-item">
-
-                <summary>
-                    Do you provide support after a project is completed?
-                </summary>
-
-                <p>
-                    Yes. Depending on the project, I can provide ongoing
-                    website updates, maintenance, design support, and
-                    other post-launch assistance.
-                </p>
-
-            </details>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ========================================================= -->
-<!-- FINAL CTA -->
-<!-- ========================================================= -->
-
-<section class="py-24 md:py-32 px-6">
-
-    <div class="max-w-6xl mx-auto">
-
-        <div
-            class="relative overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-br from-[#7C5DFA]/15 via-black to-black p-10 md:p-16 lg:p-20 text-center"
-        >
-
-
-            <!-- GLOW -->
-
-            <div
-                class="absolute -top-32 -right-32 w-80 h-80 bg-[#7C5DFA] opacity-20 blur-[120px] rounded-full"
-            ></div>
-
-            <div
-                class="absolute -bottom-32 -left-32 w-80 h-80 bg-[#7C5DFA] opacity-15 blur-[120px] rounded-full"
-            ></div>
-
-
-            <!-- CONTENT -->
-
-            <div class="relative z-10">
-
-                <p class="section-label mb-5">
-                    Start a Conversation
-                </p>
-
-                <h2
-                    class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6"
-                >
-                    Have a Project
-                    <span class="text-[#7C5DFA]">
-                        in Mind?
-                    </span>
-                </h2>
-
-                <p
-                    class="max-w-2xl mx-auto text-white/55 text-base md:text-lg leading-8 mb-10"
-                >
-                    Tell me what you're working on and what you need.
-                    Let's see how we can turn the idea into something useful,
-                    polished, and effective.
-                </p>
-
-
-                <div
-                    class="flex flex-wrap justify-center gap-4"
-                >
-
-                    <a
-                        href="#contact-form"
-                        class="purple-glow-btn px-8 py-4 rounded-full font-semibold hover:scale-105 transition"
-                    >
-                        Start a Project
-                        <span class="ml-2">→</span>
-                    </a>
-
-                    <a
-                        href="mailto:sumaimazakir@hotmail.com"
-                        class="px-8 py-4 rounded-full border border-white/15 hover:border-[#7C5DFA] hover:text-[#7C5DFA] transition font-semibold"
-                    >
-                        Email Me
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-</main>
-
-
-
-<!-- ========================================================= -->
-<!-- FOOTER -->
-<!-- ========================================================= -->
-
-<footer
-    class="bg-black pt-20 pb-10 border-t border-white/5"
->
-
-    <div
-        class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 mb-20"
-    >
-
-
-        <!-- BIO -->
-
-        <div class="md:col-span-4">
-
-            <div class="flex items-center gap-3 mb-6">
-
-                <div
-                    class="w-10 h-10 rounded-full border border-purple-500/30 flex items-center justify-center text-xs font-bold text-purple-400"
-                >
+    <!-- HEADER -->
+    <header class="w-full border-b border-white/10 bg-black/70 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center gap-4">
+
+            <a href="index.html" class="flex items-center gap-3 min-w-0">
+                <div class="w-10 h-10 shrink-0 rounded-full border border-purple-500/50 flex items-center justify-center text-xs font-bold text-purple-400">
                     SZ
                 </div>
 
-                <h1 class="text-lg font-bold">
-                    Sumaima Zakir.
-                </h1>
-
-            </div>
-
-            <p
-                class="text-white/50 text-[14px] leading-relaxed mb-8 max-w-xs"
-            >
-                Designing digital experiences that help businesses
-                communicate, connect, and grow.
-            </p>
-
-            <div class="space-y-3">
-
-                <div class="flex items-center gap-3 text-[13px]">
-
-                    <span class="text-purple-500">
-                        📍
-                    </span>
-
-                    <span class="text-white/60">
-                        Dubai, UAE • Remote Worldwide
-                    </span>
-
+                <div class="min-w-0">
+                    <h1 class="text-sm font-bold tracking-tight">Sumaima Zakir.</h1>
+                    <p class="text-[9px] uppercase tracking-[0.2em] text-white/50">
+                        Digital Designer & Strategist
+                    </p>
                 </div>
-
-                <div class="flex items-center gap-3 text-[13px]">
-
-                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
-
-                    <span class="text-white/60">
-                        Available for freelance & contract work
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- NAVIGATION -->
-
-        <div class="md:col-span-2">
-
-            <h4
-                class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-8"
-            >
-                Navigation
-            </h4>
-
-            <ul
-                class="space-y-4 text-[14px] text-white/50"
-            >
-
-                <li>
-                    <a href="index.html" class="nav-link">
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="About.html" class="nav-link">
-                        About
-                    </a>
-                </li>
-
-                <li>
-                    <a href="Portfolio.html" class="nav-link">
-                        Portfolio
-                    </a>
-                </li>
-
-                <li>
-                    <a href="Services.html" class="nav-link">
-                        Services
-                    </a>
-                </li>
-
-                <li>
-                    <a href="Resume.html" class="nav-link">
-                        Resume
-                    </a>
-                </li>
-
-                <li>
-                    <a href="Contact.html" class="nav-link">
-                        Contact
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-
-
-        <!-- SERVICES -->
-
-        <div class="md:col-span-3">
-
-            <h4
-                class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-8"
-            >
-                Services
-            </h4>
-
-            <ul
-                class="space-y-4 text-[14px] text-white/50"
-            >
-
-                <li>
-                    Web Design & Development
-                </li>
-
-                <li>
-                    WordPress Development
-                </li>
-
-                <li>
-                    UI/UX Design
-                </li>
-
-                <li>
-                    Brand & Graphic Design
-                </li>
-
-                <li>
-                    Social Media Management
-                </li>
-
-                <li>
-                    Digital Marketing
-                </li>
-
-            </ul>
-
-        </div>
-
-
-
-        <!-- CONNECT -->
-
-        <div class="md:col-span-3">
-
-            <h4
-                class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-8"
-            >
-                Connect
-            </h4>
-
-            <div class="flex gap-3 mb-8">
-
-                <a
-                    href="#"
-                    aria-label="LinkedIn"
-                    class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-purple-500 transition text-[10px]"
-                >
-                    in
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="GitHub"
-                    class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-purple-500 transition text-[10px]"
-                >
-                    GH
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="Instagram"
-                    class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-purple-500 transition text-[10px]"
-                >
-                    IG
-                </a>
-
-            </div>
-
-            <a
-                href="mailto:sumaimazakir@hotmail.com"
-                class="text-[#7C5DFA] border-b border-[#7C5DFA] pb-1 text-[14px] font-bold"
-            >
             </a>
 
+            <nav class="hidden lg:flex items-center gap-8 text-[13px] font-medium text-white/70">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="About.html" class="nav-link">About</a>
+                <a href="Portfolio.html" class="nav-link">Portfolio</a>
+                <a href="Services.html" class="nav-link">Services</a>
+                <a href="Resume.html" class="nav-link">Resume</a>
+                <a href="Contact.html" class="text-white border-b border-purple-500 pb-1">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-2">
+                <a
+                    href="#contact-form"
+                    class="hidden sm:flex purple-glow-btn px-5 py-2.5 rounded-full text-[13px] font-bold items-center justify-center min-h-[44px]"
+                >
+                    Start a Project
+                </a>
+
+                <button
+                    id="mobileMenuButton"
+                    type="button"
+                    class="mobile-menu-button lg:hidden"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu"
+                    aria-label="Open menu"
+                >
+                    <span id="menuIcon">☰</span>
+                </button>
+            </div>
         </div>
 
-    </div>
+        <div id="mobileMenu" class="mobile-menu hidden lg:hidden">
+            <nav class="container mx-auto px-4 sm:px-6 py-4">
+                <div class="grid gap-1">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="About.html" class="mobile-nav-link">About</a>
+                    <a href="Portfolio.html" class="mobile-nav-link">Portfolio</a>
+                    <a href="Services.html" class="mobile-nav-link">Services</a>
+                    <a href="Resume.html" class="mobile-nav-link">Resume</a>
+                    <a href="Contact.html" class="mobile-nav-link active">Contact</a>
+                </div>
 
+                <a
+                    href="#contact-form"
+                    class="purple-glow-btn mt-3 flex items-center justify-center rounded-xl px-5 py-3 text-sm font-bold min-h-[48px]"
+                >
+                    Start a Project
+                </a>
+            </nav>
+        </div>
+    </header>
 
+    <!-- MAIN -->
+    <main class="flex-grow">
 
-    <!-- FOOTER BOTTOM -->
+        <!-- CONTACT HERO -->
+        <section class="px-4 sm:px-6 pt-20 sm:pt-28 lg:pt-32 pb-16 sm:pb-20">
+            <div class="max-w-5xl mx-auto text-center">
+                <p class="section-label mb-4 sm:mb-5">Contact</p>
 
-    <div
-        class="container mx-auto px-6 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-[12px]"
-    >
+                <h2 class="text-[2.6rem] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.08] mb-6 sm:mb-7">
+                    Let's Build Something
+                    <span class="text-[#7C5DFA]">Meaningful.</span>
+                </h2>
 
-        <p>
-            © 2026 Sumaima Zakir. All Rights Reserved.
-        </p>
+                <p class="text-white/60 text-base md:text-lg max-w-2xl mx-auto leading-7 sm:leading-8">
+                    Have a project in mind? I help businesses create effective
+                    websites, visual identities, digital experiences, and marketing
+                    materials that support their goals.
+                </p>
 
-        <div class="flex items-center gap-6">
+                <div class="mt-8 sm:mt-10">
+                    <a
+                        href="#contact-form"
+                        class="purple-glow-btn inline-flex items-center justify-center px-7 sm:px-8 py-4 min-h-[52px] rounded-full font-semibold"
+                    >
+                        Send a Message <span class="ml-2">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-            <span class="hidden sm:block">
-                Designed & Engineered for Digital Growth
-            </span>
+        <!-- CONTACT FORM -->
+        <section id="contact-form" class="py-16 sm:py-24 px-4 sm:px-6 border-t border-white/5">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-10 sm:gap-14 lg:gap-20">
 
-            <button
-                onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-                aria-label="Back to top"
-                class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition"
-            >
-                ↑
-            </button>
+                <div>
+                    <p class="section-label mb-4">Get In Touch</p>
 
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-5 sm:mb-6">
+                        Let's Discuss Your
+                        <span class="text-[#7C5DFA]">Project.</span>
+                    </h2>
+
+                    <p class="text-white/55 leading-7 sm:leading-8 max-w-lg mb-8 sm:mb-10">
+                        Tell me a little about what you're working on, what you need,
+                        and what you'd like to achieve. I'll review your message and
+                        get back to you as soon as possible.
+                    </p>
+
+                    <div class="space-y-4">
+
+                        <div class="info-card p-5">
+                            <p class="section-label mb-2">Email</p>
+                            <a
+                                href="mailto:sumaimazakir@hotmail.com"
+                                class="text-base md:text-lg font-semibold hover:text-purple-400 transition break-all"
+                            >
+                                sumaimazakir@hotmail.com
+                            </a>
+                        </div>
+
+                        <div class="info-card p-5">
+                            <p class="section-label mb-2">WhatsApp</p>
+
+                            <a
+                                href="https://wa.me/971547540293"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-base md:text-lg font-semibold hover:text-purple-400 transition inline-flex items-center gap-2"
+                            >
+                                Chat with me on WhatsApp <span>→</span>
+                            </a>
+
+                            <p class="text-white/45 text-sm mt-1">
+                                Quick questions? Message me directly.
+                            </p>
+                        </div>
+
+                        <div class="info-card p-5">
+                            <p class="section-label mb-2">Location</p>
+
+                            <h3 class="text-base md:text-lg font-semibold">
+                                Dubai, UAE
+                            </h3>
+
+                            <p class="text-white/45 text-sm mt-1">
+                                Available for remote projects worldwide.
+                            </p>
+                        </div>
+
+                        <div class="info-card p-5">
+                            <p class="section-label mb-2">Work With Me</p>
+
+                            <h3 class="text-base md:text-lg font-semibold">
+                                Freelance • Contract • Project-Based
+                            </h3>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="bg-white/[0.035] border border-white/10 rounded-[24px] sm:rounded-[28px] p-5 sm:p-7 md:p-10">
+                    <form
+                        action="https://formspree.io/f/YOUR_FORM_ID"
+                        method="POST"
+                        class="space-y-5 sm:space-y-6"
+                    >
+                        <input type="hidden" name="_subject" value="New Portfolio Inquiry — Sumaima Zakir">
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label for="name" class="block mb-2 text-sm font-medium">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    id="name"
+                                    name="name"
+                                    type="text"
+                                    required
+                                    autocomplete="name"
+                                    placeholder="Your name"
+                                    class="input-field"
+                                >
+                            </div>
+
+                            <div>
+                                <label for="email" class="block mb-2 text-sm font-medium">
+                                    Email
+                                </label>
+
+                                <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    required
+                                    autocomplete="email"
+                                    placeholder="you@email.com"
+                                    class="input-field"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label for="company" class="block mb-2 text-sm font-medium">
+                                    Company
+                                    <span class="text-white/30">(Optional)</span>
+                                </label>
+
+                                <input
+                                    id="company"
+                                    name="company"
+                                    type="text"
+                                    autocomplete="organization"
+                                    placeholder="Company or brand"
+                                    class="input-field"
+                                >
+                            </div>
+
+                            <div>
+                                <label for="service" class="block mb-2 text-sm font-medium">
+                                    What do you need?
+                                </label>
+
+                                <select id="service" name="service" required class="input-field">
+                                    <option value="">Select a service</option>
+                                    <option value="Web Design & Development">Web Design & Development</option>
+                                    <option value="WordPress Development">WordPress Development</option>
+                                    <option value="UI/UX Design">UI/UX Design</option>
+                                    <option value="Brand Identity">Brand Identity</option>
+                                    <option value="Graphic Design">Graphic Design</option>
+                                    <option value="Social Media & Marketing">Social Media & Marketing</option>
+                                    <option value="Multiple Services">Multiple Services</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block mb-2 text-sm font-medium">
+                                Tell me about your project
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="7"
+                                required
+                                placeholder="Tell me about your project, goals, requirements, and anything else that would be helpful..."
+                                class="input-field resize-none"
+                            ></textarea>
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="purple-glow-btn inline-flex items-center justify-center px-7 sm:px-8 py-4 min-h-[52px] rounded-full font-semibold"
+                        >
+                            Send Message <span class="ml-2">→</span>
+                        </button>
+
+                        <p class="text-xs text-white/35 leading-relaxed">
+                            Your information will only be used to respond to your inquiry.
+                        </p>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- AVAILABILITY -->
+        <section id="availability" class="py-16 sm:py-24 px-4 sm:px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="rounded-[26px] sm:rounded-[32px] border border-white/10 bg-gradient-to-br from-purple-500/10 via-white/[0.025] to-transparent p-6 sm:p-8 md:p-12 lg:p-14">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
+
+                        <div>
+                            <p class="section-label mb-4 sm:mb-5">Availability</p>
+
+                            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-5 sm:mb-6">
+                                Available for
+                                <span class="text-[#7C5DFA]">New Projects.</span>
+                            </h2>
+
+                            <p class="text-white/55 text-base md:text-lg leading-7 sm:leading-8 max-w-xl">
+                                I'm open to freelance projects, contract work,
+                                and long-term collaborations with businesses,
+                                startups, and individuals.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="info-card p-5">
+                                <p class="section-label mb-3">Status</p>
+                                <h3 class="text-lg font-bold text-emerald-400">● Available</h3>
+                            </div>
+
+                            <div class="info-card p-5">
+                                <p class="section-label mb-3">Work Type</p>
+                                <h3 class="text-lg font-bold">Freelance & Contract</h3>
+                            </div>
+
+                            <div class="info-card p-5">
+                                <p class="section-label mb-3">Location</p>
+                                <h3 class="text-lg font-bold">Remote Worldwide</h3>
+                            </div>
+
+                            <div class="info-card p-5">
+                                <p class="section-label mb-3">Focus</p>
+                                <h3 class="text-base font-bold leading-relaxed">
+                                    Websites • Design • Development • Marketing
+                                </h3>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-16 sm:py-24 px-4 sm:px-6">
+            <div class="max-w-4xl mx-auto">
+
+                <div class="text-center mb-10 sm:mb-14">
+                    <p class="section-label mb-4">FAQ</p>
+
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5">
+                        Frequently Asked
+                        <span class="text-[#7C5DFA]">Questions.</span>
+                    </h2>
+
+                    <p class="text-white/50 max-w-2xl mx-auto leading-7">
+                        A few things clients often want to know before starting a project.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <details class="faq-item">
+                        <summary>What services do you provide?</summary>
+                        <p>
+                            I work across web design and development, WordPress,
+                            UI/UX design, branding, graphic design, social media,
+                            and digital marketing. Projects can focus on one area
+                            or combine multiple services.
+                        </p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How long does a typical project take?</summary>
+                        <p>
+                            Timelines depend on the scope and complexity of the
+                            project. A smaller website or design project may take
+                            a few weeks, while larger projects can require more time.
+                        </p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Do you work with clients outside the UAE?</summary>
+                        <p>
+                            Yes. I work remotely with clients and businesses
+                            worldwide through email, video calls, and online
+                            collaboration tools.
+                        </p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Do you provide support after a project is completed?</summary>
+                        <p>
+                            Yes. Depending on the project, I can provide ongoing
+                            website updates, maintenance, design support, and
+                            other post-launch assistance.
+                        </p>
+                    </details>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="py-16 sm:py-24 md:py-32 px-4 sm:px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="relative overflow-hidden rounded-[28px] sm:rounded-[36px] border border-white/10 bg-gradient-to-br from-[#7C5DFA]/15 via-black to-black p-7 sm:p-10 md:p-16 lg:p-20 text-center">
+
+                    <div class="absolute -top-32 -right-32 w-80 h-80 bg-[#7C5DFA] opacity-20 blur-[120px] rounded-full"></div>
+                    <div class="absolute -bottom-32 -left-32 w-80 h-80 bg-[#7C5DFA] opacity-15 blur-[120px] rounded-full"></div>
+
+                    <div class="relative z-10">
+                        <p class="section-label mb-5">Start a Conversation</p>
+
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                            Have a Project
+                            <span class="text-[#7C5DFA]">in Mind?</span>
+                        </h2>
+
+                        <p class="max-w-2xl mx-auto text-white/55 text-base md:text-lg leading-7 sm:leading-8 mb-8 sm:mb-10">
+                            Tell me what you're working on and what you need.
+                            Let's see how we can turn the idea into something useful,
+                            polished, and effective.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                            <a
+                                href="#contact-form"
+                                class="purple-glow-btn inline-flex items-center justify-center px-8 py-4 min-h-[52px] rounded-full font-semibold"
+                            >
+                                Start a Project <span class="ml-2">→</span>
+                            </a>
+
+                            <a
+                                href="mailto:sumaimazakir@hotmail.com"
+                                class="inline-flex items-center justify-center px-8 py-4 min-h-[52px] rounded-full border border-white/15 hover:border-[#7C5DFA] hover:text-[#7C5DFA] transition font-semibold"
+                            >
+                                Email Me
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MASTER FOOTER -->
+    <footer class="bg-black pt-16 sm:pt-24 pb-10 sm:pb-12 border-t border-white/5">
+        <div class="container mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-12 gap-10 sm:gap-16 mb-16 sm:mb-24">
+
+            <div class="md:col-span-4">
+                <div class="flex items-center gap-3 mb-6 sm:mb-8">
+                    <div class="w-10 h-10 shrink-0 rounded-full border border-purple-500/30 flex items-center justify-center text-xs font-bold text-purple-400">
+                        SZ
+                    </div>
+
+                    <h1 class="text-xl font-bold">Sumaima Zakir.</h1>
+                </div>
+
+                <p class="text-white/40 text-sm leading-relaxed mb-8 sm:mb-10 max-w-xs">
+                    Designing digital experiences that grow businesses.
+                    Delivering high-performing websites, visual identity,
+                    and growth marketing strategies.
+                </p>
+
+                <div class="space-y-2 text-xs text-white/40">
+                    <p>
+                        <span class="text-white/25">Location:</span>
+                        Dubai · Available Globally
+                    </p>
+
+                    <p>
+                        <span class="text-white/25">Status:</span>
+                        Available for New Projects
+                    </p>
+                </div>
+            </div>
+
+            <div class="md:col-span-2">
+                <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/30 mb-6 sm:mb-8">
+                    Navigation
+                </h4>
+
+                <ul class="space-y-3 sm:space-y-4 text-sm text-white/50">
+                    <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                    <li><a href="About.html" class="hover:text-white transition">About</a></li>
+                    <li><a href="Portfolio.html" class="hover:text-white transition">Portfolio</a></li>
+                    <li><a href="Services.html" class="hover:text-white transition">Services</a></li>
+                    <li><a href="Resume.html" class="hover:text-white transition">Resume</a></li>
+                    <li><a href="Contact.html" class="text-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-3">
+                <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/30 mb-6 sm:mb-8">
+                    Services Offered
+                </h4>
+
+                <ul class="space-y-3 sm:space-y-4 text-sm text-white/50">
+                    <li>Web Design & Development</li>
+                    <li>UI/UX Prototyping</li>
+                    <li>WordPress Development</li>
+                    <li>Brand Identity Design</li>
+                    <li>Social Media Management</li>
+                    <li>Digital Marketing & SEO</li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-3">
+                <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/30 mb-6 sm:mb-8">
+                    Let's Connect
+                </h4>
+
+                <div class="flex gap-3 sm:gap-4 mb-8 sm:mb-10">
+                    <a
+                        href="#"
+                        aria-label="LinkedIn"
+                        class="footer-social w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center"
+                    >
+                        in
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="Instagram"
+                        class="footer-social w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center"
+                    >
+                        IG
+                    </a>
+                </div>
+
+                <a
+                    href="Contact.html#contact-form"
+                    class="text-[#7C5DFA] border-b border-[#7C5DFA] pb-1 text-sm font-bold hover:text-white transition"
+                >
+                    Start a Conversation →
+                </a>
+            </div>
         </div>
 
-    </div>
+        <div class="container mx-auto px-4 sm:px-6 pt-8 sm:pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-5 sm:gap-6 text-white/30 text-[12px]">
+            <p class="text-center md:text-left">
+                © 2026 Sumaima Zakir. All Rights Reserved.
+            </p>
 
-</footer>
+            <div class="flex items-center gap-6">
+                <span class="hidden sm:block">
+                    Designed & Engineered for Digital Growth
+                </span>
 
+                <button
+                    type="button"
+                    onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+                    aria-label="Back to top"
+                    class="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition"
+                >
+                    ↑
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const mobileMenuButton = document.getElementById("mobileMenuButton");
+            const mobileMenu = document.getElementById("mobileMenu");
+            const menuIcon = document.getElementById("menuIcon");
+
+            if (!mobileMenuButton || !mobileMenu) return;
+
+            mobileMenuButton.addEventListener("click", () => {
+                const isOpen = !mobileMenu.classList.contains("hidden");
+
+                mobileMenu.classList.toggle("hidden");
+                mobileMenuButton.setAttribute("aria-expanded", String(!isOpen));
+                mobileMenuButton.setAttribute(
+                    "aria-label",
+                    isOpen ? "Open menu" : "Close menu"
+                );
+
+                if (menuIcon) {
+                    menuIcon.textContent = isOpen ? "☰" : "✕";
+                }
+            });
+
+            mobileMenu.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.add("hidden");
+                    mobileMenuButton.setAttribute("aria-expanded", "false");
+                    mobileMenuButton.setAttribute("aria-label", "Open menu");
+
+                    if (menuIcon) {
+                        menuIcon.textContent = "☰";
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
