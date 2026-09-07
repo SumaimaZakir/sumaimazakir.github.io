@@ -1646,155 +1646,107 @@
           Fill out the form below and Sumaima will respond as soon as possible.
         </p>
 
-     <!-- CONTACT FORM -->
-<div class="contact-form-wrapper">
-
-  <div class="contact-form-header">
-    <span class="contact-form-eyebrow">Start a Project</span>
-
-    <h2>Tell Me About Your Project</h2>
-
-    <p>
-      Have a project in mind? Share a few details and I'll get back to you
-      with the next steps.
-    </p>
-  </div>
-
-  <form
-    id="contactForm"
-    action="https://api.web3forms.com/submit"
-    method="POST"
-    class="contact-form"
-  >
-
-    <!-- Web3Forms -->
-    <input
-      type="hidden"
-      name="access_key"
-      value="36800bc8-87c8-4647-9cb7-8b5d83861c2c"
-    >
-
-    <input
-      type="hidden"
-      name="subject"
-      value="New Portfolio Inquiry — Sumaima Zakir"
-    >
-
-    <input
-      type="hidden"
-      name="from_name"
-      value="Sumaima Zakir Portfolio"
-    >
-
-    <!-- Name -->
-    <div class="form-group">
-      <label for="name">
-        Your Full Name <span>*</span>
-      </label>
-
-      <input
-        id="name"
-        name="name"
-        type="text"
-        autocomplete="name"
-        placeholder="e.g. Sarah Jenkins"
-        required
-      >
-    </div>
-
-    <!-- Email -->
-    <div class="form-group">
-      <label for="email">
-        Email Address <span>*</span>
-      </label>
-
-      <input
-        id="email"
-        name="email"
-        type="email"
-        autocomplete="email"
-        placeholder="sarah@example.com"
-        required
-      >
-    </div>
-
-    <!-- Service -->
-    <div class="form-group">
-      <label for="service">
-        Required Service
-      </label>
-
-      <div class="select-wrapper">
-        <select
-          id="service"
-          name="service"
+        <form
+          id="contactForm"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="space-y-6"
         >
-          <option value="" disabled selected>
-            Select a service
-          </option>
+          <!-- Web3Forms -->
+          <!-- Replace this placeholder with your NEW Web3Forms access key. -->
+          <input
+            type="hidden"
+            name="access_key"
+            value="YOUR_NEW_WEB3FORMS_ACCESS_KEY"
+          >
 
-          <option value="Web Design & Development">
-            Web Design & Development
-          </option>
+          <input
+            type="hidden"
+            name="subject"
+            value="New Portfolio Inquiry — Sumaima Zakir"
+          >
 
-          <option value="UI/UX Design">
-            UI/UX Design
-          </option>
+          <input
+            type="hidden"
+            name="from_name"
+            value="Sumaima Zakir Portfolio"
+          >
 
-          <option value="WordPress Development">
-            WordPress Development
-          </option>
+          <div>
+            <label for="name" class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-3">
+              Your Full Name *
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+              placeholder="e.g. Sarah Jenkins"
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-5 sm:px-6 py-4 outline-none focus:border-purple-500 transition"
+            >
+          </div>
 
-          <option value="Graphic Design & Branding">
-            Graphic Design & Branding
-          </option>
+          <div>
+            <label for="email" class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-3">
+              Email Address *
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              placeholder="sarah@example.com"
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-5 sm:px-6 py-4 outline-none focus:border-purple-500 transition"
+            >
+          </div>
 
-          <option value="Social Media Management">
-            Social Media Management
-          </option>
+          <div>
+            <label for="service" class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-3">
+              Required Service
+            </label>
+            <select
+              id="service"
+              name="service"
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-5 sm:px-6 py-4 outline-none focus:border-purple-500 transition appearance-none"
+            >
+              <option value="" disabled selected>Select a service</option>
+              <option value="Web Design & Development">Web Design & Development</option>
+              <option value="UI/UX Design">UI/UX Design</option>
+              <option value="WordPress Development">WordPress Development</option>
+              <option value="Graphic Design & Branding">Graphic Design & Branding</option>
+              <option value="Social Media Management">Social Media Management</option>
+              <option value="Digital Marketing & SEO">Digital Marketing & SEO</option>
+            </select>
+          </div>
 
-          <option value="Digital Marketing & SEO">
-            Digital Marketing & SEO
-          </option>
-        </select>
+          <div>
+            <label for="message" class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-3">
+              Project Details & Goals
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Briefly describe your project goals, scope, or timeline..."
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-5 sm:px-6 py-4 outline-none focus:border-purple-500 transition resize-y"
+            ></textarea>
+          </div>
 
-        <span class="select-arrow" aria-hidden="true">⌄</span>
-      </div>
-    </div>
+          <button
+            type="submit"
+            class="w-full btn-primary py-4 sm:py-5 rounded-xl font-bold flex items-center justify-center gap-2"
+          >
+            Send Inquiry Message <span aria-hidden="true">➤</span>
+          </button>
 
-    <!-- Message -->
-    <div class="form-group">
-      <label for="message">
-        Project Details & Goals
-      </label>
-
-      <textarea
-        id="message"
-        name="message"
-        rows="6"
-        placeholder="Tell me about your project, goals, timeline, or anything else that would be helpful..."
-      ></textarea>
-    </div>
-
-    <!-- Submit -->
-    <button
-      type="submit"
-      class="contact-submit"
-    >
-      <span>Send Inquiry Message</span>
-      <span class="submit-arrow" aria-hidden="true">→</span>
-    </button>
-
-    <!-- Form status -->
-    <p
-      id="formStatus"
-      class="form-status"
-      aria-live="polite"
-    ></p>
-
-  </form>
-
-</div>
+          <p
+            id="formStatus"
+            class="hidden text-sm text-center text-gray-400"
+            aria-live="polite"
+          ></p>
+        </form>
       </div>
     </section>
   </main>
@@ -2017,376 +1969,86 @@
         });
       }
 
-   /* =======================================================
-   CONTACT FORM
-   ======================================================= */
-
-.contact-form-wrapper {
-  width: 100%;
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-/* -------------------------
-   Header
-------------------------- */
-
-.contact-form-header {
-  margin-bottom: 40px;
-}
-
-.contact-form-eyebrow {
-  display: inline-block;
-  margin-bottom: 14px;
-
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-
-  color: #a78bfa;
-}
-
-.contact-form-header h2 {
-  margin: 0 0 14px;
-
-  font-size: clamp(28px, 4vw, 42px);
-  line-height: 1.15;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-
-  color: #ffffff;
-}
-
-.contact-form-header p {
-  max-width: 600px;
-  margin: 0;
-
-  font-size: 15px;
-  line-height: 1.7;
-
-  color: #9ca3af;
-}
-
-/* -------------------------
-   Form
-------------------------- */
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-
-  padding: 32px;
-
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 24px;
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-/* -------------------------
-   Form Group
-------------------------- */
-
-.form-group {
-  width: 100%;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 10px;
-
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-
-  color: #9ca3af;
-}
-
-.form-group label span {
-  color: #a78bfa;
-}
-
-/* -------------------------
-   Inputs
-------------------------- */
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-
-  box-sizing: border-box;
-
-  padding: 16px 18px;
-
-  font-family: inherit;
-  font-size: 15px;
-  line-height: 1.5;
-
-  color: #ffffff;
-
-  background: rgba(255, 255, 255, 0.045);
-
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: 12px;
-
-  outline: none;
-
-  transition:
-    border-color 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
-}
-
-/* Placeholder */
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: #6b7280;
-}
-
-/* Focus */
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: rgba(167, 139, 250, 0.75);
-
-  background: rgba(255, 255, 255, 0.06);
-
-  box-shadow:
-    0 0 0 3px rgba(139, 92, 246, 0.10);
-}
-
-/* -------------------------
-   Select
-------------------------- */
-
-.select-wrapper {
-  position: relative;
-}
-
-.form-group select {
-  appearance: none;
-  -webkit-appearance: none;
-
-  cursor: pointer;
-
-  padding-right: 50px;
-}
-
-.form-group select option {
-  color: #111827;
-  background: #ffffff;
-}
-
-.select-arrow {
-  position: absolute;
-
-  top: 50%;
-  right: 18px;
-
-  transform: translateY(-50%);
-
-  font-size: 20px;
-  line-height: 1;
-
-  color: #9ca3af;
-
-  pointer-events: none;
-}
-
-/* -------------------------
-   Textarea
-------------------------- */
-
-.form-group textarea {
-  min-height: 150px;
-
-  resize: vertical;
-}
-
-.form-group textarea:focus {
-  min-height: 160px;
-}
-
-/* -------------------------
-   Submit Button
-------------------------- */
-
-.contact-submit {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-
-  width: 100%;
-
-  padding: 17px 24px;
-
-  margin-top: 4px;
-
-  border: 0;
-  border-radius: 12px;
-
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-
-  color: #ffffff;
-
-  background: linear-gradient(
-    135deg,
-    #7c3aed,
-    #9333ea
-  );
-
-  cursor: pointer;
-
-  box-shadow:
-    0 10px 30px rgba(124, 58, 237, 0.18);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    opacity 0.25s ease;
-}
-
-.contact-submit:hover {
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 14px 35px rgba(124, 58, 237, 0.28);
-}
-
-.contact-submit:active {
-  transform: translateY(0);
-}
-
-.contact-submit:disabled {
-  opacity: 0.65;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* -------------------------
-   Arrow
-------------------------- */
-
-.submit-arrow {
-  font-size: 18px;
-
-  transition:
-    transform 0.25s ease;
-}
-
-.contact-submit:hover .submit-arrow {
-  transform: translateX(4px);
-}
-
-/* -------------------------
-   Form Status
-------------------------- */
-
-.form-status {
-  min-height: 20px;
-
-  margin: 0;
-
-  text-align: center;
-
-  font-size: 13px;
-  line-height: 1.6;
-
-  color: #9ca3af;
-}
-
-/* -------------------------
-   Success / Error
-------------------------- */
-
-.form-status.success {
-  color: #34d399;
-}
-
-.form-status.error {
-  color: #f87171;
-}
-
-/* =======================================================
-   MOBILE
-   ======================================================= */
-
-@media (max-width: 640px) {
-
-  .contact-form-wrapper {
-    max-width: 100%;
-  }
-
-  .contact-form-header {
-    margin-bottom: 28px;
-  }
-
-  .contact-form-header h2 {
-    font-size: 30px;
-  }
-
-  .contact-form-header p {
-    font-size: 14px;
-  }
-
-  .contact-form {
-    gap: 21px;
-
-    padding: 22px 18px;
-
-    border-radius: 18px;
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    padding: 15px 16px;
-
-    font-size: 14px;
-  }
-
-  .form-group textarea {
-    min-height: 140px;
-  }
-
-  .contact-submit {
-    padding: 16px 20px;
-
-    font-size: 13px;
-  }
-}
-
-/* =======================================================
-   SMALL MOBILE
-   ======================================================= */
-
-@media (max-width: 380px) {
-
-  .contact-form {
-    padding: 18px 15px;
-  }
-
-  .contact-form-header h2 {
-    font-size: 27px;
-  }
-
-  .contact-form-header p {
-    font-size: 13px;
-  }
-}
+      /* -------------------------------------------------------
+         WEB3FORMS CONTACT FORM
+         Submits the form without leaving the page.
+      ------------------------------------------------------- */
+      const contactForm = document.getElementById("contactForm");
+      const formStatus = document.getElementById("formStatus");
+
+      if (contactForm) {
+        contactForm.addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const submitButton = contactForm.querySelector(
+            'button[type="submit"]'
+          );
+
+          if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.innerHTML =
+              'Sending... <span aria-hidden="true">➤</span>';
+          }
+
+          if (formStatus) {
+            formStatus.classList.remove(
+              "hidden",
+              "text-emerald-400",
+              "text-amber-400",
+              "text-red-400"
+            );
+            formStatus.classList.add("text-gray-400");
+            formStatus.textContent = "Sending your message...";
+          }
+
+          try {
+            const formData = new FormData(contactForm);
+
+            const response = await fetch(contactForm.action, {
+              method: "POST",
+              body: formData,
+              headers: {
+                Accept: "application/json"
+              }
+            });
+
+            const result = await response.json();
+
+            if (!response.ok || !result.success) {
+              throw new Error(
+                result.message || "Unable to send your message."
+              );
+            }
+
+            if (formStatus) {
+              formStatus.classList.remove("text-gray-400");
+              formStatus.classList.add("text-emerald-400");
+              formStatus.textContent =
+                "Thank you! Your message has been sent successfully. I'll get back to you soon.";
+            }
+
+            contactForm.reset();
+
+          } catch (error) {
+            console.error("Web3Forms error:", error);
+
+            if (formStatus) {
+              formStatus.classList.remove("text-gray-400");
+              formStatus.classList.add("text-red-400");
+              formStatus.textContent =
+                "Sorry, your message could not be sent. Please try again or contact me directly.";
+            }
+
+          } finally {
+            if (submitButton) {
+              submitButton.disabled = false;
+              submitButton.innerHTML =
+                'Send Inquiry Message <span aria-hidden="true">➤</span>';
+            }
+          }
+        });
+      }
+    });
   </script>
 
 </body>
